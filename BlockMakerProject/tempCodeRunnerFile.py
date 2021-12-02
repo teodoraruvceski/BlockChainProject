@@ -1,0 +1,1 @@
+#sendProcess=multiprocessing.Process(target=sndProcess,args=())
