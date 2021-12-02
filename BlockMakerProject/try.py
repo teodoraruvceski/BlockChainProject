@@ -1,15 +1,17 @@
 ##import Vallet
 import BlockMaker
 import multiprocessing
+from multiprocessing import Queue
+ 
 ##vallet=Vallet.Vallet()
 
 blockmaker=BlockMaker.BlockMaker()
-
+queue = Queue()
 
 def rcvProcess():
-    blockmaker.recieveTransactions()
+    blockmaker.recieveTransactions(queue)
 def sndProcess():
-    blockmaker.sendTransaction()
+    blockmaker.sendTransaction(queue)
     
 def process():
     recieveProcess=multiprocessing.Process(target=rcvProcess,args=())

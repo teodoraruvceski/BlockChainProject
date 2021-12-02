@@ -7,13 +7,14 @@ import select
 import sys
 from multiprocessing import Queue
 class BlockMaker:
+    ##Transactions = Queue()
     def __init__(self):
         self.Block=[]
         self.Miners=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
-        self.Transactions=Queue()
+        ##self.Transactions=Queue()
         
-    def recieveTransactions(self):
+    def recieveTransactions(self,msgQueue):
         HOST=''
         PORT=5000
         ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -35,23 +36,22 @@ class BlockMaker:
                     if data:
                         s.send(data)
                         print(pickle.loads(data))
-                        self.Transactions.put(data)
-                        print(self.Transactions.qsize())
-
-                        
+                        msgQueue.put(data)
+                        ##BlockMaker.Transactions.
+                        print(msgQueue.qsize())                      
                     else:
                         s.close()
                         read_list.remove(s)
                         
-    def sendTransaction(self):
+    def sendTransaction(self,msgQueue):
 
-        print(self.Transactions.qsize())
+        print(msgQueue.qsize())
         while True:
-            if(self.Transactions.qsize()==0):
-                continue
-            print(self.Transactions.qsize())
-            print('sending money')
-            data=self.Transactions.get()
+            ##if(BlockMaker.Transactions.qsize()==0):
+            ##  continue
+            ##print()
+            print('sending money',msgQueue.qsize())
+            data=msgQueue.get()
             print('sending')
             TCP_IP = '127.0.0.1'
             TCP_PORT = 5000
