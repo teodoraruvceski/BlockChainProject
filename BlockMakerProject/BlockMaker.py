@@ -6,14 +6,15 @@ import json
 import select
 import sys
 from multiprocessing import Queue
+from Block import Block
 import multiprocessing
 class BlockMaker:
     ##Transactions = Queue()
     def __init__(self):
-        self.Block=[]
-        self.Miners=[]
+        self.block=Block(time.time(),None)
+        self.miners=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
-        self.Transactions=Queue()
+       # self.Transactions=Queue()
         
     # def recieveTransactions(self):
     #     q=Queue()
@@ -66,5 +67,5 @@ class BlockMaker:
     #         print('SENDOVAO transakciju klijentu')
     #         s.close()
 
-      
+   
        

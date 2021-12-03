@@ -11,7 +11,7 @@ def process():
     p1.start()
     #p2.start()
     while True:
-        vallet.CreateTransaction(500,'127.0.0.1')
+        vallet.CreateTransaction(200,'127.0.0.1')
         time.sleep(2)
     
 

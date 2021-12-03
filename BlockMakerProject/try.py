@@ -9,7 +9,7 @@ import select
 
 
 
-def recieveTransactions(q):
+def recieveTransactions(sendingQueue,savingQueue):
         
         HOST=''
         PORT=5000
@@ -30,10 +30,14 @@ def recieveTransactions(q):
                 else:
                     data = s.recv(1024)
                     if data:
-                        
+                        trans=pickle.loads(data)
                         #print('New transaction : \n',pickle.loads(data))
-                        q.put(data)
-                                      
+                        if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
+                            sendingQueue.put(data)
+                            savingQueue.put(data)    
+                            s.send(pickle.dumps('ok'))    
+                        else:
+                            s.send(pickle.dumps('invalid'))                     
                     else:
                         s.close()
                         read_list.remove(s)
@@ -58,8 +62,11 @@ def sendTransaction(q):
         print('SENDOVAO transakciju klijentu')
         s.close()
 
+def saveTransaction(q,blockMaker):
+    while True:
+        transaction=pickle.loads(q.get())
+        blockMaker.block.transactions.append(transaction)
 
-    
 def process():
     recieveProcess=multiprocessing.Process(target=recieveTransactions,args=())
     sendProcess=multiprocessing.Process(target=sendTransaction,args=())
@@ -68,13 +75,16 @@ def process():
     
 if __name__=='__main__':
     blockmaker=BlockMaker.BlockMaker()
-    q = Queue()
-    recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[q])
-    sendProcess=multiprocessing.Process(target=sendTransaction,args=[q])
+    sendingQueue = Queue() #red iz kog cita metoda sendTransaction
+    savingQueue = Queue()  #red iz kog cita metoda saveTransaction
+    recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue])
+    sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue])
+    saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,blockmaker])
     recieveProcess.start()
     sendProcess.start()
+    saveProcess.start()
 
-    #process()
+
 
 
 

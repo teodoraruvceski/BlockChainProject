@@ -5,14 +5,13 @@ import time
 import json
 import sys
 import select
-import keyboard
 #import portalocker
 
 
 class Vallet:
     counter=0
     def __init__(self):
-        self.balance=0
+        self.balance=1000
         self.id= self.counter +1
         self.counter += 1
         self.transactions=[]
@@ -61,6 +60,12 @@ class Vallet:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
+        response=s.recv(1024)
+        if(pickle.loads(response)=='ok'):
+            self.balance -= sum
+            print('balance=',self.balance)
+        else:
+            print('Couldnt send money. Not enough balance.')
         print('SENDOVAO')
         s.close()
         
