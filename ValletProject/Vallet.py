@@ -1,4 +1,5 @@
 import socket
+from Socket import Socket
 import Transaction
 import pickle 
 import time
@@ -18,7 +19,12 @@ class Vallet:
         self.counter += 1
         self.transactions=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
+        self.socket = Socket(None,socket.gethostbyname(socket.gethostname()))
         
+    def getSocket(self):
+        return self.socket
+    def setSocket(self,port):
+        self.socket.setPort(port)
     def getBalance(self):
         return self.balance
     def setBalance(self,balance):

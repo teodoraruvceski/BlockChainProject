@@ -1,5 +1,6 @@
 from multiprocessing import Process, Manager
 from multiprocessing.managers import BaseManager
+from Socket import Socket
 import Vallet
 from Vallet import Vallet
 import multiprocessing
@@ -11,6 +12,7 @@ import Transaction
 import pickle 
 import time
 import select
+import keyboard
 
 lock=multiprocessing.Lock()
 
@@ -23,7 +25,7 @@ lock=multiprocessing.Lock()
 #         vallet.CreateTransaction(200,'127.0.0.1')
 #         time.sleep(2)
         
-def CreateTransaction(sum,receiver,vallet):
+def CreateTransaction(port,sum,receiver,vallet):
         transaction=Transaction.Transaction(sum,vallet.getIP(),receiver,vallet.getBalance(),time.time())
         TCP_IP = '127.0.0.1'
         TCP_PORT = 5000
@@ -45,9 +47,10 @@ def CreateTransaction(sum,receiver,vallet):
         print('SENDOVAO')
         s.close()
         
-def ReceiveMoney(vallet):
+def ReceiveMoney(vallet,finishProcess):
     HOST=''
     PORT=5001 #self.GetPort()
+    vallet.setSocket(PORT)
     print(PORT)
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -57,6 +60,10 @@ def ReceiveMoney(vallet):
     print ("Listening on port",PORT)
     read_list = [ss]
     while True:
+        if finishProcess==True:
+            print('Usao')
+            return
+        print('Preskocio')
         readable, writable, errored = select.select(read_list, [], [])
         for s in readable:
             if s is ss:
@@ -85,21 +92,54 @@ def StoreMoney(rcvData,vallet):
     print('POSLE LOCKA')
 
 
-
+def SendTransaction(vallet):
+    while True:
+        ind=False
+        print("Odaberite klijenta: ")
+        with open('portconfig.txt','r') as f:
+            lines = f.readlines()
+        print(lines)
+        array = lines[0].split(',')
+        port = input()
+        for p in array:
+            if p==port:
+                ind=True           
+        if ind!=True:
+            print('Nepostojeci port')
+        else:
+            if vallet.getSocket().getPort()==port:
+                print('Odabrani port je vas port')
+            else:
+                CreateTransaction(200,Socket(port,'127.0.0.1'),vallet)
+                return      
 ##transaction_thread=threading.Thread(target=vallet.CreateTransaction,args=(500,'123.4.5.6',))
 ##transaction_thread.start()
 ##transaction_thread.join()
 ##vallet.CreateTransaction(500,'123.4.5.6')
 if __name__=='__main__':
+    finishProcess = False
     BaseManager.register('Vallet', Vallet)
     manager = BaseManager()
     manager.start()
     vallet = manager.Vallet()
-    rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet])
+    rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet,finishProcess])
     #p2=multiprocessing.Process(target=vallet.CreateTransaction,args=[500,'127.0.0.1'])
     rcvProcess.start()
     #p2.start()
     while True:
-        CreateTransaction(200,'127.0.0.1',vallet)
-        time.sleep(2)
+        print('1. Posalji novu transakciju')
+        print('2. Provjeri stanje racuna')
+        print('3. Ugasi klijenta')
+        inPut = (int)(input())
+        if inPut==1:
+            SendTransaction(vallet)
+        elif inPut==2:
+            print(vallet.getBalance())
+        elif inPut==3:
+            finishProcess=True
+            break
+        else:
+            print('Nepostojeca komanda')  
+            
+    print('Kraj programa')  
     rcvProcess.join()
