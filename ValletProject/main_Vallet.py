@@ -1,4 +1,4 @@
-from multiprocessing import Process, Manager
+from multiprocessing import Process, Manager, Value
 from multiprocessing.managers import BaseManager
 from Socket import Socket
 import Vallet
@@ -12,10 +12,11 @@ import Transaction
 import pickle 
 import time
 import select
-import keyboard
+#import keyboard
 
 lock=multiprocessing.Lock()
-
+finishLock=multiprocessing.Lock()
+configLock=multiprocessing.Lock()
 # def process():
 #     p1=multiprocessing.Process(target=vallet.ReceiveMoney,args=())
 #     #p2=multiprocessing.Process(target=vallet.CreateTransaction,args=[500,'127.0.0.1'])
@@ -49,7 +50,7 @@ def CreateTransaction(port,sum,receiver,vallet):
         
 def ReceiveMoney(vallet,finishProcess):
     HOST=''
-    PORT=5001 #self.GetPort()
+    PORT=vallet.getSocket().getPort()
     vallet.setSocket(PORT)
     print(PORT)
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -60,11 +61,14 @@ def ReceiveMoney(vallet,finishProcess):
     print ("Listening on port",PORT)
     read_list = [ss]
     while True:
-        if finishProcess==True:
+        finishLock.acquire()
+        print('bool=',finishProcess.value)
+        if finishProcess.value==True:
             print('Usao')
+            finishLock.release()
             return
-        print('Preskocio')
-        readable, writable, errored = select.select(read_list, [], [])
+        finishLock.release()
+        readable, writable, errored = select.select(read_list, [], [],3)
         for s in readable:
             if s is ss:
                 client_socket, address = ss.accept()
@@ -111,14 +115,16 @@ def SendTransaction(vallet):
                 print('Odabrani port je vas port')
             else:
                 CreateTransaction(200,Socket(port,'127.0.0.1'),vallet)
-                return      
+                break   
+
+
 ##transaction_thread=threading.Thread(target=vallet.CreateTransaction,args=(500,'123.4.5.6',))
 ##transaction_thread.start()
 ##transaction_thread.join()
 ##vallet.CreateTransaction(500,'123.4.5.6')
 if __name__=='__main__':
-    finishProcess = False
-    BaseManager.register('Vallet', Vallet)
+    BaseManager.register('Vallet', Vallet) 
+    finishProcess = Value('i',False)
     manager = BaseManager()
     manager.start()
     vallet = manager.Vallet()
@@ -136,10 +142,14 @@ if __name__=='__main__':
         elif inPut==2:
             print(vallet.getBalance())
         elif inPut==3:
-            finishProcess=True
+            finishLock.acquire()
+            finishProcess.value=True
+            finishLock.release()
             break
         else:
             print('Nepostojeca komanda')  
             
-    print('Kraj programa')  
+      
     rcvProcess.join()
+    print('Kraj programa')
+    vallet.ReleasePort()

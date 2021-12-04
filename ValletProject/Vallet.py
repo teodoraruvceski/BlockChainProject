@@ -7,6 +7,7 @@ import json
 import sys
 import select
 import multiprocessing
+from filelock import FileLock
 #import portalocker
 lock=multiprocessing.Lock()
 
@@ -19,7 +20,7 @@ class Vallet:
         self.counter += 1
         self.transactions=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
-        self.socket = Socket(None,socket.gethostbyname(socket.gethostname()))
+        self.socket = Socket(self.TakePort(),socket.gethostbyname(socket.gethostname()))
         
     def getSocket(self):
         return self.socket
@@ -34,6 +35,58 @@ class Vallet:
     def getIP(self):
         return self.ipAddr
     
+    def TakePort(self):
+        with open('portconfig.txt','r') as f:
+                lines = f.readlines()
+        idx=0
+        max=5001
+        array=[]
+        if len(lines)!=0 :
+            array = lines[0].split(',')
+            for port in array:
+                idx+=1
+                if int(port)>max:
+                    if int(port)>(max+1): #5001,5002,5003,5004
+                        idx-=1
+                        break
+                    max = int(port)
+            max+=1
+        array.insert(idx,max)
+        text=""
+        for port in array:
+            text=text+str(port)+","
+        
+        textlist = list(text)
+        textlist.pop()
+        text2= "".join(textlist)
+        with open('portconfig.txt', 'w') as f:
+                f.write(text2)
+        f.close()
+        return max
+    
+    def ReleasePort(self):
+        with open('portconfig.txt','r') as f:
+                lines = f.readlines()
+        array = lines[0].split(',')
+        print(array)
+        myport=self.getSocket().getPort()
+        print(myport)
+        array.remove(str(myport))
+        print(array)
+
+        text=""
+        if len(array)!=0 :
+            for port in array:
+                text=text+str(port)+","
+            textlist = list(text)
+            textlist.pop()
+            text2= "".join(textlist)
+            print(text2)
+        else :
+            text2=""
+        with open('portconfig.txt', 'w') as f:
+                f.write(text2)
+        f.close()
     # def GetPort(self):
     #     with open('portconfig.txt','r') as f:
     #          lines = f.readlines()
