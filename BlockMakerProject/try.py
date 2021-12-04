@@ -8,7 +8,6 @@ import time
 import select
 
 
-
 def recieveTransactions(sendingQueue,savingQueue):
         
         HOST=''
@@ -51,6 +50,7 @@ def sendTransaction(q):
             continue
         time.sleep(2)
         data= pickle.loads(q.get())
+        data.balance=None
         print('sending money')
         TCP_IP = data.receiver
         TCP_PORT = 5001
