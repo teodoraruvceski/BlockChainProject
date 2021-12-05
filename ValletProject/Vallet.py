@@ -7,10 +7,16 @@ import json
 import sys
 import select
 import multiprocessing
+import filelock
 from filelock import FileLock
 #import portalocker
 lock=multiprocessing.Lock()
 
+'''from filelock import FileLock
+
+with FileLock("myfile.txt"(sad)
+    # work with the file as it is now locked
+    print("Lock acquired.")'''
 
 class Vallet:
     counter=0
@@ -37,7 +43,11 @@ class Vallet:
     
     def TakePort(self):
         with open('portconfig.txt','r') as f:
-                lines = f.readlines()
+            lines = f.readlines()
+            f.close()
+        # with FileLock('portconfig.txt.lock'):
+        #     with lock:
+        #         lines = open('portconfig.txt','r').readlines()
         idx=0
         max=5001
         array=[]
@@ -85,8 +95,11 @@ class Vallet:
         else :
             text2=""
         with open('portconfig.txt', 'w') as f:
-                f.write(text2)
-        f.close()
+            f.write(text2)
+            f.close()
+        # with FileLock('portconfig.txt.lock'):
+        #     with lock:
+        #         lines = open('portconfig.txt','w').write(text2)
     # def GetPort(self):
     #     with open('portconfig.txt','r') as f:
     #          lines = f.readlines()

@@ -26,7 +26,8 @@ configLock=multiprocessing.Lock()
 #         vallet.CreateTransaction(200,'127.0.0.1')
 #         time.sleep(2)
         
-def CreateTransaction(port,sum,receiver,vallet):
+        #PRVI ARGUMENT f-je bio port pa sam izbacio jer je pracvilo problem
+def CreateTransaction(sum,receiver,vallet):
         transaction=Transaction.Transaction(sum,vallet.getIP(),receiver,vallet.getBalance(),time.time())
         TCP_IP = '127.0.0.1'
         TCP_PORT = 5000
@@ -37,6 +38,7 @@ def CreateTransaction(port,sum,receiver,vallet):
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
         response=s.recv(1024)
+        print(pickle.load(response))
         if(pickle.loads(response)=='ok'):
             lock.acquire()
             vallet.setBalance((int)(vallet.getBalance())-sum)
@@ -62,7 +64,7 @@ def ReceiveMoney(vallet,finishProcess):
     read_list = [ss]
     while True:
         finishLock.acquire()
-        print('bool=',finishProcess.value)
+        #print('bool=',finishProcess.value)
         if finishProcess.value==True:
             print('Usao')
             finishLock.release()
