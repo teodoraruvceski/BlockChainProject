@@ -32,13 +32,13 @@ def recieveTransactions(sendingQueue,savingQueue):
                     print(data)
                     if data:
                         trans=pickle.loads(data)
-                        #print('New transaction : \n',pickle.loads(data))
-                        # if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
-                        #     sendingQueue.put(data)
-                        #     savingQueue.put(data)    
-                        #     s.send(pickle.dumps('ok'))    
-                        # else:
-                        #     s.send(pickle.dumps('invalid'))                     
+                        print('New transaction : \n',pickle.loads(data))
+                        if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
+                            sendingQueue.put(data)
+                            savingQueue.put(data)    
+                            s.send('ok'.encode())    
+                        else:
+                            s.send('invalid'.encode())                     
                     else:
                         s.close()
                         read_list.remove(s)
@@ -54,8 +54,8 @@ def sendTransaction(q):
         data= pickle.loads(q.get())
         data.balance=None
         print('sending money')
-        TCP_IP = data.receiver
-        TCP_PORT = 5001
+        TCP_IP = data.receiver.getIp()
+        TCP_PORT =(int)(data.receiver.getPort())
         BUFFER_SIZE = 1024
         MESSAGE = pickle.dumps(data)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

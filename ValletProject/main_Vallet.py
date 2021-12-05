@@ -32,21 +32,20 @@ def CreateTransaction(sum,receiver,vallet):
         TCP_IP = '127.0.0.1'
         TCP_PORT = 5000
         BUFFER_SIZE = 1024
-       ## MESSAGE = pickle.dumps(transaction)
-        MESSAGE = pickle.dumps(transaction)##json.dumps(transaction)
+        MESSAGE = pickle.dumps(transaction)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
-        # response=s.recv(1024)
-        # print(pickle.load(response))
-        # if(pickle.loads(response)=='ok'):
-        #     lock.acquire()
-        #     vallet.setBalance((int)(vallet.getBalance())-sum)
-        #     print('balance=',vallet.getBalance())
-        #     input()
-        #     lock.release()
-        # else:
-        #     print('Couldnt send money. Not enough balance.')
+        response=s.recv(1024)
+        print(response.decode())
+        if(response.decode()=='ok'):
+            lock.acquire()
+            vallet.setBalance((int)(vallet.getBalance())-sum)
+            print('balance=',vallet.getBalance())
+           
+            lock.release()
+        else:
+            print('Couldnt send money. Not enough balance.')
         print('SENDOVAO')
         s.close()
         
@@ -80,7 +79,6 @@ def ReceiveMoney(vallet,finishProcess):
                 data = s.recv(1024)
                 if data:
                     #call method for money storing
-                    #print('New transaction : \n',pickle.loads(data))
                     StoreMoney(data,vallet)       
                 else:
                     s.close()
@@ -101,29 +99,28 @@ def StoreMoney(rcvData,vallet):
 def SendTransaction(vallet):
     while True:
         ind=False
-        print("Odaberite klijenta: ")
+        print("Odaberite klijenta [pritisnite x za odustanak]: ")
         with open('portconfig.txt','r') as f:
             lines = f.readlines()
         print(lines)
         array = lines[0].split(',')
         port = input()
+        if port=='x':
+            break
         for p in array:
             if p==port:
                 ind=True           
         if ind!=True:
             print('Nepostojeci port')
         else:
-            if vallet.getSocket().getPort()==port:
+            print('MOJ PORT: ',vallet.getSocket().getPort())
+            print('ODABRANI PORT: ',port)
+            if (int)(vallet.getSocket().getPort())==(int)(port):
                 print('Odabrani port je vas port')
             else:
                 CreateTransaction(200,Socket(port,'127.0.0.1'),vallet)
                 break   
 
-
-##transaction_thread=threading.Thread(target=vallet.CreateTransaction,args=(500,'123.4.5.6',))
-##transaction_thread.start()
-##transaction_thread.join()
-##vallet.CreateTransaction(500,'123.4.5.6')
 if __name__=='__main__':
     BaseManager.register('Vallet', Vallet) 
     finishProcess = Value('i',False)
