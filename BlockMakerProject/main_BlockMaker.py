@@ -29,15 +29,16 @@ def recieveTransactions(sendingQueue,savingQueue):
                     print( "Connection from", address)
                 else:
                     data = s.recv(1024)
+                    print(data)
                     if data:
                         trans=pickle.loads(data)
                         #print('New transaction : \n',pickle.loads(data))
-                        if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
-                            sendingQueue.put(data)
-                            savingQueue.put(data)    
-                            s.send(pickle.dumps('ok'))    
-                        else:
-                            s.send(pickle.dumps('invalid'))                     
+                        # if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
+                        #     sendingQueue.put(data)
+                        #     savingQueue.put(data)    
+                        #     s.send(pickle.dumps('ok'))    
+                        # else:
+                        #     s.send(pickle.dumps('invalid'))                     
                     else:
                         s.close()
                         read_list.remove(s)

@@ -37,16 +37,16 @@ def CreateTransaction(sum,receiver,vallet):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
-        response=s.recv(1024)
-        print(pickle.load(response))
-        if(pickle.loads(response)=='ok'):
-            lock.acquire()
-            vallet.setBalance((int)(vallet.getBalance())-sum)
-            print('balance=',vallet.getBalance())
-            input()
-            lock.release()
-        else:
-            print('Couldnt send money. Not enough balance.')
+        # response=s.recv(1024)
+        # print(pickle.load(response))
+        # if(pickle.loads(response)=='ok'):
+        #     lock.acquire()
+        #     vallet.setBalance((int)(vallet.getBalance())-sum)
+        #     print('balance=',vallet.getBalance())
+        #     input()
+        #     lock.release()
+        # else:
+        #     print('Couldnt send money. Not enough balance.')
         print('SENDOVAO')
         s.close()
         
