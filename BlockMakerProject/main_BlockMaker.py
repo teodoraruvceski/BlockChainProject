@@ -1,5 +1,6 @@
 ##import Vallet
 import BlockMaker
+import Transaction
 import multiprocessing
 from multiprocessing import Queue
 import socket
