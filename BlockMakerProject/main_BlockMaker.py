@@ -10,7 +10,6 @@ import select
 
 
 def recieveTransactions(sendingQueue,savingQueue):
-        
         HOST=''
         PORT=5000
         ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -61,19 +60,59 @@ def sendTransaction(q):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
-        print('SENDOVAO transakciju klijentu')
+        print('sent transaction to client')
         s.close()
 
 def saveTransaction(q,blockMaker):
+    start=None
     while True:
-        transaction=pickle.loads(q.get())
-        blockMaker.block.transactions.append(transaction)
+        start=time.time()
+        while True:
+            transaction=pickle.loads(q.get())
+            blockMaker.block.transactions.append(transaction)
+            if(time.time()-start>= 6):
+                break
+        chosenMiner=blockMaker.getRandomMiner()
+        TCP_IP = chosenMiner.getIp()
+        TCP_PORT =(int)(chosenMiner.getPort())
+        BUFFER_SIZE = 1024
+        MESSAGE = pickle.dumps(blockMaker.getBlock())
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((TCP_IP, TCP_PORT))
+        s.send(MESSAGE)
+        print('sent block to random miner')
+        s.close()
+        blockMaker.newBlock()
 
-def process():
-    recieveProcess=multiprocessing.Process(target=recieveTransactions,args=())
-    sendProcess=multiprocessing.Process(target=sendTransaction,args=())
-    recieveProcess.start()
-    sendProcess.start()
+def RegisterMiner(blockMaker):
+    HOST=''
+    PORT=6000
+    ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    ss.bind((HOST,PORT))
+    ss.listen(5)
+    print ("Listening for registration on port 6000")
+    read_list = [ss]
+    while True:
+        readable, writable, errored = select.select(read_list, [], [])
+        for s in readable:
+            if s is ss:
+                client_socket, address = ss.accept()
+                read_list.append(client_socket)
+                print( "Connection from", address)
+            else:
+                data = s.recv(1024)
+                print(data)
+                if data:
+                    newMiner=pickle.loads(data)
+                    if(blockMaker.setMiners().count()==0):
+                        print('')
+                        #get initial block and send it to first miner             
+                else:
+                    s.close()
+                    read_list.remove(s)
+
+
     
 if __name__=='__main__':
     blockmaker=BlockMaker.BlockMaker()

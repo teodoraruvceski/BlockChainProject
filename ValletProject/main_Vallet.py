@@ -45,10 +45,10 @@ def CreateTransaction(sum,receiver,vallet):
            
             lock.release()
         else:
-            print('Couldnt send money. Not enough balance.')
-        print('SENDOVAO')
+            print('Couldn\'t send money. Not enough balance.')
         s.close()
-        
+
+
 def ReceiveMoney(vallet,finishProcess):
     HOST=''
     PORT=vallet.getSocket().getPort()
@@ -63,7 +63,6 @@ def ReceiveMoney(vallet,finishProcess):
     read_list = [ss]
     while True:
         finishLock.acquire()
-        #print('bool=',finishProcess.value)
         if finishProcess.value==True:
             print('Usao')
             finishLock.release()

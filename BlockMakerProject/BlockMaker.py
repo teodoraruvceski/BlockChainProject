@@ -1,5 +1,6 @@
 import socket
 import Transaction
+import random
 import pickle 
 import time
 import json
@@ -9,13 +10,20 @@ from multiprocessing import Queue
 from Block import Block
 import multiprocessing
 class BlockMaker:
-    ##Transactions = Queue()
     def __init__(self):
         self.block=Block(time.time(),None)
         self.miners=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
-       # self.Transactions=Queue()
-        
+    def addTransaction(self,transaction):
+        self.block.transactions.append(transaction)
+    def newBlock(self):
+        self.Block=Block(time.time(),None)
+    def getRandomMiner(self):
+        return random.choice(self.miners)
+    def getBlock(self):
+        return self.block
+    def getMiners(self):
+        return self.miners
     # def recieveTransactions(self):
     #     q=Queue()
     #     sendProcess=multiprocessing.Process(target=self.sendTransaction,args=[q])
