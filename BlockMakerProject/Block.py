@@ -1,12 +1,14 @@
 import json
 from hashlib import sha256
-
 class Block:
-    def __init__(self, timestamp, previous_hash ):
+    cnt=0
+    def __init__(self, timestamp, previous_hash ,nonce=0):
         self.transactions = []
         self.timestamp = timestamp
         self.previous_hash = previous_hash
-        self.nonce = 0
+        self.nonce = nonce
+        self.index=Block.cnt
+        Block.cnt+=1
     
     def compute_hash(self):
         block_string = json.dumps(self.__dict__, sort_keys=True)

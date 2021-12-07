@@ -11,7 +11,7 @@ from Block import Block
 import multiprocessing
 class BlockMaker:
     def __init__(self):
-        self.block=Block(time.time(),None)
+        self.block=None
         self.miners=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
     def addTransaction(self,transaction):
@@ -24,6 +24,13 @@ class BlockMaker:
         return self.block
     def getMiners(self):
         return self.miners
+    def addMiner(self,miner):
+        self.miners.append(miner)
+    
+    def create_genesis_block(self):
+        genesis_block = Block(time.time(), "0")
+        genesis_block.hash = genesis_block.compute_hash()
+        return genesis_block
     # def recieveTransactions(self):
     #     q=Queue()
     #     sendProcess=multiprocessing.Process(target=self.sendTransaction,args=[q])

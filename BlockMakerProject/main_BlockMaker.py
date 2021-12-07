@@ -72,6 +72,8 @@ def saveTransaction(q,blockMaker):
             blockMaker.block.transactions.append(transaction)
             if(time.time()-start>= 6):
                 break
+        if(blockMaker.getMiners().count()==0):
+            continue
         chosenMiner=blockMaker.getRandomMiner()
         TCP_IP = chosenMiner.getIp()
         TCP_PORT =(int)(chosenMiner.getPort())
@@ -105,9 +107,25 @@ def RegisterMiner(blockMaker):
                 print(data)
                 if data:
                     newMiner=pickle.loads(data)
-                    if(blockMaker.setMiners().count()==0):
+                    blockMaker.addMiner(newMiner) 
+                    if(blockMaker.getMiners().count()==0):
                         print('')
-                        #get initial block and send it to first miner             
+                        genesisBlock=blockMaker.create_genesis_block()   
+                        TCP_IP = newMiner.getIp()
+                        TCP_PORT =(int)(newMiner.getPort())
+                        MESSAGE = pickle.dumps(genesisBlock)
+                        print('sent genesis block to first miner')
+                      
+                    else:
+                        chosenMiner=blockMaker.getRandomMiner()
+                        TCP_IP = newMiner.getIp()
+                        TCP_PORT =(int)(newMiner.getPort())
+                        MESSAGE = pickle.dumps(chosenMiner)
+                        print('sent random miner to new miner')
+                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                    s.connect((TCP_IP, TCP_PORT))
+                    s.send(MESSAGE)
+                    s.close()
                 else:
                     s.close()
                     read_list.remove(s)

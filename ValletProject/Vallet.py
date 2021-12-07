@@ -45,9 +45,7 @@ class Vallet:
         with open('portconfig.txt','r') as f:
             lines = f.readlines()
             f.close()
-        # with FileLock('portconfig.txt.lock'):
-        #     with lock:
-        #         lines = open('portconfig.txt','r').readlines()
+      
         idx=0
         max=5001
         array=[]
