@@ -3,7 +3,8 @@ import socket
 class Miner:
     def __init__(self):
         self.socket=Socket(self.TakePort(),socket.gethostbyname(socket.gethostname()))
-        self.blockMined=0  
+        self.blockMined=0
+        self.neighbors=[]
     def getPort(self):
         return self.socket.getPort()
     def getIp(self):
@@ -15,7 +16,10 @@ class Miner:
         return self.blockMined
     def incrementBlockMined(self):
         self.blockMined+=1
-    
+    def addNeighbor(self,neighbor):
+        self.neighbors.append(neighbor)
+    def setNeighbors(self,neighbors):
+        self.neighbors=neighbors
     def __str__(self):
         return "Miner:\n\tPort : {port}\n\tIp : {ip}\n\tBlock mined: {bm}".format(port=self.socket.getPort(),ip=self.socket.getIp(),bm=self.blockMined)
     
