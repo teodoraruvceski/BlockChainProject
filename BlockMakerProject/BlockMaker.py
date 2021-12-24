@@ -11,25 +11,41 @@ from Block import Block
 import multiprocessing
 class BlockMaker:
     def __init__(self):
-        self.block=None
+        self.block=Block(time.time(),None)
         self.miners=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
+        
     def addTransaction(self,transaction):
         self.block.transactions.append(transaction)
+        
     def newBlock(self):
         self.Block=Block(time.time(),None)
+        
     def getRandomMiner(self):
+        if(len(self.miners)==0):
+            return -1
         return random.choice(self.miners)
+    
     def getBlock(self):
         return self.block
+    
     def getMiners(self):
         return self.miners
+    
     def addMiner(self,miner):
         self.miners.append(miner)
+        print("-----DODAO MINERA")
+        print(len(self.getMiners()))
+        
+    def getMinersCount(self):
+        lenn=len(self.miners)
+        print('GETMINERSCOUNT: ',lenn)
+        return lenn
     
     def create_genesis_block(self):
         genesis_block = Block(time.time(), "0")
         genesis_block.hash = genesis_block.compute_hash()
+        print("CREATED GENESIS: "+str(genesis_block))
         return genesis_block
     # def recieveTransactions(self):
     #     q=Queue()

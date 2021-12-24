@@ -2,15 +2,14 @@ from Socket import Socket
 import socket
 class Miner:
     def __init__(self):
-        self.socket=Socket(0,'localhost')
+        self.socket=Socket("7005",'localhost')
         self.blockMined=0
         self.neighbors=[]
     def getPort(self):
         return self.socket.getPort()
     def getIp(self):
         return self.socket.getIp()
-    def setPort(self,port):
-        self.socket.setPort(port)
+    
     def setBlockMined(self,value):
         self.blockMined=value
     def getBlockMined(self):

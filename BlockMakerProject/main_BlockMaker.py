@@ -7,6 +7,13 @@ import socket
 import pickle 
 import time
 import select
+from Socket import Socket
+from Miner import Miner
+from multiprocessing import Process, Manager, Value
+from multiprocessing.managers import BaseManager
+
+lock=multiprocessing.Lock()
+
 
 
 def recieveTransactions(sendingQueue,savingQueue):
@@ -33,8 +40,8 @@ def recieveTransactions(sendingQueue,savingQueue):
                         trans=pickle.loads(data)
                         print('New transaction : \n',pickle.loads(data))
                         if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
-                            sendingQueue.put(data)
-                            savingQueue.put(data)    
+                            sendingQueue.put(trans)
+                            savingQueue.put(trans)    
                             s.send('ok'.encode())    
                         else:
                             s.send('invalid'.encode())                     
@@ -50,7 +57,7 @@ def sendTransaction(q):
             print('queue empty')
             continue
         time.sleep(2)
-        data= pickle.loads(q.get())
+        data= q.get()
         data.balance=None
         print('sending money')
         TCP_IP = data.receiver.getIp()
@@ -68,13 +75,19 @@ def saveTransaction(q,blockMaker):
     while True:
         start=time.time()
         while True:
-            transaction=pickle.loads(q.get())
+            transaction=q.get()
+            print(transaction)
             blockMaker.block.transactions.append(transaction)
-            if(time.time()-start>= 6):
+            if(time.time()-start>= 10):
                 break
-        if(blockMaker.getMiners().count()==0):
+        lock.acquire()
+        if(blockMaker.getMinersCount()==0):
+            print('IF')
+            print(blockMaker.getMinersCount())
+            lock.release()
             continue
         chosenMiner=blockMaker.getRandomMiner()
+        lock.release()
         TCP_IP = chosenMiner.getIp()
         TCP_PORT =(int)(chosenMiner.getPort())
         BUFFER_SIZE = 1024
@@ -85,6 +98,7 @@ def saveTransaction(q,blockMaker):
         print('sent block to random miner')
         s.close()
         blockMaker.newBlock()
+        
 
 def RegisterMiner(blockMaker):
     HOST=''
@@ -92,10 +106,12 @@ def RegisterMiner(blockMaker):
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     ss.bind((HOST,PORT))
+    print('bindovao')
     ss.listen(5)
-    print ("Listening for registration on port 6000")
+    print ("Listening on port 6000")
     read_list = [ss]
     while True:
+       # readable, writable, errored = select.select(read_list, [], [])
         readable, writable, errored = select.select(read_list, [], [])
         for s in readable:
             if s is ss:
@@ -104,44 +120,54 @@ def RegisterMiner(blockMaker):
                 print( "Connection from", address)
             else:
                 data = s.recv(1024)
-                print(data)
                 if data:
                     newMiner=pickle.loads(data)
-                    blockMaker.addMiner(newMiner) 
-                    if(blockMaker.getMiners().count()==0):
-                        print('')
-                        genesisBlock=blockMaker.create_genesis_block()   
-                        TCP_IP = newMiner.getIp()
-                        TCP_PORT =(int)(newMiner.getPort())
+                    print(newMiner)
+                    if(len(blockMaker.getMiners())==0):
+                        genesisBlock=blockMaker.create_genesis_block()  
                         MESSAGE = pickle.dumps(genesisBlock)
                         print('sent genesis block to first miner')
-                      
                     else:
                         chosenMiner=blockMaker.getRandomMiner()
-                        TCP_IP = newMiner.getIp()
-                        TCP_PORT =(int)(newMiner.getPort())
                         MESSAGE = pickle.dumps(chosenMiner)
                         print('sent random miner to new miner')
-                    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                    s.connect((TCP_IP, TCP_PORT))
+                    print(str(pickle.loads(MESSAGE)))
                     s.send(MESSAGE)
-                    s.close()
+                    lock.acquire()
+                    blockMaker.addMiner(newMiner)
+                    lock.release()
+                    #s.close()
                 else:
                     s.close()
                     read_list.remove(s)
 
-
+def FakeReceiveTransaction(savingQueue):
+    sum=500
+    
+    while True:
+        transaction=Transaction.Transaction(sum,Socket(8500,'localhost'),Socket(8600,'localhost'),22222,time.time())
+        savingQueue.put(transaction)
+        time.sleep(1)
     
 if __name__=='__main__':
-    blockmaker=BlockMaker.BlockMaker()
+    BaseManager.register('BlockMaker', BlockMaker)
+    manager = BaseManager()
+    manager.start()
+    inst = manager.BlockMaker()
+    
+    
     sendingQueue = Queue() #red iz kog cita metoda sendTransaction
     savingQueue = Queue()  #red iz kog cita metoda saveTransaction
     recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue])
     sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue])
-    saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,blockmaker])
-    recieveProcess.start()
-    sendProcess.start()
+    saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
+    fakeReceiveProcess=multiprocessing.Process(target=FakeReceiveTransaction,args=[savingQueue])
+    registerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
+    #recieveProcess.start()
+    #sendProcess.start()
     saveProcess.start()
+    registerProcess.start()
+    fakeReceiveProcess.start()
 
 
 

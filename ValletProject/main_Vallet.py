@@ -28,7 +28,7 @@ configLock=multiprocessing.Lock()
         
         #PRVI ARGUMENT f-je bio port pa sam izbacio jer je pracvilo problem
 def CreateTransaction(sum,receiver,vallet):
-        transaction=Transaction.Transaction(sum,vallet.getIP(),receiver,vallet.getBalance(),time.time())
+        transaction=Transaction.Transaction(sum,Socket(vallet.getIp(),vallet.getPort()),receiver,vallet.getBalance(),time.time())
         TCP_IP = '127.0.0.1'
         TCP_PORT = 5000
         BUFFER_SIZE = 1024
