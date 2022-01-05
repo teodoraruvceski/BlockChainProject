@@ -1,5 +1,5 @@
 # ##import Vallet
-from BlockMaker import BlockMaker
+import BlockMaker
 import Transaction
 import multiprocessing
 # multiprocessing.set_start_method('spawn')
@@ -86,16 +86,16 @@ def saveTransaction(q,blockMaker):
             continue
         chosenMiner=blockMaker.getRandomMiner()
         lock.release()
-        TCP_IP = chosenMiner.getIp()
-        TCP_PORT =(int)(chosenMiner.getPort())
-        BUFFER_SIZE = 1024
-        MESSAGE = pickle.dumps(blockMaker.getBlock())
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((TCP_IP, TCP_PORT))
-        s.send(MESSAGE)
-        print('sent block to random miner')
-        s.close()
-        blockMaker.newBlock()
+        # TCP_IP = chosenMiner.getIp()
+        # TCP_PORT =(int)(chosenMiner.getPort())
+        # BUFFER_SIZE = 1024
+        # MESSAGE = pickle.dumps(blockMaker.getBlock())
+        # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        # s.connect((TCP_IP, TCP_PORT))
+        # s.send(MESSAGE)
+        # print('sent block to random miner')
+        # s.close()
+        # blockMaker.newBlock()
         
 
 def RegisterMiner(blockMaker):
@@ -148,7 +148,7 @@ def FakeReceiveTransaction(savingQueue):
         time.sleep(1)
     
 if __name__=='__main__':
-    BaseManager.register('BlockMaker', BlockMaker)
+    BaseManager.register('BlockMaker', BlockMaker.BlockMaker)
     manager = BaseManager()
     manager.start()
   
@@ -164,11 +164,11 @@ if __name__=='__main__':
     registerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
     #recieveProcess.start()
     #sendProcess.start()
-    saveProcess.start()
+    saveProcess.start()##########################
     #registerProcess.start()
     fakeReceiveProcess.start()
-
-
+    inp=""
+    input(inp)
 
 
 
