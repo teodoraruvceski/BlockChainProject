@@ -39,12 +39,12 @@ class BlockMaker:
         
     def getMinersCount(self):
         lenn=len(self.miners)
-        print('GETMINERSCOUNT: ',str(lenn))
+        print('-------------------------------------GETMINERSCOUNT: ',str(lenn))
         return lenn
     
     def create_genesis_block(self):
         genesis_block = Block(time.time(), "0")
-        genesis_block.hash = genesis_block.compute_hash()
+        genesis_block.setHash(genesis_block.compute_hash())
         print("CREATED GENESIS: "+str(genesis_block))
         return genesis_block
     def addTransaction(self,transaction):

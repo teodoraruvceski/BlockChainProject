@@ -75,8 +75,8 @@ def saveTransaction(q,blockMaker):
         start=time.time()
         while True:
             transaction=q.get()
-            print(transaction)
-            #blockMaker.addTransaction(transaction)
+            #print(transaction)
+            blockMaker.addTransaction(transaction)
             if(time.time()-start>= 10):
                 break
         lock.acquire()
@@ -85,17 +85,18 @@ def saveTransaction(q,blockMaker):
             lock.release()
             continue
         chosenMiner=blockMaker.getRandomMiner()
+        print('len of block= ',len(blockMaker.getBlock().transactions))
         lock.release()
-        # TCP_IP = chosenMiner.getIp()
-        # TCP_PORT =(int)(chosenMiner.getPort())
-        # BUFFER_SIZE = 1024
-        # MESSAGE = pickle.dumps(blockMaker.getBlock())
-        # s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        # s.connect((TCP_IP, TCP_PORT))
-        # s.send(MESSAGE)
-        # print('sent block to random miner')
-        # s.close()
-        # blockMaker.newBlock()
+        TCP_IP = chosenMiner.getIp()
+        TCP_PORT =(int)(chosenMiner.getPort())
+        BUFFER_SIZE = 1024
+        MESSAGE = pickle.dumps(blockMaker.getBlock())
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((TCP_IP, TCP_PORT))
+        s.send(MESSAGE)
+        print('sent block to random miner')
+        s.close()
+        blockMaker.newBlock()
         
 
 def RegisterMiner(blockMaker):
@@ -123,6 +124,7 @@ def RegisterMiner(blockMaker):
                     print(newMiner)
                     if(len(blockMaker.getMiners())==0):
                         genesisBlock=blockMaker.create_genesis_block()  
+                        genesisBlock.hash=0
                         MESSAGE = pickle.dumps(genesisBlock)
                         print('sent genesis block to first miner')
                     else:
@@ -145,6 +147,7 @@ def FakeReceiveTransaction(savingQueue):
     while True:
         transaction=Transaction.Transaction(sum,Socket(8500,'localhost'),Socket(8600,'localhost'),22222,time.time())
         savingQueue.put(transaction)
+        print('savingQueue = ',savingQueue.qsize())
         time.sleep(1)
     
 if __name__=='__main__':
@@ -162,11 +165,11 @@ if __name__=='__main__':
     saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
     fakeReceiveProcess=multiprocessing.Process(target=FakeReceiveTransaction,args=[savingQueue])
     registerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
-    #recieveProcess.start()
+    #recieveProcess.start() #receiving transactions from Vallet
     #sendProcess.start()
     saveProcess.start()##########################
-    #registerProcess.start()
-    fakeReceiveProcess.start()
+    registerProcess.start()
+    fakeReceiveProcess.start() #faking receiving transactions from Vallet
     inp=""
     input(inp)
 

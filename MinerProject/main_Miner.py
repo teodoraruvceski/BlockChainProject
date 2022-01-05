@@ -6,8 +6,21 @@ from Block import Block
 from NeighborInfo import NeighborInfo
 import time
 import select
+import Socket
 import paho.mqtt.client as mqtt
 from multiprocessing import Queue
+import json
+import Transaction
+difficulty=1
+def proof_of_work( block):
+    global difficulty
+    block.nonce = 0
+    computed_hash = block.compute_hash()
+    while not computed_hash.startswith('0' * difficulty):
+        block.nonce += 1
+        computed_hash = block.compute_hash()
+    difficulty += 1
+    return computed_hash
 
 def on_message(client, userdata, message):
     print("Received message: ", str(message.payload.decode("utf-8")))
@@ -17,7 +30,7 @@ def on_message(client, userdata, message):
     
 
 def StartMining():
-    mqttBroker = "mqtt.eclipseprojects.io"
+    mqttBroker = "test.mosquitto.org"
     client = mqtt.Client("Smartphone")
     client.connect(mqttBroker)
     while True:
@@ -28,7 +41,7 @@ def StartMining():
         client.loop_read()
 
 def SubscribeToBlockTopic():
-    mqttBroker = "mqtt.eclipseprojects.io"
+    mqttBroker = "test.mosquitto.org"
     client = mqtt.Client()
     client.connect(mqttBroker)
     while True:
@@ -39,7 +52,7 @@ def SubscribeToBlockTopic():
         client.loop_read()   
 
 def SubscribeToConfirmationTopic():
-    mqttBroker = "mqtt.eclipseprojects.io"
+    mqttBroker = "test.mosquitto.org"
     client = mqtt.Client()
     client.connect(mqttBroker)
     while True:
@@ -51,23 +64,28 @@ def SubscribeToConfirmationTopic():
    
         
 def PublishValidatedBlock(block):
-    mqttBroker = "mqtt.eclipseprojects.io"
+    mqttBroker = "test.mosquitto.org"
     client = mqtt.Client()
     client.connect(mqttBroker)
-    client.publish("block", block)
+    bytes=json.dumps(block.dump(block.hash))
+    client.publish("block", bytes)
     
 def PublishConfirmation(message):
-    mqttBroker = "mqtt.eclipseprojects.io"
+    mqttBroker = "test.mosquitto.org"
     client = mqtt.Client()
     client.connect(mqttBroker)
     client.publish("confirmation", message)
 
 
 def on_messageBlockTopic(client, userdata, message):
+    print("----Message on Block topic----")
     print(message.payload.decode())
+    #print(pickle.loads(message))
     
 def on_messageConfirmationTopic(client, userdata, message):
+    print("----Message on Confirmation topic----")
     print(message.payload.decode())
+    #print(pickle.loads(message))
     
 # def on_message2(client, userdata, message):
 #     print(message.payload.decode())
@@ -89,7 +107,7 @@ def JoinBlockchain(miner,blockchain):
     print(responseFromBlockMaker)
     if(type(responseFromBlockMaker)==type(Miner())):
         connectingMiner=responseFromBlockMaker
-        print("Response from blockmaker: ")
+        print("Received miner from blockmaker: ")
         print(str(connectingMiner))
         TCP_IP = connectingMiner.getIp()
         TCP_PORT =(int)(connectingMiner.getPort())
@@ -105,7 +123,8 @@ def JoinBlockchain(miner,blockchain):
             print(b)
         s.close()
     elif(type(responseFromBlockMaker)==type(Block(time.time(),"0"))):
-        blockchain.append(responseFromBlockMaker)
+        blockchain.append(responseFromBlockMaker.hash)
+        print("Received genesis block. Appended to my blockchain.\n")
     s.close()
 
 # def Mining():
@@ -124,15 +143,22 @@ def Listening(miner,blockchain,ss):
                 read_list.append(client_socket)
                 print( "Connection from", address)
             else:
-                data = s.recv(1024)
+                data = s.recv(4096)
                 if data:
                     data=pickle.loads(data)
                     if(type(data)==type(Block(time.time(),"0"))):
                         time.sleep(5) #time for validating
                         print('Received new block from blockmaker')
+                        data.setPreviousHash(blockchain[len(blockchain)-1])
+                        hash=proof_of_work(data)
+                        data.setHash(hash)
+                        blockchain.append(hash)
+                        print(str(data))
+                        PublishValidatedBlock(data)
                     elif(type(data)==type(Miner())):
-                        print('Miner recieved: ')
+                        print('Received new miner: ')
                         print(data)
+                        print("Sending blockchain...")
                         s.send(pickle.dumps(blockchain))     
                 else:
                     s.close()
@@ -142,9 +168,11 @@ def Listening(miner,blockchain,ss):
     
 if __name__=='__main__':
     
-    blockchain=[]
+    blockchain=[] #sadrzi hashove
+    #transaction=Transaction.Transaction(sum,Socket.Socket(8500,'localhost'),Socket.Socket(8600,'localhost'),22222,time.time())
+    #print(transaction.toJSON())
     miner=Miner()
-    
+     #finishProcess = Value('i',1)
     HOST=''
     PORT=miner.getPort()
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
