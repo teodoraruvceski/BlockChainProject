@@ -3,6 +3,7 @@ from multiprocessing.managers import BaseManager
 from Socket import Socket
 import Vallet
 from Vallet import Vallet
+from BlockMaker import BlockMaker
 import multiprocessing
 ##import BlockMaker
 import threading
@@ -121,14 +122,14 @@ def SendTransaction(vallet):
                 break   
 
 if __name__=='__main__':
-    BaseManager.register('Vallet', Vallet) 
+    BaseManager.register('BlockMaker', BlockMaker) 
     finishProcess = Value('i',False)
     manager = BaseManager()
     manager.start()
-    vallet = manager.Vallet()
-    rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet,finishProcess])
+    vallet = manager.BlockMaker()
+    # rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet,finishProcess])
     #p2=multiprocessing.Process(target=vallet.CreateTransaction,args=[500,'127.0.0.1'])
-    rcvProcess.start()
+    # rcvProcess.start()
     #p2.start()
     while True:
         print('1. Posalji novu transakciju')

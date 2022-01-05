@@ -1,7 +1,8 @@
-##import Vallet
-import BlockMaker
+# ##import Vallet
+from BlockMaker import BlockMaker
 import Transaction
 import multiprocessing
+# multiprocessing.set_start_method('spawn')
 from multiprocessing import Queue
 import socket
 import pickle 
@@ -13,8 +14,6 @@ from multiprocessing import Process, Manager, Value
 from multiprocessing.managers import BaseManager
 
 lock=multiprocessing.Lock()
-
-
 
 def recieveTransactions(sendingQueue,savingQueue):
         HOST=''
@@ -77,12 +76,11 @@ def saveTransaction(q,blockMaker):
         while True:
             transaction=q.get()
             print(transaction)
-            blockMaker.block.transactions.append(transaction)
+            #blockMaker.addTransaction(transaction)
             if(time.time()-start>= 10):
                 break
         lock.acquire()
         if(blockMaker.getMinersCount()==0):
-            print('IF')
             print(blockMaker.getMinersCount())
             lock.release()
             continue
@@ -153,6 +151,7 @@ if __name__=='__main__':
     BaseManager.register('BlockMaker', BlockMaker)
     manager = BaseManager()
     manager.start()
+  
     inst = manager.BlockMaker()
     
     
@@ -166,7 +165,7 @@ if __name__=='__main__':
     #recieveProcess.start()
     #sendProcess.start()
     saveProcess.start()
-    registerProcess.start()
+    #registerProcess.start()
     fakeReceiveProcess.start()
 
 

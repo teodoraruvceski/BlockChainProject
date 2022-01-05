@@ -12,5 +12,7 @@ class Block:
     def compute_hash(self):
         block_string = json.dumps(self.__dict__, sort_keys=True)
         return sha256(block_string.encode()).hexdigest()
+    def addTransaction(self,transaction):
+        self.transactions.append(transaction)
     def __str__(self):
         return "Timestamp: {ts}\nPrev_hash: {ph}".format(ts=self.timestamp,ph=self.previous_hash)        
