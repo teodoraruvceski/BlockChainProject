@@ -14,6 +14,7 @@ class BlockMaker:
          self.block=Block(time.time(),None)
          self.miners=[]
          self.ipAddr=socket.gethostbyname(socket.gethostname())
+         self.vallets=[]
         
     def addTransaction(self,transaction):
         self.block.transactions.append(transaction)
@@ -41,7 +42,8 @@ class BlockMaker:
         lenn=len(self.miners)
         print('-------------------------------------GETMINERSCOUNT: ',str(lenn))
         return lenn
-    
+    def getVallets(self):
+        return self.vallets
     def create_genesis_block(self):
         genesis_block = Block(time.time(), "0")
         genesis_block.setHash(genesis_block.compute_hash())
@@ -49,6 +51,8 @@ class BlockMaker:
         return genesis_block
     def addTransaction(self,transaction):
         self.block.addTransaction(transaction);
+    def addVallet(self,vallet):
+        self.vallets.append(vallet)
     # def recieveTransactions(self):
     #     q=Queue()
     #     sendProcess=multiprocessing.Process(target=self.sendTransaction,args=[q])

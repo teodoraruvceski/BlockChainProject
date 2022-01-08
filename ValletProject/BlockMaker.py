@@ -10,10 +10,10 @@ from multiprocessing import Queue
 # from Block import Block
 import multiprocessing
 class BlockMaker:
-    # def __init__(self):
-    #     self.block=Block(time.time(),None)
-    #     self.miners=[]
-    #     self.ipAddr=socket.gethostbyname(socket.gethostname())
+    def __init__(self):
+       # self.block=Block(time.time(),None)
+        self.miners=[]
+        self.ipAddr=socket.gethostbyname(socket.gethostname())
         
     def addTransaction(self,transaction):
         self.block.transactions.append(transaction)

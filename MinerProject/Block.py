@@ -9,6 +9,7 @@ class Block:
         self.nonce = nonce
         self.index=Block.cnt
         Block.cnt+=1
+        self.hash=None
     def addTransaction(self,transaction):
         self.transactions.append(transaction)
     def compute_hash(self):
@@ -18,6 +19,8 @@ class Block:
         return "Timestamp: {ts}\nPrev_hash: {ph} \nTransactionsCnt: {cnt}\nNonce: {non}".format(ts=self.timestamp,ph=self.previous_hash,cnt=len(self.transactions),non=self.nonce)  
     def setHash(self,hash):
         self.hash=hash
+    def getHash(self):
+        return self.hash
     def setPreviousHash(self,hash):
         self.previous_hash=hash
     def toJSON(self):
@@ -35,14 +38,7 @@ class Block:
             'timestamp':self.timestamp,
             'nonce':self.nonce,
             'previous_hash':self.previous_hash,
-            'hash':hash,
+            'hash':self.hash,
             'index':self.index
         }
-        # pom=self
-        # pom_niz=[]
-        # for t in self.transactions:
-        #    pom_niz.append(t.toJSON)
-        # for i in pom_niz:
-        #     print(i)
-        # pom.transactions=json.dumps(pom_niz)
-        # return json.dumps(pom.__dict__)
+     

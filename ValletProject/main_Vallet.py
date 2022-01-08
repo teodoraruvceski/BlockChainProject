@@ -13,6 +13,8 @@ import Transaction
 import pickle 
 import time
 import select
+import socketserver
+
 #import keyboard
 
 lock=multiprocessing.Lock()
@@ -28,11 +30,10 @@ configLock=multiprocessing.Lock()
 #         time.sleep(2)
         
         #PRVI ARGUMENT f-je bio port pa sam izbacio jer je pracvilo problem
-def CreateTransaction(sum,receiver,vallet):
-        transaction=Transaction.Transaction(sum,Socket(vallet.getIp(),vallet.getPort()),receiver,vallet.getBalance(),time.time())
+def CreateTransaction(sum,vallet,username):
+        transaction=Transaction.Transaction(sum,vallet.getUsername(),username,vallet.getBalance(),time.time())
         TCP_IP = '127.0.0.1'
         TCP_PORT = 5000
-        BUFFER_SIZE = 1024
         MESSAGE = pickle.dumps(transaction)
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
@@ -45,8 +46,10 @@ def CreateTransaction(sum,receiver,vallet):
             print('balance=',vallet.getBalance())
            
             lock.release()
-        else:
-            print('Couldn\'t send money. Not enough balance.')
+        elif(response.decode()=="ERROR: not enough balance."):
+            print(response.decode())
+        elif(response.decode()=="ERROR: invalid receiver's username."):
+            print(response.decode())
         s.close()
 
 
@@ -98,38 +101,59 @@ def StoreMoney(rcvData,vallet):
 
 def SendTransaction(vallet):
     while True:
-        ind=False
-        print("Odaberite klijenta [pritisnite x za odustanak]: ")
-        with open('portconfig.txt','r') as f:
-            lines = f.readlines()
-        print(lines)
-        array = lines[0].split(',')
-        port = input()
-        if port=='x':
-            break
-        for p in array:
-            if p==port:
-                ind=True           
-        if ind!=True:
-            print('Nepostojeci port')
-        else:
-            print('MOJ PORT: ',vallet.getSocket().getPort())
-            print('ODABRANI PORT: ',port)
-            if (int)(vallet.getSocket().getPort())==(int)(port):
-                print('Odabrani port je vas port')
-            else:
-                CreateTransaction(200,Socket(port,'127.0.0.1'),vallet)
-                break   
+        # ind=False
+        # print("Odaberite klijenta [pritisnite x za odustanak]: ")
+        # with open('portconfig.txt','r') as f:
+        #     lines = f.readlines()
+        # print(lines)
+        # array = lines[0].split(',')
+        # port = input()
+        # if port=='x':
+        #     break
+        # for p in array:
+        #     if p==port:
+        #         ind=True           
+        # if ind!=True:
+        #     print('Nepostojeci port')
+        # else:
+        #     print('MOJ PORT: ',vallet.getSocket().getPort())
+        #     print('ODABRANI PORT: ',port)
+        #     if (int)(vallet.getSocket().getPort())==(int)(port):
+        #         print('Odabrani port je vas port')
+        #     else:
+        #         CreateTransaction(200,Socket(port,'127.0.0.1'),vallet)
+        #         break   
+        receiverUsername=input('Enter receiver\'s username')
+        CreateTransaction(200,vallet,receiverUsername)
+def Register(vallet):
+    print(vallet)
+    transaction=Transaction.Transaction(100,'sender','receiver',1000,time.time())
+    TCP_IP = '127.0.0.1'
+    TCP_PORT = 5001
+    MESSAGE = pickle.dumps(vallet)
+    print(MESSAGE)
+    print(pickle.loads(MESSAGE))
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((TCP_IP, TCP_PORT))
+    s.send(MESSAGE)
+    s.close()
 
 if __name__=='__main__':
-    BaseManager.register('BlockMaker', BlockMaker) 
+    with socketserver.TCPServer(("localhost", 0), None) as s:
+        free_port = s.server_address[1]
+        print(free_port)
+    username=input('Enter username\n')
+    
+    BaseManager.register('Vallet', Vallet) 
     finishProcess = Value('i',False)
     manager = BaseManager()
     manager.start()
-    vallet = manager.BlockMaker()
-    # rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet,finishProcess])
+    vallet = manager.Vallet(username,free_port)
+    valletCopy=Vallet(username,free_port)
+    Register(valletCopy)
+    rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet,finishProcess])
     #p2=multiprocessing.Process(target=vallet.CreateTransaction,args=[500,'127.0.0.1'])
-    # rcvProcess.start()
+    rcvProcess.start()
     #p2.start()
     while True:
         print('1. Posalji novu transakciju')

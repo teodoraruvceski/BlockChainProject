@@ -2,6 +2,7 @@
 import BlockMaker
 import Transaction
 import multiprocessing
+import Vallet
 # multiprocessing.set_start_method('spawn')
 from multiprocessing import Queue
 import socket
@@ -9,13 +10,24 @@ import pickle
 import time
 import select
 from Socket import Socket
-from Miner import Miner
-from multiprocessing import Process, Manager, Value
 from multiprocessing.managers import BaseManager
+from flask import Flask
+import json
 
+app=Flask(__name__)
+transactions=[]
+@app.route("/transactions")
+def transactionsForWeb():
+    global transactions
+    jsons={"transactions":[json.dumps([t.dump() for t in transactions])]}
+    print(jsons)
+    return {"transactions":[json.dumps([t.dump() for t in transactions])]}
+
+def runServerForWeb():
+    app.run(debug=True)
 lock=multiprocessing.Lock()
 
-def recieveTransactions(sendingQueue,savingQueue):
+def recieveTransactions(sendingQueue,savingQueue,blockmaker):
         HOST=''
         PORT=5000
         ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -37,18 +49,26 @@ def recieveTransactions(sendingQueue,savingQueue):
                     print(data)
                     if data:
                         trans=pickle.loads(data)
-                        print('New transaction : \n',pickle.loads(data))
-                        if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
-                            sendingQueue.put(trans)
-                            savingQueue.put(trans)    
-                            s.send('ok'.encode())    
-                        else:
-                            s.send('invalid'.encode())                     
+                        print('New transaction : \n',trans)
+                        ind=False
+                        for s in blockmaker.getVallets():
+                            if(trans.getReceiver()==s.getUsername()):
+                                ind=True
+                                if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
+                                    sendingQueue.put(trans)
+                                    savingQueue.put(trans)    
+                                    s.send('ok'.encode())  
+                                    
+                                else:
+                                    s.send('ERROR: not enough balance.'.encode())  
+                                break  
+                        if(ind!=True):
+                            s.send('ERROR: invalid receiver\'s username.'.encode())                  
                     else:
                         s.close()
                         read_list.remove(s)
                         
-def sendTransaction(q):
+def sendTransaction(q,blockmaker):
     while True:
         print('qsize = ', q.qsize())
         if( q.empty()):
@@ -58,16 +78,17 @@ def sendTransaction(q):
         time.sleep(2)
         data= q.get()
         data.balance=None
-        print('sending money')
-        TCP_IP = data.receiver.getIp()
-        TCP_PORT =(int)(data.receiver.getPort())
-        BUFFER_SIZE = 1024
-        MESSAGE = pickle.dumps(data)
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((TCP_IP, TCP_PORT))
-        s.send(MESSAGE)
-        print('sent transaction to client')
-        s.close()
+        for v in blockmaker.getVallets():
+            if(v.getUsername()==data.getReceiver()):
+                print('sending money')
+                TCP_IP = v.getSocket().getIp()
+                TCP_PORT =(int)(v.getSocket().getPort())
+                MESSAGE = pickle.dumps(data)
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.connect((TCP_IP, TCP_PORT))
+                s.send(MESSAGE)
+                print('sent transaction to client')
+                s.close()
 
 def saveTransaction(q,blockMaker):
     start=None
@@ -143,13 +164,46 @@ def RegisterMiner(blockMaker):
 
 def FakeReceiveTransaction(savingQueue):
     sum=500
-    
+    global transactions
     while True:
         transaction=Transaction.Transaction(sum,Socket(8500,'localhost'),Socket(8600,'localhost'),22222,time.time())
         savingQueue.put(transaction)
+        transactions.append(transaction)
         print('savingQueue = ',savingQueue.qsize())
         time.sleep(1)
-    
+def RegisterVallet(blockMaker):
+    HOST=''
+    PORT=5001
+    ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    ss.bind((HOST,PORT))
+    print('bindovao')
+    ss.listen(5)
+    print ("Listening on port 5001")
+    read_list = [ss]
+    while True:
+        readable, writable, errored = select.select(read_list, [], [])
+        for s in readable:
+            if s is ss:
+                client_socket, address = ss.accept()
+                read_list.append(client_socket)
+                print( "Connection from", address)
+            else:
+                data = s.recv(8192)
+                if data:
+                    newVallet=pickle.loads(data)
+                    print(newVallet)
+                    ind =True
+                    for v in blockMaker.getVallets():
+                        if(v.getUsername()==newVallet.getUsername()):
+                           ind=False
+                           break
+                    if(ind==True):
+                        blockMaker.addVallet(newVallet) 
+                    s.close()
+                else:
+                    s.close()
+                    read_list.remove(s)
 if __name__=='__main__':
     BaseManager.register('BlockMaker', BlockMaker.BlockMaker)
     manager = BaseManager()
@@ -160,16 +214,20 @@ if __name__=='__main__':
     
     sendingQueue = Queue() #red iz kog cita metoda sendTransaction
     savingQueue = Queue()  #red iz kog cita metoda saveTransaction
-    recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue])
-    sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue])
+    recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue,inst])
+    sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue,inst])
     saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
     fakeReceiveProcess=multiprocessing.Process(target=FakeReceiveTransaction,args=[savingQueue])
     registerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
-    #recieveProcess.start() #receiving transactions from Vallet
+    registerValletProcess=multiprocessing.Process(target=RegisterVallet,args=[inst])
+    webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
+    registerValletProcess.start()
+    recieveProcess.start() #receiving transactions from Vallet
     #sendProcess.start()
-    saveProcess.start()##########################
-    registerProcess.start()
-    fakeReceiveProcess.start() #faking receiving transactions from Vallet
+    saveProcess.start()
+    #registerProcess.start()
+    #fakeReceiveProcess.start() #faking receiving transactions from Vallet
+    #webServerProcess.start()
     inp=""
     input(inp)
 

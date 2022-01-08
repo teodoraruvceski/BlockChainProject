@@ -13,3 +13,5 @@ class Socket:
     
     def __str__(self):
         return "Port : {port}\nIp : {ip}".format(port=self.port,ip=self.ip)
+    def dump(self):
+        return {'port':self.port,'ip':self.ip}

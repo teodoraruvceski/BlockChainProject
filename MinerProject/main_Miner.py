@@ -12,15 +12,30 @@ from multiprocessing import Queue
 import json
 import Transaction
 difficulty=1
+count=0
+savedBlock=None
 def proof_of_work( block):
     global difficulty
+    global count
     block.nonce = 0
     computed_hash = block.compute_hash()
     while not computed_hash.startswith('0' * difficulty):
         block.nonce += 1
         computed_hash = block.compute_hash()
-    difficulty += 1
+        count += 1
+        if count>40:   
+            difficulty += 1
+            count = 0
     return computed_hash
+def checkValidatedBlock( block):
+    global difficulty
+    global count
+    pom=block.getHash()
+    block.setHash(None)
+    computed_hash = block.compute_hash()
+    if(computed_hash==pom):
+        return True
+    return False
 
 def on_message(client, userdata, message):
     print("Received message: ", str(message.payload.decode("utf-8")))
@@ -78,13 +93,38 @@ def PublishConfirmation(message):
 
 
 def on_messageBlockTopic(client, userdata, message):
-    print("----Message on Block topic----")
-    print(message.payload.decode())
+    
+    newBlock=message.payload.decode()
+    # if(newBlock.hash==None):
+    #     print("----Message on Block topic from BLOCKMAKER----")
+    #     generatedHash=proof_of_work(newBlock)
+    #     print('Proof_of_work generated hash -> ',generatedHash)
+    #     newBlock.setHash(generatedHash)
+    #     PublishValidatedBlock(newBlock)
+    # else:
+    print("----Message on Block topic from MINER----")
+    if(checkValidatedBlock(newBlock)):
+        PublishConfirmation("True_",newBlock.getHash())
+    else:
+        PublishConfirmation("False_",newBlock.getHash())
+
+        
+        
+    #print(newBlock)
     #print(pickle.loads(message))
     
-def on_messageConfirmationTopic(client, userdata, message):
+def on_messageConfirmationTopic(client, userdata, message):###Kako da znamo koliko True odgovora treba da dobijemo??????
+    global savedBlock
     print("----Message on Confirmation topic----")
-    print(message.payload.decode())
+    newMessage=message.payload.decode()
+    print(newMessage)
+    words=newMessage.split("_")
+    if(words[0]=="True"):
+        
+        blockchain.append(savedBlock)
+        savedBlock=None
+    else:
+        savedBlock=None
     #print(pickle.loads(message))
     
 # def on_message2(client, userdata, message):
@@ -135,7 +175,6 @@ def Listening(miner,blockchain,ss):
     print ("Listening on port ",miner.getPort())
     read_list = [ss]
     while True:
-        print('Still listening...')
         readable, writable, errored = select.select(read_list, [], [])
         for s in readable:
             if s is ss:
