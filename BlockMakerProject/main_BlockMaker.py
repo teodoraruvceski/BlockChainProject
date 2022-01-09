@@ -96,29 +96,33 @@ def saveTransaction(q,blockMaker):
         start=time.time()
         while True:
             transaction=q.get()
-            #print(transaction)
             blockMaker.addTransaction(transaction)
             if(time.time()-start>= 10):
                 break
         lock.acquire()
+        if(len(blockMaker.getBlock().getTransactions())==0):
+            continue
         if(blockMaker.getMinersCount()==0):
             print(blockMaker.getMinersCount())
             lock.release()
-            continue
         chosenMiner=blockMaker.getRandomMiner()
         print('len of block= ',len(blockMaker.getBlock().transactions))
         lock.release()
         TCP_IP = chosenMiner.getIp()
         TCP_PORT =(int)(chosenMiner.getPort())
-        BUFFER_SIZE = 1024
         MESSAGE = pickle.dumps(blockMaker.getBlock())
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
         print('sent block to random miner')
-        s.close()
+        #s.close()
         blockMaker.newBlock()
-        
+        print('Prije blokiranja i cekanja potvrde da je blok sredjen')
+        data = s.recv(1024)
+        print('Nakon primanja poruke')
+        if data:
+            mess=pickle.loads(data)
+            print(mess)
 
 def RegisterMiner(blockMaker):
     HOST=''
@@ -166,7 +170,7 @@ def FakeReceiveTransaction(savingQueue):
     sum=500
     global transactions
     while True:
-        transaction=Transaction.Transaction(sum,Socket(8500,'localhost'),Socket(8600,'localhost'),22222,time.time())
+        transaction=Transaction.Transaction(sum,"neca","dora",22222,time.time())
         savingQueue.put(transaction)
         transactions.append(transaction)
         print('savingQueue = ',savingQueue.qsize())
@@ -221,12 +225,12 @@ if __name__=='__main__':
     registerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
     registerValletProcess=multiprocessing.Process(target=RegisterVallet,args=[inst])
     webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
-    registerValletProcess.start()
-    recieveProcess.start() #receiving transactions from Vallet
+    #registerValletProcess.start()
+    #recieveProcess.start() #receiving transactions from Vallet
     #sendProcess.start()
     saveProcess.start()
-    #registerProcess.start()
-    #fakeReceiveProcess.start() #faking receiving transactions from Vallet
+    registerProcess.start()
+    fakeReceiveProcess.start() #faking receiving transactions from Vallet
     #webServerProcess.start()
     inp=""
     input(inp)

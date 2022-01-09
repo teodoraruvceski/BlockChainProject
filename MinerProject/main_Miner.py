@@ -9,11 +9,16 @@ import select
 import Socket
 import paho.mqtt.client as mqtt
 from multiprocessing import Queue
+from threading import Thread
+import threading
+import  time
 import json
-import Transaction
 difficulty=1
 count=0
 savedBlock=None
+confirmationMessages=Queue()
+cond_obj=threading.Condition()
+
 def proof_of_work( block):
     global difficulty
     global count
@@ -79,9 +84,12 @@ def SubscribeToConfirmationTopic():
    
         
 def PublishValidatedBlock(block):
+    print('PublishValidatedBlock')
     mqttBroker = "test.mosquitto.org"
     client = mqtt.Client()
     client.connect(mqttBroker)
+    #block=json.loads(block)
+    #block=CreateBlockObject(block)
     bytes=json.dumps(block.dump(block.hash))
     client.publish("block", bytes)
     
@@ -91,46 +99,63 @@ def PublishConfirmation(message):
     client.connect(mqttBroker)
     client.publish("confirmation", message)
 
+def CreateBlockObject(dict):
+    retBlock =Block(dict["timestamp"],dict["previous_hash"],dict["nonce"])
+    for i in dict["transactions"]:
+        retBlock.addTransaction(i)
+    retBlock.setHash(dict["hash"])
+    return retBlock
 
 def on_messageBlockTopic(client, userdata, message):
-    
-    newBlock=message.payload.decode()
-    # if(newBlock.hash==None):
-    #     print("----Message on Block topic from BLOCKMAKER----")
-    #     generatedHash=proof_of_work(newBlock)
-    #     print('Proof_of_work generated hash -> ',generatedHash)
-    #     newBlock.setHash(generatedHash)
-    #     PublishValidatedBlock(newBlock)
-    # else:
-    print("----Message on Block topic from MINER----")
-    if(checkValidatedBlock(newBlock)):
-        PublishConfirmation("True_",newBlock.getHash())
-    else:
-        PublishConfirmation("False_",newBlock.getHash())
-
-        
-        
-    #print(newBlock)
-    #print(pickle.loads(message))
-    
-def on_messageConfirmationTopic(client, userdata, message):###Kako da znamo koliko True odgovora treba da dobijemo??????
     global savedBlock
+    newBlock=message.payload.decode()
+    print("----Message on Block topic from MINER----")
+    newBlock=json.loads(newBlock)
+    newBlock2=CreateBlockObject(newBlock)
+    savedBlock=newBlock2
+    if(checkValidatedBlock(newBlock2)):
+        PublishConfirmation("True_",newBlock2.getHash())
+    else:
+        PublishConfirmation("False_",newBlock2.getHash())
+    
+def on_messageConfirmationTopic(client, userdata, message):
+    global confirmationMessages
     print("----Message on Confirmation topic----")
     newMessage=message.payload.decode()
     print(newMessage)
-    words=newMessage.split("_")
-    if(words[0]=="True"):
-        
-        blockchain.append(savedBlock)
-        savedBlock=None
-    else:
-        savedBlock=None
-    #print(pickle.loads(message))
-    
-# def on_message2(client, userdata, message):
-#     print(message.payload.decode())
-    
-
+    confirmationMessages.put(newMessage)
+ 
+def SavingBlock(blockchain):
+    global savedBlock
+    global confirmationMessages
+    positive=0
+    negative=0
+    while True:
+        if(savedBlock==None):
+            time.sleep(1)
+            continue
+        time.sleep(3)
+        while True:
+            time.sleep(1)
+            if(confirmationMessages.empty()==False):
+                message=confirmationMessages.get()
+                if(message.split("_")[1]==savedBlock.getHash()):
+                    if(message.split("_")[0]=='True'):
+                        positive += 1
+                    elif(message.split("_")[0]=='False'):
+                        negative -= 1
+            else:
+                if(positive>negative):
+                    blockchain.append(savedBlock.getHash())
+                    savedBlock=None
+                    positive=0
+                    negative=0
+                    #semafor notifikuje
+                    cond_obj.notify_all()
+                    break
+                    
+            
+            
 def JoinBlockchain(miner,blockchain):
     TCP_IP='localhost'
     TCP_PORT=6000
@@ -166,12 +191,10 @@ def JoinBlockchain(miner,blockchain):
         blockchain.append(responseFromBlockMaker.hash)
         print("Received genesis block. Appended to my blockchain.\n")
     s.close()
-
-# def Mining():
-#     print()
     
 def Listening(miner,blockchain,ss):
-    
+    global savedBlock
+    global cond_obj
     print ("Listening on port ",miner.getPort())
     read_list = [ss]
     while True:
@@ -191,9 +214,12 @@ def Listening(miner,blockchain,ss):
                         data.setPreviousHash(blockchain[len(blockchain)-1])
                         hash=proof_of_work(data)
                         data.setHash(hash)
-                        blockchain.append(hash)
                         print(str(data))
                         PublishValidatedBlock(data)
+                        #semafor ceka
+                        cond_obj.wait()
+                        MESSAGE="done"
+                        s.send(pickle.dumps(MESSAGE))
                     elif(type(data)==type(Miner())):
                         print('Received new miner: ')
                         print(data)
@@ -206,12 +232,8 @@ def Listening(miner,blockchain,ss):
 
     
 if __name__=='__main__':
-    
     blockchain=[] #sadrzi hashove
-    #transaction=Transaction.Transaction(sum,Socket.Socket(8500,'localhost'),Socket.Socket(8600,'localhost'),22222,time.time())
-    #print(transaction.toJSON())
     miner=Miner()
-     #finishProcess = Value('i',1)
     HOST=''
     PORT=miner.getPort()
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -219,11 +241,15 @@ if __name__=='__main__':
     ss.bind((HOST,PORT))
     ss.listen(5)
     miner.setPort(ss.getsockname()[1])
-    
     JoinBlockchain(miner,blockchain)
-    listeningProcess=multiprocessing.Process(target=Listening,args=[miner,blockchain,ss])
-    subscribeBlockProcess=multiprocessing.Process(target=SubscribeToBlockTopic,args=[])
-    subscribeConfirmationProcess=multiprocessing.Process(target=SubscribeToBlockTopic,args=[])
+    #listeningProcess=multiprocessing.Process(target=Listening,args=[miner,blockchain,ss])
+    listeningProcess=Thread(target=Listening,args=[miner,blockchain,ss])
+    #subscribeBlockProcess=multiprocessing.Process(target=SubscribeToBlockTopic,args=[])
+    subscribeBlockProcess=Thread(target=SubscribeToBlockTopic,args=())
+    #subscribeConfirmationProcess=multiprocessing.Process(target=SubscribeToConfirmationTopic,args=[confirmationMessages])
+    subscribeConfirmationProcess=Thread(target=SubscribeToConfirmationTopic,args=())
+    savingBlockProcess=Thread(target=SavingBlock,args=(blockchain))
+    #x = threading.Thread(target=thread_function, args=(1,))
     #miningProcess=multiprocessing.Process(target=StartMining,args=[q])
     #miningProcess2=multiprocessing.Process(target=StartMining2,args=[q])
     #miningProcess.start()

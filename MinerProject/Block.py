@@ -13,7 +13,8 @@ class Block:
     def addTransaction(self,transaction):
         self.transactions.append(transaction)
     def compute_hash(self):
-        block_string=self.toJSON()
+        d=self.dump(self.hash)
+        block_string=json.dumps(d)
         return sha256(block_string.encode()).hexdigest()
     def __str__(self):
         return "Timestamp: {ts}\nPrev_hash: {ph} \nTransactionsCnt: {cnt}\nNonce: {non}".format(ts=self.timestamp,ph=self.previous_hash,cnt=len(self.transactions),non=self.nonce)  
@@ -26,7 +27,7 @@ class Block:
     def toJSON(self):
        s= "'timestamp': {ts},\n'previous_hash': '{ph}' ,\n'nonce': {non},\n'index':{ind},\n'transactions':[\n".format(ts=self.timestamp,ph=self.previous_hash,non=self.nonce,ind=self.index);
        for t in self.transactions:
-           s +=  "'sender' : 'port':{sport},'ip':'{sip}','receiver': 'port':{rport},'ip':'{rip}', 'sum' : {sum},'timestamp' : {timestamp},'balance':{balance}\n".format(sport=t.sender.port,sip=t.sender.ip,rport=t.receiver.port,rip=t.receiver.ip,sum=t.sum,timestamp=t.timestamp,balance=t.balance)
+           s +=  "'sender' : {s}','receiver': {r}', 'sum' : {sum},'timestamp' : {timestamp},'balance':{balance}\n".format(s=t.sender,r=t.receiver,sum=t.sum,timestamp=t.timestamp,balance=t.balance)
            s+=','
        s=s[:len(s)-1]
        s+=']'
