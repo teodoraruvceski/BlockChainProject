@@ -31,26 +31,26 @@ configLock=multiprocessing.Lock()
         
         #PRVI ARGUMENT f-je bio port pa sam izbacio jer je pracvilo problem
 def CreateTransaction(sum,vallet,username):
-        transaction=Transaction.Transaction(sum,vallet.getUsername(),username,vallet.getBalance(),time.time())
-        TCP_IP = '127.0.0.1'
-        TCP_PORT = 5000
-        MESSAGE = pickle.dumps(transaction)
-        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        s.connect((TCP_IP, TCP_PORT))
-        s.send(MESSAGE)
-        response=s.recv(1024)
+    transaction=Transaction.Transaction(sum,vallet.getUsername(),username,vallet.getBalance(),time.time())
+    TCP_IP = '127.0.0.1'
+    TCP_PORT = 5000
+    MESSAGE = pickle.dumps(transaction)
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((TCP_IP, TCP_PORT))
+    s.send(MESSAGE)
+    response=s.recv(1024)
+    print(response.decode())
+    if(response.decode()=='ok'):
+        lock.acquire()
+        vallet.setBalance((int)(vallet.getBalance())-sum)
+        print('balance=',vallet.getBalance())
+        
+        lock.release()
+    elif(response.decode()=="ERROR: not enough balance."):
         print(response.decode())
-        if(response.decode()=='ok'):
-            lock.acquire()
-            vallet.setBalance((int)(vallet.getBalance())-sum)
-            print('balance=',vallet.getBalance())
-           
-            lock.release()
-        elif(response.decode()=="ERROR: not enough balance."):
-            print(response.decode())
-        elif(response.decode()=="ERROR: invalid receiver's username."):
-            print(response.decode())
-        s.close()
+    elif(response.decode()=="ERROR: invalid receiver's username."):
+        print(response.decode())
+    s.close()
 
 
 def ReceiveMoney(vallet,finishProcess):
@@ -68,7 +68,6 @@ def ReceiveMoney(vallet,finishProcess):
     while True:
         finishLock.acquire()
         if finishProcess.value==True:
-            print('Usao')
             finishLock.release()
             return
         finishLock.release()
@@ -90,48 +89,28 @@ def ReceiveMoney(vallet,finishProcess):
 def StoreMoney(rcvData,vallet):
     transaction=pickle.loads(rcvData)
     print('income: ',transaction.sum)
-    print('PRE LOCKA')
     lock.acquire()
     vallet.setBalance((int)(vallet.getBalance())+transaction.sum)
-    print('balance =>  ',vallet.getBalance())
+    print('new balance =>  ',vallet.getBalance())
     vallet.addTransaction(transaction)
     lock.release()    
-    print('POSLE LOCKA')
 
 
 def SendTransaction(vallet):
+    receiverUsername=input('Enter receiver\'s username: ')
     while True:
-        # ind=False
-        # print("Odaberite klijenta [pritisnite x za odustanak]: ")
-        # with open('portconfig.txt','r') as f:
-        #     lines = f.readlines()
-        # print(lines)
-        # array = lines[0].split(',')
-        # port = input()
-        # if port=='x':
-        #     break
-        # for p in array:
-        #     if p==port:
-        #         ind=True           
-        # if ind!=True:
-        #     print('Nepostojeci port')
-        # else:
-        #     print('MOJ PORT: ',vallet.getSocket().getPort())
-        #     print('ODABRANI PORT: ',port)
-        #     if (int)(vallet.getSocket().getPort())==(int)(port):
-        #         print('Odabrani port je vas port')
-        #     else:
-        #         CreateTransaction(200,Socket(port,'127.0.0.1'),vallet)
-        #         break   
-        receiverUsername=input('Enter receiver\'s username')
-        CreateTransaction(200,vallet,receiverUsername)
+        sum=input('Enter sending sum: ')
+        sum=int(sum)
+        if(sum>vallet.getBalance()):
+            print('Not enough balance.')
+            continue
+        else:
+            CreateTransaction(sum,vallet,receiverUsername)
+            break
 def Register(vallet):
-    print(vallet)
-    transaction=Transaction.Transaction(100,'sender','receiver',1000,time.time())
     TCP_IP = '127.0.0.1'
     TCP_PORT = 5001
     MESSAGE = pickle.dumps(vallet)
-    print(MESSAGE)
     print(pickle.loads(MESSAGE))
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((TCP_IP, TCP_PORT))
@@ -159,7 +138,10 @@ if __name__=='__main__':
         print('1. Posalji novu transakciju')
         print('2. Provjeri stanje racuna')
         print('3. Ugasi klijenta')
-        inPut = (int)(input())
+        try:
+            inPut = (int)(input())
+        except:
+            inPut=55
         if inPut==1:
             SendTransaction(vallet)
         elif inPut==2:

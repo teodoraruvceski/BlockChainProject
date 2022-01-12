@@ -18,9 +18,12 @@ class BlockMaker:
         
     def addTransaction(self,transaction):
         self.block.transactions.append(transaction)
-        
+   
     def newBlock(self):
-        self.Block=Block(time.time(),None)
+        #newB=Block(time.time(),None)
+        #print(newB)
+        self.block=Block(time.time(),None)
+        print(self.block)
         
     def getRandomMiner(self):
         if(len(self.miners)==0):
@@ -40,7 +43,6 @@ class BlockMaker:
         
     def getMinersCount(self):
         lenn=len(self.miners)
-        print('-------------------------------------GETMINERSCOUNT: ',str(lenn))
         return lenn
     def getVallets(self):
         return self.vallets

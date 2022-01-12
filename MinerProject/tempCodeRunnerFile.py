@@ -1,1 +1,1 @@
-compute_hash
+savedBlock=

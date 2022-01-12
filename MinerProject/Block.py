@@ -7,17 +7,18 @@ class Block:
         self.timestamp = timestamp
         self.previous_hash = previous_hash
         self.nonce = nonce
-        self.index=Block.cnt
+        self.index=0
         Block.cnt+=1
         self.hash=None
     def addTransaction(self,transaction):
         self.transactions.append(transaction)
     def compute_hash(self):
-        d=self.dump(self.hash)
-        block_string=json.dumps(d)
+      
+        block_string=self.toJSON()
+     
         return sha256(block_string.encode()).hexdigest()
     def __str__(self):
-        return "Timestamp: {ts}\nPrev_hash: {ph} \nTransactionsCnt: {cnt}\nNonce: {non}".format(ts=self.timestamp,ph=self.previous_hash,cnt=len(self.transactions),non=self.nonce)  
+        return "Timestamp: {ts}\nPrev_hash: {ph} \nTransactionsCnt: {cnt}\nNonce: {non}\nHash:{h}".format(ts=self.timestamp,ph=self.previous_hash,cnt=len(self.transactions),non=self.nonce,h=self.hash)  
     def setHash(self,hash):
         self.hash=hash
     def getHash(self):
@@ -35,7 +36,7 @@ class Block:
        return s
     def dump(self,hash):
         return {
-            'transactions': json.dumps([t.dump() for t in self.transactions]),
+            'transactions': [t.dump() for t in self.transactions],
             'timestamp':self.timestamp,
             'nonce':self.nonce,
             'previous_hash':self.previous_hash,

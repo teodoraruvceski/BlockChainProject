@@ -10,6 +10,7 @@ import pickle
 import time
 import select
 from Socket import Socket
+from Block import Block
 from multiprocessing.managers import BaseManager
 from flask import Flask
 import json
@@ -51,8 +52,8 @@ def recieveTransactions(sendingQueue,savingQueue,blockmaker):
                         trans=pickle.loads(data)
                         print('New transaction : \n',trans)
                         ind=False
-                        for s in blockmaker.getVallets():
-                            if(trans.getReceiver()==s.getUsername()):
+                        for v in blockmaker.getVallets():
+                            if(trans.getReceiver()==v.getUsername()):
                                 ind=True
                                 if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
                                     sendingQueue.put(trans)
@@ -105,18 +106,19 @@ def saveTransaction(q,blockMaker):
         if(blockMaker.getMinersCount()==0):
             print(blockMaker.getMinersCount())
             lock.release()
+            continue
         chosenMiner=blockMaker.getRandomMiner()
-        print('len of block= ',len(blockMaker.getBlock().transactions))
         lock.release()
         TCP_IP = chosenMiner.getIp()
         TCP_PORT =(int)(chosenMiner.getPort())
+        print('!!! blok KOJI SALJEM: \n',blockMaker.getBlock())
         MESSAGE = pickle.dumps(blockMaker.getBlock())
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
         s.send(MESSAGE)
-        print('sent block to random miner')
-        #s.close()
         blockMaker.newBlock()
+        print('------RESETOVANJE BLOKA------')
+        print(blockMaker.getBlock())
         print('Prije blokiranja i cekanja potvrde da je blok sredjen')
         data = s.recv(1024)
         print('Nakon primanja poruke')
@@ -186,28 +188,29 @@ def RegisterVallet(blockMaker):
     print ("Listening on port 5001")
     read_list = [ss]
     while True:
-        readable, writable, errored = select.select(read_list, [], [])
-        for s in readable:
-            if s is ss:
-                client_socket, address = ss.accept()
-                read_list.append(client_socket)
-                print( "Connection from", address)
-            else:
-                data = s.recv(8192)
-                if data:
-                    newVallet=pickle.loads(data)
-                    print(newVallet)
-                    ind =True
-                    for v in blockMaker.getVallets():
-                        if(v.getUsername()==newVallet.getUsername()):
-                           ind=False
-                           break
-                    if(ind==True):
-                        blockMaker.addVallet(newVallet) 
-                    s.close()
+        try:
+            readable, writable, errored = select.select(read_list, [], [])
+            for s in readable:
+                if s is ss:
+                    client_socket, address = ss.accept()
+                    read_list.append(client_socket)
+                    print( "Connection from", address)
                 else:
-                    s.close()
-                    read_list.remove(s)
+                    data = s.recv(8192)
+                    if data:
+                        newVallet=pickle.loads(data)
+                        print(newVallet)
+                        ind =True
+                        for v in blockMaker.getVallets():
+                            if(v.getUsername()==newVallet.getUsername()):
+                                ind=False
+                                break
+                        if(ind==True):
+                            blockMaker.addVallet(newVallet) 
+                    else:
+                        read_list.remove(s)
+        except:
+            print(readable)
 if __name__=='__main__':
     BaseManager.register('BlockMaker', BlockMaker.BlockMaker)
     manager = BaseManager()
@@ -215,22 +218,21 @@ if __name__=='__main__':
   
     inst = manager.BlockMaker()
     
-    
     sendingQueue = Queue() #red iz kog cita metoda sendTransaction
     savingQueue = Queue()  #red iz kog cita metoda saveTransaction
     recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue,inst])
     sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue,inst])
     saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
     fakeReceiveProcess=multiprocessing.Process(target=FakeReceiveTransaction,args=[savingQueue])
-    registerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
+    registerMinerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
     registerValletProcess=multiprocessing.Process(target=RegisterVallet,args=[inst])
     webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
-    #registerValletProcess.start()
-    #recieveProcess.start() #receiving transactions from Vallet
-    #sendProcess.start()
+    registerValletProcess.start()
+    recieveProcess.start() #receiving transactions from Vallet
+    sendProcess.start()
     saveProcess.start()
-    registerProcess.start()
-    fakeReceiveProcess.start() #faking receiving transactions from Vallet
+    registerMinerProcess.start()
+    #fakeReceiveProcess.start() #faking receiving transactions from Vallet
     #webServerProcess.start()
     inp=""
     input(inp)

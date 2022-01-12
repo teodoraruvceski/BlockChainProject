@@ -34,3 +34,4 @@ class Transaction:
             'balance':self.balance,
             'timestamp':self.timestamp
         }
+    
