@@ -29,8 +29,8 @@ class Transaction:
     def dump(self):
         return{
             'sum':self.sum,
-            'sender':self.sender.dump(),
-            'receiver':self.receiver.dump(),
+            'sender':self.sender,
+            'receiver':self.receiver,
             'balance':self.balance,
             'timestamp':self.timestamp
         }

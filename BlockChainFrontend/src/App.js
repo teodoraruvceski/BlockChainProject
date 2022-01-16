@@ -12,6 +12,8 @@ function App() {
   useEffect(() => {
     socket.on("message", (data) => {
       setPoruka(data);
+      console.log(data)
+      console.log('Hi!')
     });
   }, [socket]);
   return <div>{poruka}</div>;
