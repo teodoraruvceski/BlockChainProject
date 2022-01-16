@@ -13,61 +13,71 @@ from Socket import Socket
 from Block import Block
 from multiprocessing.managers import BaseManager
 from flask import Flask
+from flask_socketio import SocketIO, send
 import json
+from time import sleep
 
-app=Flask(__name__)
-transactions=[]
-@app.route("/transactions")
-def transactionsForWeb():
-    global transactions
-    jsons={"transactions":[json.dumps([t.dump() for t in transactions])]}
-    print(jsons)
-    return {"transactions":[json.dumps([t.dump() for t in transactions])]}
-
-def runServerForWeb():
-    app.run(debug=True)
 lock=multiprocessing.Lock()
 
+webclientQueue = Queue() ###################################################dodao
+app=Flask(__name__)
+app.config['SECRET_KEY'] = 'mysecret'
+socketIo = SocketIO(app, cors_allowed_origins="*")
+app.debug=True 
+app.host='localhost'
+
+@socketIo.on("connectt")
+def handleMessage (msg):
+    global webclientQueue
+    print("Client connected: ", msg)
+    while True:
+        message =  webclientQueue.get()
+        socketIo.emit("message",message)        
+        print("poslata poruka reactu\n")
+#########################################################################
+
 def recieveTransactions(sendingQueue,savingQueue,blockmaker):
-        HOST=''
-        PORT=5000
-        ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-        ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        ss.bind((HOST,PORT))
-        print('bindovao')
-        ss.listen(5)
-        print ("Listening on port 5000")
-        read_list = [ss]
-        while True:
-            readable, writable, errored = select.select(read_list, [], [])
-            for s in readable:
-                if s is ss:
-                    client_socket, address = ss.accept()
-                    read_list.append(client_socket)
-                    print( "Connection from", address)
+    global webclientQueue ######################################################
+    HOST=''
+    PORT=5000
+    ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+    ss.bind((HOST,PORT))
+    print('bindovao')
+    ss.listen(5)
+    print ("Listening on port 5000")
+    read_list = [ss]
+    while True:
+        readable, writable, errored = select.select(read_list, [], [])
+        for s in readable:
+            if s is ss:
+                client_socket, address = ss.accept()
+                read_list.append(client_socket)
+                print( "Connection from", address)
+            else:
+                data = s.recv(1024)
+                print(data)
+                if data:
+                    trans=pickle.loads(data)
+                    print('New transaction : \n',trans)
+                    ind=False
+                    for v in blockmaker.getVallets():
+                        if(trans.getReceiver()==v.getUsername()):
+                            ind=True
+                            if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
+                                webclientQueue.put(trans)##################################################dodao
+                                sendingQueue.put(trans)
+                                savingQueue.put(trans)    
+                                s.send('ok'.encode())  
+                                
+                            else:
+                                s.send('ERROR: not enough balance.'.encode())  
+                            break  
+                    if(ind!=True):
+                        s.send('ERROR: invalid receiver\'s username.'.encode())                  
                 else:
-                    data = s.recv(1024)
-                    print(data)
-                    if data:
-                        trans=pickle.loads(data)
-                        print('New transaction : \n',trans)
-                        ind=False
-                        for v in blockmaker.getVallets():
-                            if(trans.getReceiver()==v.getUsername()):
-                                ind=True
-                                if(trans.balance>=trans.sum):  #proveravamo da li ima dovoljno sredstava na racunu
-                                    sendingQueue.put(trans)
-                                    savingQueue.put(trans)    
-                                    s.send('ok'.encode())  
-                                    
-                                else:
-                                    s.send('ERROR: not enough balance.'.encode())  
-                                break  
-                        if(ind!=True):
-                            s.send('ERROR: invalid receiver\'s username.'.encode())                  
-                    else:
-                        s.close()
-                        read_list.remove(s)
+                    s.close()
+                    read_list.remove(s)
                         
 def sendTransaction(q,blockmaker):
     while True:
@@ -170,11 +180,9 @@ def RegisterMiner(blockMaker):
 
 def FakeReceiveTransaction(savingQueue):
     sum=500
-    global transactions
     while True:
         transaction=Transaction.Transaction(sum,"neca","dora",22222,time.time())
         savingQueue.put(transaction)
-        transactions.append(transaction)
         print('savingQueue = ',savingQueue.qsize())
         time.sleep(1)
 def RegisterVallet(blockMaker):
@@ -211,6 +219,7 @@ def RegisterVallet(blockMaker):
                         read_list.remove(s)
         except:
             print(readable)
+            
 if __name__=='__main__':
     BaseManager.register('BlockMaker', BlockMaker.BlockMaker)
     manager = BaseManager()
@@ -220,18 +229,22 @@ if __name__=='__main__':
     
     sendingQueue = Queue() #red iz kog cita metoda sendTransaction
     savingQueue = Queue()  #red iz kog cita metoda saveTransaction
+    
     recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue,inst])
     sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue,inst])
     saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
     fakeReceiveProcess=multiprocessing.Process(target=FakeReceiveTransaction,args=[savingQueue])
     registerMinerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
     registerValletProcess=multiprocessing.Process(target=RegisterVallet,args=[inst])
-    webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
+    #webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
+    
     registerValletProcess.start()
     recieveProcess.start() #receiving transactions from Vallet
     sendProcess.start()
     saveProcess.start()
     registerMinerProcess.start()
+    socketIo.run(app)#############################################################dodao
+
     #fakeReceiveProcess.start() #faking receiving transactions from Vallet
     #webServerProcess.start()
     inp=""
