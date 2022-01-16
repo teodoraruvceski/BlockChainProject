@@ -44,4 +44,12 @@ class Block:
             'hash':self.hash,
             'index':self.index
         }
+    def dumpForWeb(self):
+        return{
+            'hash':self.hash,
+            'previous_hash':self.previous_hash,
+            'nonce':self.nonce,
+            'timestamp':self.timestamp,
+        }
+       
      

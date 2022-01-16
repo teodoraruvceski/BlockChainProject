@@ -21,6 +21,8 @@ class Vallet:
         return self.balance
     def setBalance(self,balance):
         self.balance=balance
+    def getPort(self):
+        self.socket.getPort()
     def addTransaction(self,transaction):
         self.transactions.append(transaction)
     def getIP(self):
@@ -29,3 +31,10 @@ class Vallet:
         return self.username
     def __str__(self):
         return "username:{u}\nbalance:{b}\n".format(u=self.username,b=self.balance)
+    def dump(self):
+        return {
+            "username":self.username,
+            "balance":self.balance,
+            "ipAddress":self.getIP(),
+            "port":self.getPort()
+        }

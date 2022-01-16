@@ -30,17 +30,16 @@ app.host='localhost'
 @socketIo.on("connectt")
 def handleMessage (msg):
     global webclientQueue
-    cnt=0
     print("Client connected: ", msg)
     while True:
-        #print(s'webQueue:',webclientQueue.qsize())
         message =  webclientQueue.get()
         #transaction=message.dump()
-        #print(message)
-        #socketIo.emit("message",message.dump())      
-        socketIo.emit("message",str(cnt))
-        cnt+=1  
-        print("poslata poruka reactu\n")
+        print("Sent to react: ",  message)
+        if(type(message )==type(Block(time.time(),None))):
+            message=message.dumpForWeb()
+        else:
+            message=message.dump()
+        socketIo.emit("message",message)      
         time.sleep(1)
 #########################################################################
 
@@ -110,6 +109,7 @@ def sendTransaction(q,blockmaker):
                 s.close()
 
 def saveTransaction(q,blockMaker):
+    global webclientQueue
     start=None
     while True:
         start=time.time()
@@ -129,7 +129,7 @@ def saveTransaction(q,blockMaker):
         lock.release()
         TCP_IP = chosenMiner.getIp()
         TCP_PORT =(int)(chosenMiner.getPort())
-        print('!!! blok KOJI SALJEM: \n',blockMaker.getBlock())
+        webclientQueue.put(blockMaker.getBlock())
         MESSAGE = pickle.dumps(blockMaker.getBlock())
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((TCP_IP, TCP_PORT))
@@ -145,6 +145,7 @@ def saveTransaction(q,blockMaker):
             print(mess)
 
 def RegisterMiner(blockMaker):
+    global webclientQueue
     HOST=''
     PORT=6000
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -176,6 +177,7 @@ def RegisterMiner(blockMaker):
                         chosenMiner=blockMaker.getRandomMiner()
                         MESSAGE = pickle.dumps(chosenMiner)
                         print('sent random miner to new miner')
+                    webclientQueue.put(newMiner)
                     print(str(pickle.loads(MESSAGE)))
                     s.send(MESSAGE)
                     lock.acquire()
@@ -195,8 +197,9 @@ def FakeReceiveTransaction(savingQueue):
         savingQueue.put(transaction)
         webclientQueue.put(transaction)
         #print('savingQueue = ',savingQueue.qsize())
-        time.sleep(1)
+        time.sleep(2)
 def RegisterVallet(blockMaker):
+    global webclientQueue
     HOST=''
     PORT=5001
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -226,6 +229,7 @@ def RegisterVallet(blockMaker):
                                 break
                         if(ind==True):
                             blockMaker.addVallet(newVallet) 
+                            webclientQueue.put(newVallet)
                     else:
                         read_list.remove(s)
         except:
@@ -242,18 +246,18 @@ if __name__=='__main__':
     savingQueue = Queue()  #red iz kog cita metoda saveTransaction
     
     recieveProcess=Thread(target=recieveTransactions,args=[sendingQueue,savingQueue,inst])
-    sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue,inst])
-    saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
+    sendProcess=Thread(target=sendTransaction,args=[sendingQueue,inst])
+    saveProcess=Thread(target=saveTransaction,args=[savingQueue,inst])
     fakeReceiveProcess=Thread(target=FakeReceiveTransaction,args=[savingQueue])
-    registerMinerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
-    registerValletProcess=multiprocessing.Process(target=RegisterVallet,args=[inst])
+    registerMinerProcess=Thread(target=RegisterMiner,args=[inst])
+    registerValletProcess=Thread(target=RegisterVallet,args=[inst])
     #webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
     
     registerValletProcess.start()
-    #recieveProcess.start() #receiving transactions from Vallet
-    #sendProcess.start()
-    #saveProcess.start()
-    fakeReceiveProcess.start() #faking receiving transactions from Vallet
+    recieveProcess.start() #receiving transactions from Vallet
+    sendProcess.start()
+    saveProcess.start()
+    #fakeReceiveProcess.start() #faking receiving transactions from Vallet
     registerMinerProcess.start()
     socketIo.run(app)#############################################################dodao
 
