@@ -33,7 +33,7 @@ configLock=multiprocessing.Lock()
 def CreateTransaction(sum,vallet,username):
     transaction=Transaction.Transaction(sum,vallet.getUsername(),username,vallet.getBalance(),time.time())
     TCP_IP = '127.0.0.1'
-    TCP_PORT = 5000
+    TCP_PORT = 5015
     MESSAGE = pickle.dumps(transaction)
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((TCP_IP, TCP_PORT))

@@ -10,6 +10,7 @@ import pickle
 import time
 import select
 from Socket import Socket
+from threading import Thread
 from Block import Block
 from multiprocessing.managers import BaseManager
 from flask import Flask
@@ -29,23 +30,30 @@ app.host='localhost'
 @socketIo.on("connectt")
 def handleMessage (msg):
     global webclientQueue
+    cnt=0
     print("Client connected: ", msg)
     while True:
+        #print(s'webQueue:',webclientQueue.qsize())
         message =  webclientQueue.get()
-        socketIo.emit("message",message)        
+        #transaction=message.dump()
+        #print(message)
+        #socketIo.emit("message",message.dump())      
+        socketIo.emit("message",str(cnt))
+        cnt+=1  
         print("poslata poruka reactu\n")
+        time.sleep(1)
 #########################################################################
 
 def recieveTransactions(sendingQueue,savingQueue,blockmaker):
     global webclientQueue ######################################################
     HOST=''
-    PORT=5000
+    PORT=5015
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     ss.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     ss.bind((HOST,PORT))
     print('bindovao')
     ss.listen(5)
-    print ("Listening on port 5000")
+    print ("Listening on port 5015!!!")
     read_list = [ss]
     while True:
         readable, writable, errored = select.select(read_list, [], [])
@@ -179,11 +187,14 @@ def RegisterMiner(blockMaker):
                     read_list.remove(s)
 
 def FakeReceiveTransaction(savingQueue):
+    global webclientQueue
+    print('FAKE STARTDED')
     sum=500
     while True:
         transaction=Transaction.Transaction(sum,"neca","dora",22222,time.time())
         savingQueue.put(transaction)
-        print('savingQueue = ',savingQueue.qsize())
+        webclientQueue.put(transaction)
+        #print('savingQueue = ',savingQueue.qsize())
         time.sleep(1)
 def RegisterVallet(blockMaker):
     HOST=''
@@ -230,22 +241,22 @@ if __name__=='__main__':
     sendingQueue = Queue() #red iz kog cita metoda sendTransaction
     savingQueue = Queue()  #red iz kog cita metoda saveTransaction
     
-    recieveProcess=multiprocessing.Process(target=recieveTransactions,args=[sendingQueue,savingQueue,inst])
+    recieveProcess=Thread(target=recieveTransactions,args=[sendingQueue,savingQueue,inst])
     sendProcess=multiprocessing.Process(target=sendTransaction,args=[sendingQueue,inst])
     saveProcess=multiprocessing.Process(target=saveTransaction,args=[savingQueue,inst])
-    fakeReceiveProcess=multiprocessing.Process(target=FakeReceiveTransaction,args=[savingQueue])
+    fakeReceiveProcess=Thread(target=FakeReceiveTransaction,args=[savingQueue])
     registerMinerProcess=multiprocessing.Process(target=RegisterMiner,args=[inst])
     registerValletProcess=multiprocessing.Process(target=RegisterVallet,args=[inst])
     #webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
     
     registerValletProcess.start()
-    recieveProcess.start() #receiving transactions from Vallet
-    sendProcess.start()
-    saveProcess.start()
+    #recieveProcess.start() #receiving transactions from Vallet
+    #sendProcess.start()
+    #saveProcess.start()
+    fakeReceiveProcess.start() #faking receiving transactions from Vallet
     registerMinerProcess.start()
     socketIo.run(app)#############################################################dodao
 
-    #fakeReceiveProcess.start() #faking receiving transactions from Vallet
     #webServerProcess.start()
     inp=""
     input(inp)
