@@ -22,6 +22,7 @@ function App() {
 
   useEffect(() => {
     socket.on("message", (data) => {
+      console.log(data);
       if (data["sender"] !== undefined) {
         setTransactions(
           trans.unshift(
@@ -44,7 +45,7 @@ function App() {
             data["sum"] +
             "$ to client " +
             data["receiver"] +
-            ", timestamp: " +
+            ", Timestamp: " +
             data["timestamp"]
         );
         setTransactions(t);
@@ -54,21 +55,26 @@ function App() {
         if (m.length >= 20) m.pop();
         m.unshift("New miner connected.");
         setMiners(m);
-      } else if (data["nonce" !== undefined]) {
-        setBlocks(miners.unshift("New block created."));
-        console.log(JSON.stringify(data));
+      } else if (data["previous_hash"] !== undefined) {
+        setBlocks(blocks.unshift("New block created."));
+        //console.log(JSON.stringify(data));
         if (b.length >= 20) b.pop();
-        b.unshift("New block created. Time: " + data["timestamp"]);
+        b.unshift(
+          "New block created. Previous hash:" +
+            data["previous_hash"] +
+            ", Timestamp: " +
+            data["timestamp"]
+        );
         setBlocks(b);
       } else if (data["balance"] !== undefined) {
+        //console.log("volet");
+        //console.log("New vallet " + data["username"] + " connected.");
         setVallets(
           vallets.unshift("New vallet " + data["username"] + " connected.")
         );
-        console.log(JSON.stringify(data));
+        //console.log(JSON.stringify(data));
         if (v.length >= 20) v.pop();
-        v.unshift(
-          vallets.unshift("New vallet " + data["username"] + " connected.")
-        );
+        v.unshift("New vallet " + data["username"] + " connected.");
         setVallets(v);
       }
     });
@@ -83,7 +89,7 @@ function App() {
           <th>New vallets:</th>
           <th>Blocks:</th>
         </tr>
-        <tr>
+        <tr valign="top">
           <td>
             <Table t={trans} />
           </td>

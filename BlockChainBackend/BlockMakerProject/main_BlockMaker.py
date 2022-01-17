@@ -3,6 +3,7 @@ import BlockMaker
 import Transaction
 import multiprocessing
 import Vallet
+import Miner
 # multiprocessing.set_start_method('spawn')
 from multiprocessing import Queue
 import socket
@@ -32,8 +33,9 @@ def handleMessage (msg):
     global webclientQueue
     print("Client connected: ", msg)
     while True:
+        print("nijeusao")
         message =  webclientQueue.get()
-        #transaction=message.dump()
+        print("usao")
         print("Sent to react: ",  message)
         if(type(message )==type(Block(time.time(),None))):
             message=message.dumpForWeb()
@@ -52,7 +54,7 @@ def recieveTransactions(sendingQueue,savingQueue,blockmaker):
     ss.bind((HOST,PORT))
     print('bindovao')
     ss.listen(5)
-    print ("Listening on port 5015!!!")
+    print ("Listening on port 5015.")
     read_list = [ss]
     while True:
         readable, writable, errored = select.select(read_list, [], [])
@@ -88,10 +90,10 @@ def recieveTransactions(sendingQueue,savingQueue,blockmaker):
                         
 def sendTransaction(q,blockmaker):
     while True:
-        print('qsize = ', q.qsize())
+        #print('qsize = ', q.qsize())
         if( q.empty()):
             time.sleep(2)
-            print('queue empty')
+            #print('queue empty')
             continue
         time.sleep(2)
         data= q.get()
@@ -195,7 +197,10 @@ def FakeReceiveTransaction(savingQueue):
     while True:
         transaction=Transaction.Transaction(sum,"neca","dora",22222,time.time())
         savingQueue.put(transaction)
-        webclientQueue.put(transaction)
+        #webclientQueue.put(transaction)
+        #webclientQueue.put(Miner.Miner())
+        #webclientQueue.put(Vallet.Vallet("nebojsa",3))
+        webclientQueue.put(Block(12,12))
         #print('savingQueue = ',savingQueue.qsize())
         time.sleep(2)
 def RegisterVallet(blockMaker):
@@ -228,8 +233,10 @@ def RegisterVallet(blockMaker):
                                 ind=False
                                 break
                         if(ind==True):
-                            blockMaker.addVallet(newVallet) 
+                            blockMaker.addVallet(newVallet)
+                            print("ubacuje u red") 
                             webclientQueue.put(newVallet)
+                            print(webclientQueue.qsize())
                     else:
                         read_list.remove(s)
         except:
