@@ -1,0 +1,557 @@
+19/01/2022 07:26:00 PM - INFO : BlockMaker upaljen.
+19/01/2022 07:26:01 PM - INFO :  * Restarting with stat
+19/01/2022 07:26:03 PM - INFO : BlockMaker upaljen.
+19/01/2022 07:26:04 PM - WARNING :  * Debugger is active!
+19/01/2022 07:26:04 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 07:26:05 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 07:29:12 PM - INFO : BlockMaker upaljen.
+19/01/2022 07:29:13 PM - INFO :  * Restarting with stat
+19/01/2022 07:29:14 PM - INFO : BlockMaker upaljen.
+19/01/2022 07:29:16 PM - WARNING :  * Debugger is active!
+19/01/2022 07:29:16 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 07:29:16 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 09:31:17 PM - INFO : BlockMaker upaljen.
+19/01/2022 09:31:20 PM - INFO :  * Restarting with stat
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52364.
+19/01/2022 09:31:20 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52358.
+19/01/2022 09:31:20 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52366.
+19/01/2022 09:31:20 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 09:31:20 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52369.
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52370.
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52372.
+19/01/2022 09:31:20 PM - INFO : Novi miner registrovan IP: localhost PORT: 52376.
+19/01/2022 09:31:20 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 09:31:21 PM - INFO : BlockMaker upaljen.
+19/01/2022 09:31:22 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 47.
+19/01/2022 09:31:22 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 47, sacuvana u blok.
+19/01/2022 09:31:23 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 58.
+19/01/2022 09:31:23 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 58, sacuvana u blok.
+19/01/2022 09:31:23 PM - WARNING :  * Debugger is active!
+19/01/2022 09:31:23 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 09:31:23 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 09:31:24 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 30.
+19/01/2022 09:31:24 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 30, sacuvana u blok.
+19/01/2022 09:31:25 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Nebojsa. Kolicina 66.
+19/01/2022 09:31:25 PM - INFO : Transakcija od Nikola ka Nebojsa, kolicine 66, sacuvana u blok.
+19/01/2022 09:31:25 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 44.
+19/01/2022 09:31:25 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 44, sacuvana u blok.
+19/01/2022 09:31:25 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 77.
+19/01/2022 09:31:25 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 77, sacuvana u blok.
+19/01/2022 09:31:26 PM - INFO : Transakcija od Nebojsa ka Dusan proslijedjena. Kolicina 47.
+19/01/2022 09:31:26 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 66.
+19/01/2022 09:31:26 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 66, sacuvana u blok.
+19/01/2022 09:31:28 PM - INFO : Transakcija od Teodora ka Dusan proslijedjena. Kolicina 58.
+19/01/2022 09:31:28 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 29.
+19/01/2022 09:31:28 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 29, sacuvana u blok.
+19/01/2022 09:31:28 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 52366.
+19/01/2022 09:31:29 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Nebojsa. Kolicina 69.
+19/01/2022 09:31:29 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 94.
+19/01/2022 09:31:30 PM - INFO : Transakcija od Dusan ka Nikola proslijedjena. Kolicina 30.
+19/01/2022 09:31:30 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 88.
+19/01/2022 09:31:31 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 66.
+19/01/2022 09:31:31 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 57.
+19/01/2022 09:31:32 PM - INFO : Transakcija od Nikola ka Nebojsa proslijedjena. Kolicina 66.
+19/01/2022 09:31:32 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 23.
+19/01/2022 09:31:32 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 98.
+19/01/2022 09:31:33 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 34.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Nikola ka Nebojsa, kolicine 69, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 94, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 88, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 66, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 57, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 23, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 98, sacuvana u blok.
+19/01/2022 09:31:33 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 34, sacuvana u blok.
+19/01/2022 09:31:34 PM - INFO : Transakcija od Nebojsa ka Nikola proslijedjena. Kolicina 44.
+19/01/2022 09:31:34 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 100.
+19/01/2022 09:31:34 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 100, sacuvana u blok.
+19/01/2022 09:31:35 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 71.
+19/01/2022 09:31:35 PM - INFO : Transakcija od Nebojsa ka Zorana, kolicine 71, sacuvana u blok.
+19/01/2022 09:31:36 PM - INFO : Transakcija od Zorana ka Dusan proslijedjena. Kolicina 77.
+19/01/2022 09:31:36 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 43.
+19/01/2022 09:31:36 PM - INFO : Transakcija od Nikola ka Zorana, kolicine 43, sacuvana u blok.
+19/01/2022 09:31:36 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 33.
+19/01/2022 09:31:36 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 33, sacuvana u blok.
+19/01/2022 09:31:37 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 17.
+19/01/2022 09:31:37 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 17, sacuvana u blok.
+19/01/2022 09:31:38 PM - INFO : Transakcija od Teodora ka Dusan proslijedjena. Kolicina 66.
+19/01/2022 09:31:38 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 78.
+19/01/2022 09:31:38 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 78, sacuvana u blok.
+19/01/2022 09:31:39 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 63.
+19/01/2022 09:31:39 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 63, sacuvana u blok.
+19/01/2022 09:31:39 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 28.
+19/01/2022 09:31:39 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 28, sacuvana u blok.
+19/01/2022 09:31:40 PM - INFO : Transakcija od Dusan ka Nikola proslijedjena. Kolicina 29.
+19/01/2022 09:31:40 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 64.
+19/01/2022 09:31:40 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 64, sacuvana u blok.
+19/01/2022 09:31:40 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 52358.
+19/01/2022 09:31:40 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 53.
+19/01/2022 09:31:41 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 17.
+19/01/2022 09:31:42 PM - INFO : Transakcija od Nikola ka Nebojsa proslijedjena. Kolicina 69.
+19/01/2022 09:31:42 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 93.
+19/01/2022 09:31:42 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 23.
+19/01/2022 09:31:43 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 13.
+19/01/2022 09:31:43 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 82.
+19/01/2022 09:31:44 PM - INFO : Transakcija od Zorana ka Teodora proslijedjena. Kolicina 94.
+19/01/2022 09:31:44 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 38.
+19/01/2022 09:31:44 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 98.
+19/01/2022 09:31:44 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 72.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 53, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 17, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 93, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 23, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 13, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 82, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 38, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 98, sacuvana u blok.
+19/01/2022 09:31:45 PM - INFO : Transakcija od Zorana ka Nikola, kolicine 72, sacuvana u blok.
+19/01/2022 09:31:46 PM - INFO : Transakcija od Nebojsa ka Dusan proslijedjena. Kolicina 88.
+19/01/2022 09:31:46 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Nebojsa. Kolicina 36.
+19/01/2022 09:31:46 PM - INFO : Transakcija od Nikola ka Nebojsa, kolicine 36, sacuvana u blok.
+19/01/2022 09:31:46 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 36.
+19/01/2022 09:31:46 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 36, sacuvana u blok.
+19/01/2022 09:31:46 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 23.
+19/01/2022 09:31:46 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 23, sacuvana u blok.
+19/01/2022 09:31:46 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 32.
+19/01/2022 09:31:46 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 32, sacuvana u blok.
+19/01/2022 09:31:48 PM - INFO : Transakcija od Teodora ka Zorana proslijedjena. Kolicina 66.
+19/01/2022 09:31:48 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 15.
+19/01/2022 09:31:48 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 15, sacuvana u blok.
+19/01/2022 09:31:49 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 92.
+19/01/2022 09:31:49 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 92, sacuvana u blok.
+19/01/2022 09:31:50 PM - INFO : Transakcija od Dusan ka Teodora proslijedjena. Kolicina 57.
+19/01/2022 09:31:50 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 31.
+19/01/2022 09:31:50 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 31, sacuvana u blok.
+19/01/2022 09:31:51 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 90.
+19/01/2022 09:31:51 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 90, sacuvana u blok.
+19/01/2022 09:31:51 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 85.
+19/01/2022 09:31:51 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 85, sacuvana u blok.
+19/01/2022 09:31:51 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 52.
+19/01/2022 09:31:51 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 52, sacuvana u blok.
+19/01/2022 09:31:51 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 44.
+19/01/2022 09:31:51 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 44, sacuvana u blok.
+19/01/2022 09:31:52 PM - INFO : Transakcija od Nikola ka Teodora proslijedjena. Kolicina 23.
+19/01/2022 09:31:53 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 30.
+19/01/2022 09:31:53 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 30, sacuvana u blok.
+19/01/2022 09:31:54 PM - INFO : Transakcija od Zorana ka Teodora proslijedjena. Kolicina 98.
+19/01/2022 09:31:54 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 16.
+19/01/2022 09:31:54 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 43.
+19/01/2022 09:31:56 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 13.
+19/01/2022 10:02:06 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:02:09 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 10:02:09 PM - INFO :  * Restarting with stat
+19/01/2022 10:02:09 PM - INFO : Novi miner registrovan IP: localhost PORT: 57938.
+19/01/2022 10:02:09 PM - INFO : Novi miner registrovan IP: localhost PORT: 57940.
+19/01/2022 10:02:09 PM - INFO : Novi miner registrovan IP: localhost PORT: 57944.
+19/01/2022 10:02:09 PM - INFO : Novi miner registrovan IP: localhost PORT: 57947.
+19/01/2022 10:02:09 PM - INFO : Novi miner registrovan IP: localhost PORT: 57949.
+19/01/2022 10:02:09 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 10:02:09 PM - INFO : Novi miner registrovan IP: localhost PORT: 57951.
+19/01/2022 10:02:10 PM - INFO : Novi miner registrovan IP: localhost PORT: 57952.
+19/01/2022 10:02:10 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 10:02:10 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 10:02:10 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 10:02:11 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:02:12 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 93.
+19/01/2022 10:02:12 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 93, sacuvana u blok.
+19/01/2022 10:02:12 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 80.
+19/01/2022 10:02:12 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 80, sacuvana u blok.
+19/01/2022 10:02:13 PM - WARNING :  * Debugger is active!
+19/01/2022 10:02:13 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 10:02:13 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 79.
+19/01/2022 10:02:13 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 79, sacuvana u blok.
+19/01/2022 10:02:13 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 10:02:14 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 12.
+19/01/2022 10:02:14 PM - INFO : Transakcija od Zorana ka Nikola, kolicine 12, sacuvana u blok.
+19/01/2022 10:02:14 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 15.
+19/01/2022 10:02:14 PM - INFO : Transakcija od Nebojsa ka Zorana, kolicine 15, sacuvana u blok.
+19/01/2022 10:02:15 PM - INFO : Transakcija od Dusan ka Teodora proslijedjena. Kolicina 93.
+19/01/2022 10:02:16 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nebojsa. Kolicina 40.
+19/01/2022 10:02:16 PM - INFO : Transakcija od Dusan ka Nebojsa, kolicine 40, sacuvana u blok.
+19/01/2022 10:02:17 PM - INFO : Transakcija od Nikola ka Dusan proslijedjena. Kolicina 80.
+19/01/2022 10:02:17 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 35.
+19/01/2022 10:02:17 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 35, sacuvana u blok.
+19/01/2022 10:02:18 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 89.
+19/01/2022 10:03:50 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:03:53 PM - INFO : Novi miner registrovan IP: localhost PORT: 58230.
+19/01/2022 10:03:53 PM - INFO :  * Restarting with stat
+19/01/2022 10:03:54 PM - INFO : Novi miner registrovan IP: localhost PORT: 58213.
+19/01/2022 10:03:54 PM - INFO : Novi miner registrovan IP: localhost PORT: 58220.
+19/01/2022 10:03:54 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 10:03:54 PM - INFO : Novi miner registrovan IP: localhost PORT: 58214.
+19/01/2022 10:03:54 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 10:03:54 PM - INFO : Novi miner registrovan IP: localhost PORT: 58217.
+19/01/2022 10:03:54 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 10:03:54 PM - INFO : Novi miner registrovan IP: localhost PORT: 58219.
+19/01/2022 10:03:54 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 10:03:54 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 10:03:54 PM - INFO : Novi miner registrovan IP: localhost PORT: 58216.
+19/01/2022 10:03:55 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:03:57 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 53.
+19/01/2022 10:03:57 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 53, sacuvana u blok.
+19/01/2022 10:03:57 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 38.
+19/01/2022 10:03:57 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 38, sacuvana u blok.
+19/01/2022 10:03:57 PM - WARNING :  * Debugger is active!
+19/01/2022 10:03:57 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 10:03:57 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 10:03:58 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 56.
+19/01/2022 10:03:58 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 56, sacuvana u blok.
+19/01/2022 10:03:58 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 98.
+19/01/2022 10:03:58 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 98, sacuvana u blok.
+19/01/2022 10:03:58 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 86.
+19/01/2022 10:03:58 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 86, sacuvana u blok.
+19/01/2022 10:03:59 PM - INFO : Transakcija od Nikola ka Dusan proslijedjena. Kolicina 53.
+19/01/2022 10:04:01 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 84.
+19/01/2022 10:04:01 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 84, sacuvana u blok.
+19/01/2022 10:04:01 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nebojsa. Kolicina 81.
+19/01/2022 10:04:01 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 58230.
+19/01/2022 10:04:01 PM - INFO : Transakcija od Teodora ka Dusan proslijedjena. Kolicina 38.
+19/01/2022 10:04:02 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 31.
+19/01/2022 10:04:02 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 58.
+19/01/2022 10:04:02 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 84.
+19/01/2022 10:04:03 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nebojsa. Kolicina 41.
+19/01/2022 10:04:03 PM - INFO : Transakcija od Zorana ka Dusan proslijedjena. Kolicina 56.
+19/01/2022 10:04:04 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 98.
+19/01/2022 10:04:05 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 53.
+19/01/2022 10:04:05 PM - INFO : Transakcija od Dusan ka Teodora proslijedjena. Kolicina 98.
+19/01/2022 10:04:06 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 69.
+19/01/2022 10:04:06 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 92.
+19/01/2022 10:04:06 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 15.
+19/01/2022 10:04:07 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 67.
+19/01/2022 10:04:07 PM - INFO : Transakcija od Nebojsa ka Teodora proslijedjena. Kolicina 86.
+19/01/2022 10:04:08 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 36.
+19/01/2022 10:04:09 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 46.
+19/01/2022 10:04:09 PM - INFO : Transakcija od Zorana ka Nebojsa proslijedjena. Kolicina 84.
+19/01/2022 10:04:10 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 13.
+19/01/2022 10:04:11 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 23.
+19/01/2022 10:04:11 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 57.
+19/01/2022 10:43:00 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:43:04 PM - INFO :  * Restarting with stat
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61381.
+19/01/2022 10:43:04 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61382.
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61385.
+19/01/2022 10:43:04 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 10:43:04 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 10:43:04 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 10:43:04 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61387.
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61389.
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61391.
+19/01/2022 10:43:04 PM - INFO : Novi miner registrovan IP: localhost PORT: 61393.
+19/01/2022 10:43:05 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:43:06 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 87.
+19/01/2022 10:43:06 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 87, sacuvana u blok.
+19/01/2022 10:43:07 PM - WARNING :  * Debugger is active!
+19/01/2022 10:43:07 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 10:43:07 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 12.
+19/01/2022 10:43:07 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 12, sacuvana u blok.
+19/01/2022 10:43:08 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 30.
+19/01/2022 10:43:08 PM - INFO : Transakcija od Zorana ka Nikola, kolicine 30, sacuvana u blok.
+19/01/2022 10:43:08 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 10:43:08 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 53.
+19/01/2022 10:43:08 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 53, sacuvana u blok.
+19/01/2022 10:43:08 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 63.
+19/01/2022 10:43:08 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 63, sacuvana u blok.
+19/01/2022 10:43:09 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nebojsa. Kolicina 23.
+19/01/2022 10:43:09 PM - INFO : Transakcija od Teodora ka Nebojsa, kolicine 23, sacuvana u blok.
+19/01/2022 10:43:10 PM - INFO : Transakcija od Dusan ka Teodora proslijedjena. Kolicina 87.
+19/01/2022 10:43:10 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 20.
+19/01/2022 10:43:10 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 20, sacuvana u blok.
+19/01/2022 10:43:12 PM - INFO : Transakcija od Nebojsa ka Dusan proslijedjena. Kolicina 12.
+19/01/2022 10:43:12 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 57.
+19/01/2022 10:43:12 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 57, sacuvana u blok.
+19/01/2022 10:43:12 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 50.
+19/01/2022 10:43:12 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 41.
+19/01/2022 10:43:12 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 61385.
+19/01/2022 10:43:13 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 26.
+19/01/2022 10:43:14 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nebojsa. Kolicina 75.
+19/01/2022 10:43:15 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 32.
+19/01/2022 10:54:32 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:54:35 PM - INFO :  * Restarting with stat
+19/01/2022 10:54:35 PM - INFO : Novi miner registrovan IP: localhost PORT: 62183.
+19/01/2022 10:54:35 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 10:54:35 PM - INFO : Novi miner registrovan IP: localhost PORT: 62185.
+19/01/2022 10:54:35 PM - INFO : Novi miner registrovan IP: localhost PORT: 62188.
+19/01/2022 10:54:35 PM - INFO : Novi miner registrovan IP: localhost PORT: 62191.
+19/01/2022 10:54:35 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 10:54:35 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 10:54:35 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 10:54:35 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 10:54:35 PM - INFO : Novi miner registrovan IP: localhost PORT: 62193.
+19/01/2022 10:54:36 PM - INFO : Novi miner registrovan IP: localhost PORT: 62179.
+19/01/2022 10:54:36 PM - INFO : Novi miner registrovan IP: localhost PORT: 62180.
+19/01/2022 10:54:37 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 57.
+19/01/2022 10:54:37 PM - INFO : Transakcija od Nikola ka Zorana, kolicine 57, sacuvana u blok.
+19/01/2022 10:54:37 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nebojsa. Kolicina 57.
+19/01/2022 10:54:37 PM - INFO : Transakcija od Dusan ka Nebojsa, kolicine 57, sacuvana u blok.
+19/01/2022 10:54:37 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 49.
+19/01/2022 10:54:37 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 49, sacuvana u blok.
+19/01/2022 10:54:38 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:54:40 PM - WARNING :  * Debugger is active!
+19/01/2022 10:54:40 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 10:54:40 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 10:54:40 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 37.
+19/01/2022 10:54:40 PM - INFO : Transakcija od Nebojsa ka Zorana, kolicine 37, sacuvana u blok.
+19/01/2022 10:54:40 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 55.
+19/01/2022 10:54:40 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 55, sacuvana u blok.
+19/01/2022 10:54:40 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 28.
+19/01/2022 10:54:40 PM - INFO : Transakcija od Zorana ka Nikola, kolicine 28, sacuvana u blok.
+19/01/2022 10:54:40 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 43.
+19/01/2022 10:54:40 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 43, sacuvana u blok.
+19/01/2022 10:54:41 PM - INFO : Transakcija od Nikola ka Zorana proslijedjena. Kolicina 57.
+19/01/2022 10:54:41 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 83.
+19/01/2022 10:54:41 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 83, sacuvana u blok.
+19/01/2022 10:54:42 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 23.
+19/01/2022 10:54:42 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 23, sacuvana u blok.
+19/01/2022 10:54:42 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 62193.
+19/01/2022 10:54:43 PM - INFO : Transakcija od Dusan ka Nebojsa proslijedjena. Kolicina 57.
+19/01/2022 10:54:43 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 98.
+19/01/2022 10:54:44 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Nebojsa. Kolicina 28.
+19/01/2022 10:54:45 PM - INFO : Transakcija od Teodora ka Zorana proslijedjena. Kolicina 49.
+19/01/2022 10:54:45 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 63.
+19/01/2022 10:54:46 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 62.
+19/01/2022 10:54:46 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 23.
+19/01/2022 10:54:46 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 91.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Nebojsa ka Zorana proslijedjena. Kolicina 37.
+19/01/2022 10:54:47 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 86.
+19/01/2022 10:54:47 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nebojsa. Kolicina 82.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 98, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Nikola ka Nebojsa, kolicine 28, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 63, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 62, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 23, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 91, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 86, sacuvana u blok.
+19/01/2022 10:54:47 PM - INFO : Transakcija od Teodora ka Nebojsa, kolicine 82, sacuvana u blok.
+19/01/2022 10:54:48 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nebojsa. Kolicina 72.
+19/01/2022 10:54:48 PM - INFO : Transakcija od Dusan ka Nebojsa, kolicine 72, sacuvana u blok.
+19/01/2022 10:54:49 PM - INFO : Transakcija od Nikola ka Dusan proslijedjena. Kolicina 55.
+19/01/2022 10:54:49 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 94.
+19/01/2022 10:54:49 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 94, sacuvana u blok.
+19/01/2022 10:54:49 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 97.
+19/01/2022 10:54:49 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 97, sacuvana u blok.
+19/01/2022 10:54:50 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 68.
+19/01/2022 10:54:50 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 68, sacuvana u blok.
+19/01/2022 10:54:51 PM - INFO : Transakcija od Zorana ka Nikola proslijedjena. Kolicina 28.
+19/01/2022 10:54:51 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 13.
+19/01/2022 10:54:51 PM - INFO : Transakcija od Nikola ka Zorana, kolicine 13, sacuvana u blok.
+19/01/2022 10:54:51 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nebojsa. Kolicina 67.
+19/01/2022 10:54:51 PM - INFO : Transakcija od Dusan ka Nebojsa, kolicine 67, sacuvana u blok.
+19/01/2022 10:54:51 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 98.
+19/01/2022 10:54:51 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 98, sacuvana u blok.
+19/01/2022 10:54:53 PM - INFO : Transakcija od Teodora ka Zorana proslijedjena. Kolicina 43.
+19/01/2022 10:54:53 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 50.
+19/01/2022 10:54:53 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 50, sacuvana u blok.
+19/01/2022 10:54:54 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 27.
+19/01/2022 10:54:54 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 27, sacuvana u blok.
+19/01/2022 10:54:54 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 16.
+19/01/2022 10:54:54 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 16, sacuvana u blok.
+19/01/2022 10:54:55 PM - INFO : Transakcija od Dusan ka Teodora proslijedjena. Kolicina 83.
+19/01/2022 10:54:55 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 11.
+19/01/2022 10:54:55 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 11, sacuvana u blok.
+19/01/2022 10:54:56 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 62188.
+19/01/2022 10:54:56 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 87.
+19/01/2022 10:54:56 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 43.
+19/01/2022 10:54:57 PM - INFO : Transakcija od Teodora ka Zorana proslijedjena. Kolicina 23.
+19/01/2022 10:54:57 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 63.
+19/01/2022 10:56:53 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:56:57 PM - INFO :  * Restarting with stat
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62387.
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62389.
+19/01/2022 10:56:57 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 10:56:57 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62393.
+19/01/2022 10:56:57 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62395.
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62396.
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62398.
+19/01/2022 10:56:57 PM - INFO : Novi miner registrovan IP: localhost PORT: 62384.
+19/01/2022 10:56:57 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 10:56:57 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 10:56:59 PM - INFO : BlockMaker upaljen.
+19/01/2022 10:56:59 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 19.
+19/01/2022 10:56:59 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 19, sacuvana u blok.
+19/01/2022 10:57:00 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 37.
+19/01/2022 10:57:00 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 37, sacuvana u blok.
+19/01/2022 10:57:00 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 37.
+19/01/2022 10:57:00 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 37, sacuvana u blok.
+19/01/2022 10:57:00 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 14.
+19/01/2022 10:57:00 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 14, sacuvana u blok.
+19/01/2022 10:57:00 PM - WARNING :  * Debugger is active!
+19/01/2022 10:57:00 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 10:57:01 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 10:57:01 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 41.
+19/01/2022 10:57:01 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 41, sacuvana u blok.
+19/01/2022 10:57:02 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 22.
+19/01/2022 10:57:02 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 22, sacuvana u blok.
+19/01/2022 10:57:03 PM - INFO : Transakcija od Dusan ka Nikola proslijedjena. Kolicina 19.
+19/01/2022 10:57:03 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 14.
+19/01/2022 10:57:03 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 14, sacuvana u blok.
+19/01/2022 10:57:03 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 16.
+19/01/2022 10:57:03 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 16, sacuvana u blok.
+19/01/2022 10:57:03 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 12.
+19/01/2022 10:57:03 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 12, sacuvana u blok.
+19/01/2022 10:57:04 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 99.
+19/01/2022 10:57:04 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 99, sacuvana u blok.
+19/01/2022 10:57:04 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 62396.
+19/01/2022 10:57:04 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 73.
+19/01/2022 10:57:05 PM - INFO : Transakcija od Teodora ka Dusan proslijedjena. Kolicina 37.
+19/01/2022 10:57:06 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 35.
+19/01/2022 10:57:07 PM - INFO : Transakcija od Zorana ka Teodora proslijedjena. Kolicina 37.
+19/01/2022 10:57:07 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 33.
+19/01/2022 10:57:07 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 26.
+19/01/2022 10:57:08 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 32.
+19/01/2022 10:57:08 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 26.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Nebojsa ka Dusan proslijedjena. Kolicina 14.
+19/01/2022 10:57:09 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 83.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 73, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 35, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 33, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 26, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 32, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 26, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 83, sacuvana u blok.
+19/01/2022 10:57:09 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 78.
+19/01/2022 10:57:09 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 78, sacuvana u blok.
+19/01/2022 10:57:10 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 86.
+19/01/2022 10:57:10 PM - INFO : Transakcija od Nikola ka Zorana, kolicine 86, sacuvana u blok.
+19/01/2022 10:57:11 PM - INFO : Transakcija od Nikola ka Teodora proslijedjena. Kolicina 41.
+19/01/2022 10:57:11 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 76.
+19/01/2022 10:57:11 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 76, sacuvana u blok.
+19/01/2022 10:57:11 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 59.
+19/01/2022 10:57:11 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 59, sacuvana u blok.
+19/01/2022 10:57:11 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 95.
+19/01/2022 10:57:11 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 95, sacuvana u blok.
+19/01/2022 10:57:12 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Dusan. Kolicina 14.
+19/01/2022 10:57:12 PM - INFO : Transakcija od Zorana ka Dusan, kolicine 14, sacuvana u blok.
+19/01/2022 10:57:12 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 100.
+19/01/2022 10:57:12 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 100, sacuvana u blok.
+19/01/2022 10:57:13 PM - INFO : Transakcija od Zorana ka Dusan proslijedjena. Kolicina 22.
+19/01/2022 10:57:13 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 92.
+19/01/2022 10:57:13 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 92, sacuvana u blok.
+19/01/2022 10:57:14 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 11.
+19/01/2022 10:57:14 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 11, sacuvana u blok.
+19/01/2022 10:57:15 PM - INFO : Transakcija od Nebojsa ka Teodora proslijedjena. Kolicina 14.
+19/01/2022 10:57:15 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 14.
+19/01/2022 10:57:15 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 14, sacuvana u blok.
+19/01/2022 10:57:15 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 75.
+19/01/2022 10:57:15 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 75, sacuvana u blok.
+19/01/2022 10:57:16 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 29.
+19/01/2022 10:57:16 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 29, sacuvana u blok.
+19/01/2022 11:00:29 PM - INFO : BlockMaker upaljen.
+19/01/2022 11:00:33 PM - INFO :  * Restarting with stat
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61063.
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61065.
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61053.
+19/01/2022 11:00:33 PM - INFO : Novi vallet Zorana registrovan.
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61055.
+19/01/2022 11:00:33 PM - INFO : Novi vallet Nikola registrovan.
+19/01/2022 11:00:33 PM - INFO : Novi vallet Teodora registrovan.
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61057.
+19/01/2022 11:00:33 PM - INFO : Novi vallet Nebojsa registrovan.
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61060.
+19/01/2022 11:00:33 PM - INFO : Novi vallet Dusan registrovan.
+19/01/2022 11:00:33 PM - INFO : Novi miner registrovan IP: localhost PORT: 61059.
+19/01/2022 11:00:34 PM - INFO : BlockMaker upaljen.
+19/01/2022 11:00:35 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 26.
+19/01/2022 11:00:35 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 26, sacuvana u blok.
+19/01/2022 11:00:35 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 82.
+19/01/2022 11:00:35 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 82, sacuvana u blok.
+19/01/2022 11:00:35 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 40.
+19/01/2022 11:00:35 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 40, sacuvana u blok.
+19/01/2022 11:00:36 PM - WARNING :  * Debugger is active!
+19/01/2022 11:00:36 PM - INFO :  * Debugger PIN: 183-757-126
+19/01/2022 11:00:37 PM - INFO :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+19/01/2022 11:00:37 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 96.
+19/01/2022 11:00:37 PM - INFO : Transakcija od Nebojsa ka Nikola, kolicine 96, sacuvana u blok.
+19/01/2022 11:00:38 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 57.
+19/01/2022 11:00:38 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 57, sacuvana u blok.
+19/01/2022 11:00:38 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 23.
+19/01/2022 11:00:38 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 23, sacuvana u blok.
+19/01/2022 11:00:39 PM - INFO : Transakcija od Zorana ka Nebojsa proslijedjena. Kolicina 26.
+19/01/2022 11:00:39 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 15.
+19/01/2022 11:00:39 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 15, sacuvana u blok.
+19/01/2022 11:00:39 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 77.
+19/01/2022 11:00:39 PM - INFO : Transakcija od Teodora ka Dusan, kolicine 77, sacuvana u blok.
+19/01/2022 11:00:41 PM - INFO : Transakcija od Teodora ka Dusan proslijedjena. Kolicina 82.
+19/01/2022 11:00:41 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 46.
+19/01/2022 11:00:41 PM - INFO : Transakcija od Nebojsa ka Zorana, kolicine 46, sacuvana u blok.
+19/01/2022 11:00:41 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 61060.
+19/01/2022 11:00:42 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 39.
+19/01/2022 11:00:42 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 35.
+19/01/2022 11:00:42 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nebojsa. Kolicina 59.
+19/01/2022 11:00:43 PM - INFO : Transakcija od Dusan ka Zorana proslijedjena. Kolicina 40.
+19/01/2022 11:00:43 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 60.
+19/01/2022 11:00:44 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Nebojsa. Kolicina 100.
+19/01/2022 11:00:44 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Teodora. Kolicina 93.
+19/01/2022 11:00:45 PM - INFO : Transakcija od Nebojsa ka Nikola proslijedjena. Kolicina 96.
+19/01/2022 11:00:45 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 60.
+19/01/2022 11:00:46 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 23.
+19/01/2022 11:00:46 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 25.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Zorana ka Teodora, kolicine 39, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 35, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Teodora ka Nebojsa, kolicine 59, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Dusan ka Nikola, kolicine 60, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Nikola ka Nebojsa, kolicine 100, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 74.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Nebojsa ka Teodora, kolicine 93, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 60, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Zorana ka Nebojsa, kolicine 23, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Nikola ka Teodora, kolicine 25, sacuvana u blok.
+19/01/2022 11:00:46 PM - INFO : Transakcija od Nebojsa ka Dusan, kolicine 74, sacuvana u blok.
+19/01/2022 11:00:47 PM - INFO : Transakcija od Nikola ka Dusan proslijedjena. Kolicina 57.
+19/01/2022 11:00:48 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 72.
+19/01/2022 11:00:48 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 72, sacuvana u blok.
+19/01/2022 11:00:49 PM - INFO : Transakcija od Dusan ka Zorana proslijedjena. Kolicina 23.
+19/01/2022 11:00:50 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 31.
+19/01/2022 11:00:50 PM - INFO : Transakcija od Nikola ka Dusan, kolicine 31, sacuvana u blok.
+19/01/2022 11:00:50 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 33.
+19/01/2022 11:00:50 PM - INFO : Transakcija od Teodora ka Zorana, kolicine 33, sacuvana u blok.
+19/01/2022 11:00:50 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 22.
+19/01/2022 11:00:50 PM - INFO : Transakcija od Nebojsa ka Zorana, kolicine 22, sacuvana u blok.
+19/01/2022 11:00:50 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 80.
+19/01/2022 11:00:50 PM - INFO : Transakcija od Dusan ka Zorana, kolicine 80, sacuvana u blok.
+19/01/2022 11:00:51 PM - INFO : Transakcija od Zorana ka Teodora proslijedjena. Kolicina 15.
+19/01/2022 11:00:51 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 98.
+19/01/2022 11:00:51 PM - INFO : Transakcija od Zorana ka Nikola, kolicine 98, sacuvana u blok.
+19/01/2022 11:00:52 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 79.
+19/01/2022 11:00:52 PM - INFO : Transakcija od Dusan ka Teodora, kolicine 79, sacuvana u blok.
+19/01/2022 11:00:53 PM - INFO : Transakcija od Teodora ka Dusan proslijedjena. Kolicina 77.
+19/01/2022 11:00:53 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nikola. Kolicina 82.
+19/01/2022 11:00:53 PM - INFO : Transakcija od Teodora ka Nikola, kolicine 82, sacuvana u blok.
+19/01/2022 11:00:53 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Dusan. Kolicina 52.
+19/01/2022 11:00:53 PM - INFO : Blok napravljen i proslijedjen ka miner-u IP: localhost PORT: 61060.
+19/01/2022 11:00:54 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 12.
+19/01/2022 11:00:55 PM - INFO : Transakcija od Nebojsa ka Zorana proslijedjena. Kolicina 46.
+19/01/2022 11:00:55 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 44.
+19/01/2022 11:00:55 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 91.
+19/01/2022 11:00:56 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nikola. Kolicina 79.
+19/01/2022 11:00:57 PM - INFO : Transakcija od Zorana ka Teodora proslijedjena. Kolicina 39.
+19/01/2022 11:00:57 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 45.
+19/01/2022 11:00:58 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 34.
+19/01/2022 11:00:58 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 25.
+19/01/2022 11:00:59 PM - INFO : Transakcija od Nikola ka Dusan proslijedjena. Kolicina 35.
+19/01/2022 11:00:59 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Zorana. Kolicina 24.
+19/01/2022 11:00:59 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 10.
+19/01/2022 11:01:00 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Zorana. Kolicina 99.
+19/01/2022 11:01:00 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Teodora. Kolicina 96.
+19/01/2022 11:01:01 PM - INFO : Transakcija od Teodora ka Nebojsa proslijedjena. Kolicina 59.
+19/01/2022 11:01:01 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Teodora. Kolicina 76.
+19/01/2022 11:01:01 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 11.
+19/01/2022 11:01:03 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Zorana. Kolicina 86.
+19/01/2022 11:01:03 PM - INFO : Transakcija od Dusan ka Nikola proslijedjena. Kolicina 60.
+19/01/2022 11:01:03 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Dusan. Kolicina 65.
+19/01/2022 11:01:03 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Zorana. Kolicina 68.
+19/01/2022 11:01:05 PM - INFO : Transakcija od Nikola ka Nebojsa proslijedjena. Kolicina 100.
+19/01/2022 11:01:05 PM - INFO : Pristigla nova transakcija od vallet-a Zorana za vallet Nebojsa. Kolicina 47.
+19/01/2022 11:01:05 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Teodora. Kolicina 21.
+19/01/2022 11:01:05 PM - INFO : Pristigla nova transakcija od vallet-a Nebojsa za vallet Nikola. Kolicina 13.
+19/01/2022 11:01:07 PM - INFO : Pristigla nova transakcija od vallet-a Dusan za vallet Nikola. Kolicina 87.
+19/01/2022 11:01:07 PM - INFO : Transakcija od Nebojsa ka Teodora proslijedjena. Kolicina 93.
+19/01/2022 11:01:07 PM - INFO : Pristigla nova transakcija od vallet-a Nikola za vallet Dusan. Kolicina 28.
+19/01/2022 11:01:07 PM - INFO : Pristigla nova transakcija od vallet-a Teodora za vallet Nebojsa. Kolicina 61.
+19/01/2022 11:01:09 PM - INFO : Transakcija od Teodora ka Nikola proslijedjena. Kolicina 60.

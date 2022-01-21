@@ -57,7 +57,6 @@ function App() {
         setMiners(m);
       } else if (data["previous_hash"] !== undefined) {
         setBlocks(blocks.unshift("New block created."));
-        //console.log(JSON.stringify(data));
         if (b.length >= 20) b.pop();
         b.unshift(
           "New block created. Previous hash:" +
@@ -67,12 +66,9 @@ function App() {
         );
         setBlocks(b);
       } else if (data["balance"] !== undefined) {
-        //console.log("volet");
-        //console.log("New vallet " + data["username"] + " connected.");
         setVallets(
           vallets.unshift("New vallet " + data["username"] + " connected.")
         );
-        //console.log(JSON.stringify(data));
         if (v.length >= 20) v.pop();
         v.unshift("New vallet " + data["username"] + " connected.");
         setVallets(v);

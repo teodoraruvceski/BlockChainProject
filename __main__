@@ -1,0 +1,18 @@
+INFO:root:BlockMaker upaljen.
+WARNING:werkzeug:WebSocket transport not available. Install simple-websocket for improved performance.
+INFO:werkzeug: * Restarting with stat
+INFO:root:BlockMaker upaljen.
+WARNING:werkzeug:WebSocket transport not available. Install simple-websocket for improved performance.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 183-757-126
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nebojsa\\Desktop\\BlockChainProject\\BlockChainBackend\\BlockMakerProject\\main_BlockMaker.py', reloading
+INFO:root:BlockMaker upaljen.
+WARNING:werkzeug:WebSocket transport not available. Install simple-websocket for improved performance.
+INFO:werkzeug: * Restarting with stat
+INFO:root:BlockMaker upaljen.
+WARNING:werkzeug:WebSocket transport not available. Install simple-websocket for improved performance.
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 183-757-126
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Detected change in 'c:\\Users\\Nebojsa\\Desktop\\BlockChainProject\\BlockChainBackend\\BlockMakerProject\\main_BlockMaker.py', reloading

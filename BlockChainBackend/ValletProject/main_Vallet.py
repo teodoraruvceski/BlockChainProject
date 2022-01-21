@@ -1,11 +1,12 @@
 from multiprocessing import Process, Manager, Value
 from multiprocessing.managers import BaseManager
+from logger import Logger
 from Socket import Socket
 import Vallet
 from Vallet import Vallet
 from BlockMaker import BlockMaker
 import multiprocessing
-##import BlockMaker
+from random import randint
 import threading
 import time
 import socket
@@ -14,7 +15,11 @@ import pickle
 import time
 import select
 import socketserver
-
+import sys
+import time
+from threading import Thread
+from random import randint
+from random import choice
 #import keyboard
 
 lock=multiprocessing.Lock()
@@ -53,7 +58,7 @@ def CreateTransaction(sum,vallet,username):
     s.close()
 
 
-def ReceiveMoney(vallet,finishProcess):
+def ReceiveMoney(vallet,finishProcess,username,logger):
     HOST=''
     PORT=vallet.getSocket().getPort()
     vallet.setSocket(PORT)
@@ -81,7 +86,9 @@ def ReceiveMoney(vallet,finishProcess):
                 data = s.recv(1024)
                 if data:
                     #call method for money storing
-                    StoreMoney(data,vallet)       
+                    StoreMoney(data,vallet) 
+                    transaction=pickle.loads(data)
+                    logger.logMessage(f"Vallet {username} received {transaction.sum} from vallet {transaction.sender}")      
                 else:
                     s.close()
                     read_list.remove(s)
@@ -96,16 +103,19 @@ def StoreMoney(rcvData,vallet):
     lock.release()    
 
 
-def SendTransaction(vallet):
-    receiverUsername=input('Enter receiver\'s username: ')
+def SendTransaction(vallet,username,users,logger): #mijenjana funkcija
+    #receiverUsername=input('Enter receiver\'s username: ')
+    receiverUsername = choice(users)
     while True:
-        sum=input('Enter sending sum: ')
-        sum=int(sum)
+        # sum=input('Enter sending sum: ')
+        # sum=int(sum)
+        sum = randint(10,100)
         if(sum>vallet.getBalance()):
             print('Not enough balance.')
             continue
         else:
             CreateTransaction(sum,vallet,receiverUsername)
+            logger.logMessage(f"Vallet {username} sent {sum} to vallet {receiverUsername}.")
             break
 def Register(vallet):
     TCP_IP = '127.0.0.1'
@@ -118,10 +128,18 @@ def Register(vallet):
     s.close()
 
 if __name__=='__main__':
+    # je broj na kome se u narednim agrumentima nalazi username
+    # ostali su drugi voleti kojima moze slati
+    users = sys.argv[2:len(sys.argv)]
+    username=users[int(sys.argv[1])]
+    print("username:",username)
+    users.remove(username)
+    print("users2:",users)
+    logger = Logger("valletLogs.log")
+    logger.logMessage(f"Vallet {username} started.")
     with socketserver.TCPServer(("localhost", 0), None) as s:
         free_port = s.server_address[1]
         print(free_port)
-    username=input('Enter username\n')
     
     BaseManager.register('Vallet', Vallet) 
     finishProcess = Value('i',False)
@@ -130,29 +148,33 @@ if __name__=='__main__':
     vallet = manager.Vallet(username,free_port)
     valletCopy=Vallet(username,free_port)
     Register(valletCopy)
-    rcvProcess=multiprocessing.Process(target=ReceiveMoney,args=[vallet,finishProcess])
+    rcvProcess=Thread(target=ReceiveMoney,args=[vallet,finishProcess,username,logger])
     #p2=multiprocessing.Process(target=vallet.CreateTransaction,args=[500,'127.0.0.1'])
     rcvProcess.start()
     #p2.start()
     while True:
-        print('1. Posalji novu transakciju')
-        print('2. Provjeri stanje racuna')
-        print('3. Ugasi klijenta')
-        try:
-            inPut = (int)(input())
-        except:
-            inPut=55
-        if inPut==1:
-            SendTransaction(vallet)
-        elif inPut==2:
-            print(vallet.getBalance())
-        elif inPut==3:
-            finishLock.acquire()
-            finishProcess.value=True
-            finishLock.release()
-            break
-        else:
-            print('Nepostojeca komanda')  
+        time.sleep(randint(2,5))
+        SendTransaction(vallet,username,users,logger)
+        #logger.logMessage(f"Vallet {username} sent transaction.")
+
+        # print('1. Posalji novu transakciju')
+        # print('2. Provjeri stanje racuna')
+        # print('3. Ugasi klijenta')
+        # try:
+        #     inPut = (int)(input())
+        # except:
+        #     inPut=55
+        # if inPut==1:
+        #     SendTransaction(vallet)
+        # elif inPut==2:
+        #     print(vallet.getBalance())
+        # elif inPut==3:
+        #     finishLock.acquire()
+        #     finishProcess.value=True
+        #     finishLock.release()
+        #     break
+        # else:
+        #     print('Nepostojeca komanda')  
             
       
     rcvProcess.join()

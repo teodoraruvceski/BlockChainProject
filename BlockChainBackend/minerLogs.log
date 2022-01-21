@@ -1,0 +1,20 @@
+19/01/2022 11:00:31 PM - INFO : Miner pokrenut IP: localhost PORT: 61053.
+19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61055.
+19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61057.
+19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61059.
+19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61063.
+19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61065.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61063 kao prvi miner.
+19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61065 preko drugog minera IP: localhost PORT: 61063.
+19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61065 poslao blockchain miner-u.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61053 preko drugog minera IP: localhost PORT: 61065.
+19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61055 preko drugog minera IP: localhost PORT: 61063.
+19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61057 preko drugog minera IP: localhost PORT: 61063.
+19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61060 preko drugog minera IP: localhost PORT: 61063.
+19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61057 poslao blockchain miner-u.
+19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61059 preko drugog minera IP: localhost PORT: 61057.
+19/01/2022 11:00:46 PM - INFO : Miner IP: localhost PORT: 61060 dobio blok na hash-ovanje. Timestamp bloka:1642629633.2194273.

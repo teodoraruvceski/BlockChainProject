@@ -1,0 +1,395 @@
+19/01/2022 07:26:03 PM - INFO : Vallet Nebojsa started.
+19/01/2022 07:26:03 PM - INFO : Vallet Dusan started.
+19/01/2022 07:26:03 PM - INFO : Vallet Nikola started.
+19/01/2022 07:26:03 PM - INFO : Vallet Zorana started.
+19/01/2022 07:26:03 PM - INFO : Vallet Teodora started.
+19/01/2022 07:26:05 PM - INFO : Vallet Nebojsa sent 32 to vallet Nikola.
+19/01/2022 07:26:06 PM - INFO : Vallet Dusan sent 53 to vallet Teodora.
+19/01/2022 07:26:06 PM - INFO : Vallet Teodora sent 86 to vallet Dusan.
+19/01/2022 07:26:07 PM - INFO : Vallet Zorana sent 59 to vallet Nebojsa.
+19/01/2022 07:26:08 PM - INFO : Vallet Nikola sent 32 to vallet Teodora.
+19/01/2022 07:26:08 PM - INFO : Vallet Nebojsa sent 94 to vallet Nikola.
+19/01/2022 07:26:09 PM - INFO : Vallet Dusan sent 82 to vallet Nikola.
+19/01/2022 07:26:09 PM - INFO : Vallet Zorana sent 88 to vallet Nebojsa.
+19/01/2022 07:26:09 PM - INFO : Vallet Teodora sent 56 to vallet Dusan.
+19/01/2022 07:26:09 PM - INFO : Vallet Nikola received 32 from vallet Nebojsa
+19/01/2022 07:26:11 PM - INFO : Vallet Nebojsa sent 50 to vallet Nikola.
+19/01/2022 07:26:11 PM - INFO : Vallet Teodora sent 86 to vallet Nebojsa.
+19/01/2022 07:26:11 PM - INFO : Vallet Teodora received 53 from vallet Dusan
+19/01/2022 07:26:12 PM - INFO : Vallet Nikola sent 36 to vallet Dusan.
+19/01/2022 07:26:13 PM - INFO : Vallet Dusan received 86 from vallet Teodora
+19/01/2022 07:26:14 PM - INFO : Vallet Dusan sent 54 to vallet Teodora.
+19/01/2022 07:26:14 PM - INFO : Vallet Zorana sent 94 to vallet Nebojsa.
+19/01/2022 07:26:15 PM - INFO : Vallet Teodora sent 41 to vallet Nebojsa.
+19/01/2022 07:26:15 PM - INFO : Vallet Nebojsa received 59 from vallet Zorana
+19/01/2022 07:26:16 PM - INFO : Vallet Nebojsa sent 82 to vallet Dusan.
+19/01/2022 07:26:16 PM - INFO : Vallet Dusan sent 32 to vallet Nikola.
+19/01/2022 07:26:17 PM - INFO : Vallet Nikola sent 61 to vallet Dusan.
+19/01/2022 07:26:17 PM - INFO : Vallet Teodora received 32 from vallet Nikola
+19/01/2022 07:26:19 PM - INFO : Vallet Teodora sent 57 to vallet Nebojsa.
+19/01/2022 07:26:21 PM - INFO : Vallet Nebojsa sent 29 to vallet Zorana.
+19/01/2022 07:26:21 PM - INFO : Vallet Dusan sent 32 to vallet Nebojsa.
+19/01/2022 07:26:21 PM - INFO : Vallet Teodora sent 18 to vallet Nebojsa.
+19/01/2022 07:26:23 PM - INFO : Vallet Dusan sent 44 to vallet Zorana.
+19/01/2022 07:26:24 PM - INFO : Vallet Nebojsa sent 83 to vallet Zorana.
+19/01/2022 07:26:24 PM - INFO : Vallet Teodora sent 53 to vallet Dusan.
+19/01/2022 07:26:26 PM - INFO : Vallet Teodora sent 36 to vallet Dusan.
+19/01/2022 07:26:27 PM - INFO : Vallet Nebojsa sent 47 to vallet Teodora.
+19/01/2022 07:26:28 PM - INFO : Vallet Dusan sent 24 to vallet Nikola.
+19/01/2022 07:26:29 PM - INFO : Vallet Nebojsa sent 27 to vallet Dusan.
+19/01/2022 07:26:29 PM - INFO : Vallet Teodora sent 61 to vallet Zorana.
+19/01/2022 07:26:32 PM - INFO : Vallet Teodora sent 59 to vallet Nebojsa.
+19/01/2022 07:26:33 PM - INFO : Vallet Nebojsa sent 92 to vallet Nikola.
+19/01/2022 07:26:33 PM - INFO : Vallet Dusan sent 24 to vallet Nikola.
+19/01/2022 07:26:35 PM - INFO : Vallet Nebojsa sent 33 to vallet Teodora.
+19/01/2022 07:26:35 PM - INFO : Vallet Dusan sent 45 to vallet Nebojsa.
+19/01/2022 07:26:36 PM - INFO : Vallet Teodora sent 99 to vallet Dusan.
+19/01/2022 07:26:39 PM - INFO : Vallet Dusan sent 13 to vallet Nebojsa.
+19/01/2022 07:26:40 PM - INFO : Vallet Nebojsa sent 55 to vallet Dusan.
+19/01/2022 07:26:41 PM - INFO : Vallet Dusan sent 67 to vallet Nebojsa.
+19/01/2022 07:26:41 PM - INFO : Vallet Teodora sent 30 to vallet Nebojsa.
+19/01/2022 07:26:42 PM - INFO : Vallet Nebojsa sent 90 to vallet Dusan.
+19/01/2022 07:26:43 PM - INFO : Vallet Teodora sent 92 to vallet Dusan.
+19/01/2022 07:26:46 PM - INFO : Vallet Teodora sent 64 to vallet Zorana.
+19/01/2022 07:29:15 PM - INFO : Vallet Zorana started.
+19/01/2022 07:29:15 PM - INFO : Vallet Dusan started.
+19/01/2022 07:29:15 PM - INFO : Vallet Nikola started.
+19/01/2022 07:29:15 PM - INFO : Vallet Teodora started.
+19/01/2022 07:29:15 PM - INFO : Vallet Nebojsa started.
+19/01/2022 07:29:18 PM - INFO : Vallet Zorana sent 22 to vallet Nikola.
+19/01/2022 07:29:18 PM - INFO : Vallet Teodora sent 13 to vallet Dusan.
+19/01/2022 07:29:19 PM - INFO : Vallet Dusan sent 79 to vallet Teodora.
+19/01/2022 07:29:20 PM - INFO : Vallet Nikola sent 74 to vallet Teodora.
+19/01/2022 07:29:20 PM - INFO : Vallet Nebojsa sent 43 to vallet Zorana.
+19/01/2022 07:29:20 PM - INFO : Vallet Teodora sent 50 to vallet Nebojsa.
+19/01/2022 07:29:21 PM - INFO : Vallet Nikola received 22 from vallet Zorana
+19/01/2022 07:29:21 PM - INFO : Vallet Dusan sent 69 to vallet Nebojsa.
+19/01/2022 07:29:22 PM - INFO : Vallet Zorana sent 87 to vallet Nikola.
+19/01/2022 07:29:23 PM - INFO : Vallet Dusan received 13 from vallet Teodora
+19/01/2022 07:29:24 PM - INFO : Vallet Dusan sent 16 to vallet Nebojsa.
+19/01/2022 07:29:24 PM - INFO : Vallet Nebojsa sent 68 to vallet Zorana.
+19/01/2022 07:29:24 PM - INFO : Vallet Teodora sent 99 to vallet Nikola.
+19/01/2022 07:29:25 PM - INFO : Vallet Teodora received 79 from vallet Dusan
+19/01/2022 07:29:25 PM - INFO : Vallet Nikola sent 90 to vallet Nebojsa.
+19/01/2022 07:29:26 PM - INFO : Vallet Zorana sent 46 to vallet Nikola.
+19/01/2022 07:29:26 PM - INFO : Vallet Nebojsa sent 81 to vallet Nikola.
+19/01/2022 07:29:27 PM - INFO : Vallet Teodora received 74 from vallet Nikola
+19/01/2022 07:29:27 PM - INFO : Vallet Dusan sent 58 to vallet Nebojsa.
+19/01/2022 07:29:29 PM - INFO : Vallet Zorana received 43 from vallet Nebojsa
+19/01/2022 07:29:29 PM - INFO : Vallet Nebojsa sent 49 to vallet Dusan.
+19/01/2022 07:29:29 PM - INFO : Vallet Teodora sent 43 to vallet Nebojsa.
+19/01/2022 07:29:30 PM - INFO : Vallet Nikola sent 60 to vallet Teodora.
+19/01/2022 07:29:31 PM - INFO : Vallet Zorana sent 39 to vallet Nebojsa.
+19/01/2022 07:29:31 PM - INFO : Vallet Nebojsa received 50 from vallet Teodora
+19/01/2022 07:29:31 PM - INFO : Vallet Teodora sent 66 to vallet Zorana.
+19/01/2022 07:29:32 PM - INFO : Vallet Dusan sent 27 to vallet Teodora.
+19/01/2022 07:29:32 PM - INFO : Vallet Nebojsa sent 64 to vallet Teodora.
+19/01/2022 07:29:33 PM - INFO : Vallet Nikola sent 44 to vallet Teodora.
+19/01/2022 07:29:33 PM - INFO : Vallet Nebojsa received 69 from vallet Dusan
+19/01/2022 07:29:33 PM - INFO : Vallet Zorana sent 27 to vallet Nikola.
+19/01/2022 07:29:34 PM - INFO : Vallet Nebojsa sent 63 to vallet Zorana.
+19/01/2022 07:29:35 PM - INFO : Vallet Nikola received 87 from vallet Zorana
+19/01/2022 07:29:35 PM - INFO : Vallet Zorana sent 88 to vallet Nebojsa.
+19/01/2022 07:29:36 PM - INFO : Vallet Dusan sent 73 to vallet Teodora.
+19/01/2022 07:29:36 PM - INFO : Vallet Teodora sent 46 to vallet Zorana.
+19/01/2022 07:29:37 PM - INFO : Vallet Nebojsa received 16 from vallet Dusan
+19/01/2022 07:29:38 PM - INFO : Vallet Nikola sent 76 to vallet Dusan.
+19/01/2022 07:29:38 PM - INFO : Vallet Zorana sent 35 to vallet Teodora.
+19/01/2022 07:29:39 PM - INFO : Vallet Zorana received 68 from vallet Nebojsa
+19/01/2022 07:29:39 PM - INFO : Vallet Nebojsa sent 71 to vallet Dusan.
+19/01/2022 07:29:40 PM - INFO : Vallet Teodora sent 49 to vallet Nikola.
+19/01/2022 07:29:43 PM - INFO : Vallet Nebojsa sent 15 to vallet Teodora.
+19/01/2022 07:29:45 PM - INFO : Vallet Nebojsa sent 98 to vallet Nikola.
+19/01/2022 09:31:18 PM - INFO : Vallet Dusan started.
+19/01/2022 09:31:18 PM - INFO : Vallet Teodora started.
+19/01/2022 09:31:18 PM - INFO : Vallet Nikola started.
+19/01/2022 09:31:18 PM - INFO : Vallet Nebojsa started.
+19/01/2022 09:31:18 PM - INFO : Vallet Zorana started.
+19/01/2022 09:31:22 PM - INFO : Vallet Nebojsa sent 47 to vallet Dusan.
+19/01/2022 09:31:23 PM - INFO : Vallet Teodora sent 58 to vallet Dusan.
+19/01/2022 09:31:24 PM - INFO : Vallet Dusan sent 30 to vallet Nikola.
+19/01/2022 09:31:25 PM - INFO : Vallet Nikola sent 66 to vallet Nebojsa.
+19/01/2022 09:31:25 PM - INFO : Vallet Nebojsa sent 44 to vallet Nikola.
+19/01/2022 09:31:25 PM - INFO : Vallet Zorana sent 77 to vallet Dusan.
+19/01/2022 09:31:26 PM - INFO : Vallet Dusan received 47 from vallet Nebojsa
+19/01/2022 09:31:26 PM - INFO : Vallet Teodora sent 66 to vallet Dusan.
+19/01/2022 09:31:28 PM - INFO : Vallet Dusan received 58 from vallet Teodora
+19/01/2022 09:31:28 PM - INFO : Vallet Dusan sent 29 to vallet Nikola.
+19/01/2022 09:31:29 PM - INFO : Vallet Nikola sent 69 to vallet Nebojsa.
+19/01/2022 09:31:29 PM - INFO : Vallet Zorana sent 94 to vallet Teodora.
+19/01/2022 09:31:30 PM - INFO : Vallet Nikola received 30 from vallet Dusan
+19/01/2022 09:31:30 PM - INFO : Vallet Nebojsa sent 88 to vallet Dusan.
+19/01/2022 09:31:31 PM - INFO : Vallet Teodora sent 66 to vallet Zorana.
+19/01/2022 09:31:31 PM - INFO : Vallet Dusan sent 57 to vallet Teodora.
+19/01/2022 09:31:32 PM - INFO : Vallet Nebojsa received 66 from vallet Nikola
+19/01/2022 09:31:32 PM - INFO : Vallet Nikola sent 23 to vallet Teodora.
+19/01/2022 09:31:32 PM - INFO : Vallet Zorana sent 98 to vallet Teodora.
+19/01/2022 09:31:33 PM - INFO : Vallet Dusan sent 34 to vallet Teodora.
+19/01/2022 09:31:34 PM - INFO : Vallet Nikola received 44 from vallet Nebojsa
+19/01/2022 09:31:34 PM - INFO : Vallet Teodora sent 100 to vallet Dusan.
+19/01/2022 09:31:35 PM - INFO : Vallet Nebojsa sent 71 to vallet Zorana.
+19/01/2022 09:31:36 PM - INFO : Vallet Dusan received 77 from vallet Zorana
+19/01/2022 09:31:36 PM - INFO : Vallet Nikola sent 43 to vallet Zorana.
+19/01/2022 09:31:36 PM - INFO : Vallet Zorana sent 33 to vallet Nebojsa.
+19/01/2022 09:31:37 PM - INFO : Vallet Dusan sent 17 to vallet Zorana.
+19/01/2022 09:31:38 PM - INFO : Vallet Dusan received 66 from vallet Teodora
+19/01/2022 09:31:38 PM - INFO : Vallet Nikola sent 78 to vallet Dusan.
+19/01/2022 09:31:39 PM - INFO : Vallet Teodora sent 63 to vallet Dusan.
+19/01/2022 09:31:39 PM - INFO : Vallet Nebojsa sent 28 to vallet Nikola.
+19/01/2022 09:31:40 PM - INFO : Vallet Nikola received 29 from vallet Dusan
+19/01/2022 09:31:40 PM - INFO : Vallet Dusan sent 64 to vallet Zorana.
+19/01/2022 09:31:40 PM - INFO : Vallet Zorana sent 53 to vallet Nebojsa.
+19/01/2022 09:31:41 PM - INFO : Vallet Teodora sent 17 to vallet Dusan.
+19/01/2022 09:31:42 PM - INFO : Vallet Nebojsa received 69 from vallet Nikola
+19/01/2022 09:31:42 PM - INFO : Vallet Nebojsa sent 93 to vallet Dusan.
+19/01/2022 09:31:42 PM - INFO : Vallet Zorana sent 23 to vallet Nebojsa.
+19/01/2022 09:31:43 PM - INFO : Vallet Nikola sent 13 to vallet Teodora.
+19/01/2022 09:31:43 PM - INFO : Vallet Dusan sent 82 to vallet Nikola.
+19/01/2022 09:31:44 PM - INFO : Vallet Teodora received 94 from vallet Zorana
+19/01/2022 09:31:44 PM - INFO : Vallet Teodora sent 38 to vallet Nikola.
+19/01/2022 09:31:44 PM - INFO : Vallet Nebojsa sent 98 to vallet Nikola.
+19/01/2022 09:31:44 PM - INFO : Vallet Zorana sent 72 to vallet Nikola.
+19/01/2022 09:31:46 PM - INFO : Vallet Dusan received 88 from vallet Nebojsa
+19/01/2022 09:31:46 PM - INFO : Vallet Nikola sent 36 to vallet Nebojsa.
+19/01/2022 09:31:46 PM - INFO : Vallet Nebojsa sent 36 to vallet Nikola.
+19/01/2022 09:31:46 PM - INFO : Vallet Dusan sent 23 to vallet Zorana.
+19/01/2022 09:31:46 PM - INFO : Vallet Zorana sent 32 to vallet Teodora.
+19/01/2022 09:31:48 PM - INFO : Vallet Zorana received 66 from vallet Teodora
+19/01/2022 09:31:48 PM - INFO : Vallet Dusan sent 15 to vallet Teodora.
+19/01/2022 09:31:49 PM - INFO : Vallet Teodora sent 92 to vallet Nikola.
+19/01/2022 09:31:50 PM - INFO : Vallet Teodora received 57 from vallet Dusan
+19/01/2022 09:31:50 PM - INFO : Vallet Zorana sent 31 to vallet Nebojsa.
+19/01/2022 09:31:51 PM - INFO : Vallet Teodora sent 90 to vallet Nikola.
+19/01/2022 09:31:51 PM - INFO : Vallet Nikola sent 85 to vallet Teodora.
+19/01/2022 09:31:51 PM - INFO : Vallet Nebojsa sent 52 to vallet Dusan.
+19/01/2022 09:31:51 PM - INFO : Vallet Dusan sent 44 to vallet Zorana.
+19/01/2022 09:31:52 PM - INFO : Vallet Teodora received 23 from vallet Nikola
+19/01/2022 09:31:53 PM - INFO : Vallet Teodora sent 30 to vallet Zorana.
+19/01/2022 09:31:54 PM - INFO : Vallet Teodora received 98 from vallet Zorana
+19/01/2022 09:31:54 PM - INFO : Vallet Nebojsa sent 16 to vallet Teodora.
+19/01/2022 09:31:54 PM - INFO : Vallet Zorana sent 43 to vallet Nikola.
+19/01/2022 09:31:56 PM - INFO : Vallet Dusan sent 13 to vallet Teodora.
+19/01/2022 10:02:06 PM - INFO : Vallet Nikola started.
+19/01/2022 10:02:07 PM - INFO : Vallet Dusan started.
+19/01/2022 10:02:07 PM - INFO : Vallet Zorana started.
+19/01/2022 10:02:07 PM - INFO : Vallet Teodora started.
+19/01/2022 10:02:07 PM - INFO : Vallet Nebojsa started.
+19/01/2022 10:02:12 PM - INFO : Vallet Dusan sent 93 to vallet Teodora.
+19/01/2022 10:02:12 PM - INFO : Vallet Nikola sent 80 to vallet Dusan.
+19/01/2022 10:02:13 PM - INFO : Vallet Teodora sent 79 to vallet Zorana.
+19/01/2022 10:02:14 PM - INFO : Vallet Zorana sent 12 to vallet Nikola.
+19/01/2022 10:02:14 PM - INFO : Vallet Nebojsa sent 15 to vallet Zorana.
+19/01/2022 10:02:15 PM - INFO : Vallet Teodora received 93 from vallet Dusan
+19/01/2022 10:02:16 PM - INFO : Vallet Dusan sent 40 to vallet Nebojsa.
+19/01/2022 10:02:17 PM - INFO : Vallet Dusan received 80 from vallet Nikola
+19/01/2022 10:02:17 PM - INFO : Vallet Nebojsa sent 35 to vallet Teodora.
+19/01/2022 10:02:18 PM - INFO : Vallet Zorana sent 89 to vallet Teodora.
+19/01/2022 10:03:52 PM - INFO : Vallet Dusan started.
+19/01/2022 10:03:52 PM - INFO : Vallet Nikola started.
+19/01/2022 10:03:52 PM - INFO : Vallet Teodora started.
+19/01/2022 10:03:52 PM - INFO : Vallet Zorana started.
+19/01/2022 10:03:53 PM - INFO : Vallet Nebojsa started.
+19/01/2022 10:03:57 PM - INFO : Vallet Nikola sent 53 to vallet Dusan.
+19/01/2022 10:03:57 PM - INFO : Vallet Teodora sent 38 to vallet Dusan.
+19/01/2022 10:03:58 PM - INFO : Vallet Zorana sent 56 to vallet Dusan.
+19/01/2022 10:03:58 PM - INFO : Vallet Dusan sent 98 to vallet Teodora.
+19/01/2022 10:03:58 PM - INFO : Vallet Nebojsa sent 86 to vallet Teodora.
+19/01/2022 10:03:59 PM - INFO : Vallet Dusan received 53 from vallet Nikola
+19/01/2022 10:04:01 PM - INFO : Vallet Zorana sent 84 to vallet Nebojsa.
+19/01/2022 10:04:01 PM - INFO : Vallet Dusan sent 81 to vallet Nebojsa.
+19/01/2022 10:04:01 PM - INFO : Vallet Dusan received 38 from vallet Teodora
+19/01/2022 10:04:02 PM - INFO : Vallet Nikola sent 31 to vallet Teodora.
+19/01/2022 10:04:02 PM - INFO : Vallet Teodora sent 58 to vallet Dusan.
+19/01/2022 10:04:02 PM - INFO : Vallet Nebojsa sent 84 to vallet Dusan.
+19/01/2022 10:04:03 PM - INFO : Vallet Dusan sent 41 to vallet Nebojsa.
+19/01/2022 10:04:03 PM - INFO : Vallet Dusan received 56 from vallet Zorana
+19/01/2022 10:04:04 PM - INFO : Vallet Nebojsa sent 98 to vallet Zorana.
+19/01/2022 10:04:05 PM - INFO : Vallet Teodora sent 53 to vallet Dusan.
+19/01/2022 10:04:05 PM - INFO : Vallet Teodora received 98 from vallet Dusan
+19/01/2022 10:04:06 PM - INFO : Vallet Nikola sent 69 to vallet Zorana.
+19/01/2022 10:04:06 PM - INFO : Vallet Zorana sent 92 to vallet Nikola.
+19/01/2022 10:04:06 PM - INFO : Vallet Dusan sent 15 to vallet Zorana.
+19/01/2022 10:04:07 PM - INFO : Vallet Nebojsa sent 67 to vallet Dusan.
+19/01/2022 10:04:07 PM - INFO : Vallet Teodora received 86 from vallet Nebojsa
+19/01/2022 10:04:08 PM - INFO : Vallet Teodora sent 36 to vallet Nikola.
+19/01/2022 10:04:09 PM - INFO : Vallet Zorana sent 46 to vallet Nebojsa.
+19/01/2022 10:04:10 PM - INFO : Vallet Nebojsa received 84 from vallet Zorana
+19/01/2022 10:04:10 PM - INFO : Vallet Nikola sent 13 to vallet Zorana.
+19/01/2022 10:04:11 PM - INFO : Vallet Teodora sent 23 to vallet Dusan.
+19/01/2022 10:04:11 PM - INFO : Vallet Dusan sent 57 to vallet Nikola.
+19/01/2022 10:43:02 PM - INFO : Vallet Teodora started.
+19/01/2022 10:43:02 PM - INFO : Vallet Nebojsa started.
+19/01/2022 10:43:02 PM - INFO : Vallet Nikola started.
+19/01/2022 10:43:02 PM - INFO : Vallet Zorana started.
+19/01/2022 10:43:06 PM - INFO : Vallet Dusan sent 87 to vallet Teodora.
+19/01/2022 10:43:07 PM - INFO : Vallet Nebojsa sent 12 to vallet Dusan.
+19/01/2022 10:43:08 PM - INFO : Vallet Zorana sent 30 to vallet Nikola.
+19/01/2022 10:43:08 PM - INFO : Vallet Nikola sent 53 to vallet Teodora.
+19/01/2022 10:43:08 PM - INFO : Vallet Dusan sent 63 to vallet Zorana.
+19/01/2022 10:43:09 PM - INFO : Vallet Teodora sent 23 to vallet Nebojsa.
+19/01/2022 10:43:10 PM - INFO : Vallet Teodora received 87 from vallet Dusan
+19/01/2022 10:43:10 PM - INFO : Vallet Zorana sent 20 to vallet Nebojsa.
+19/01/2022 10:43:12 PM - INFO : Vallet Dusan received 12 from vallet Nebojsa
+19/01/2022 10:43:12 PM - INFO : Vallet Nebojsa sent 57 to vallet Teodora.
+19/01/2022 10:43:12 PM - INFO : Vallet Nikola sent 50 to vallet Dusan.
+19/01/2022 10:43:12 PM - INFO : Vallet Zorana sent 41 to vallet Nikola.
+19/01/2022 10:43:13 PM - INFO : Vallet Dusan sent 26 to vallet Nikola.
+19/01/2022 10:43:14 PM - INFO : Vallet Teodora sent 75 to vallet Nebojsa.
+19/01/2022 10:43:15 PM - INFO : Vallet Dusan sent 32 to vallet Teodora.
+19/01/2022 10:54:34 PM - INFO : Vallet Zorana started.
+19/01/2022 10:54:34 PM - INFO : Vallet Nebojsa started.
+19/01/2022 10:54:34 PM - INFO : Vallet Nikola started.
+19/01/2022 10:54:35 PM - INFO : Vallet Dusan started.
+19/01/2022 10:54:35 PM - INFO : Vallet Teodora started.
+19/01/2022 10:54:37 PM - INFO : Vallet Nikola sent 57 to vallet Zorana.
+19/01/2022 10:54:37 PM - INFO : Vallet Dusan sent 57 to vallet Nebojsa.
+19/01/2022 10:54:37 PM - INFO : Vallet Teodora sent 49 to vallet Zorana.
+19/01/2022 10:54:40 PM - INFO : Vallet Nebojsa sent 37 to vallet Zorana.
+19/01/2022 10:54:40 PM - INFO : Vallet Nikola sent 55 to vallet Dusan.
+19/01/2022 10:54:40 PM - INFO : Vallet Zorana sent 28 to vallet Nikola.
+19/01/2022 10:54:40 PM - INFO : Vallet Teodora sent 43 to vallet Zorana.
+19/01/2022 10:54:41 PM - INFO : Vallet Zorana received 57 from vallet Nikola
+19/01/2022 10:54:41 PM - INFO : Vallet Dusan sent 83 to vallet Teodora.
+19/01/2022 10:54:42 PM - INFO : Vallet Teodora sent 23 to vallet Zorana.
+19/01/2022 10:54:43 PM - INFO : Vallet Nebojsa received 57 from vallet Dusan
+19/01/2022 10:54:43 PM - INFO : Vallet Nebojsa sent 98 to vallet Teodora.
+19/01/2022 10:54:44 PM - INFO : Vallet Nikola sent 28 to vallet Nebojsa.
+19/01/2022 10:54:45 PM - INFO : Vallet Zorana received 49 from vallet Teodora
+19/01/2022 10:54:45 PM - INFO : Vallet Zorana sent 63 to vallet Teodora.
+19/01/2022 10:54:46 PM - INFO : Vallet Nebojsa sent 62 to vallet Nikola.
+19/01/2022 10:54:46 PM - INFO : Vallet Nikola sent 23 to vallet Teodora.
+19/01/2022 10:54:46 PM - INFO : Vallet Dusan sent 91 to vallet Nikola.
+19/01/2022 10:54:47 PM - INFO : Vallet Zorana received 37 from vallet Nebojsa
+19/01/2022 10:54:47 PM - INFO : Vallet Zorana sent 86 to vallet Nebojsa.
+19/01/2022 10:54:47 PM - INFO : Vallet Teodora sent 82 to vallet Nebojsa.
+19/01/2022 10:54:48 PM - INFO : Vallet Dusan sent 72 to vallet Nebojsa.
+19/01/2022 10:54:49 PM - INFO : Vallet Dusan received 55 from vallet Nikola
+19/01/2022 10:54:49 PM - INFO : Vallet Zorana sent 94 to vallet Dusan.
+19/01/2022 10:54:49 PM - INFO : Vallet Nikola sent 97 to vallet Teodora.
+19/01/2022 10:54:50 PM - INFO : Vallet Nebojsa sent 68 to vallet Nikola.
+19/01/2022 10:54:51 PM - INFO : Vallet Nikola received 28 from vallet Zorana
+19/01/2022 10:54:51 PM - INFO : Vallet Nikola sent 13 to vallet Zorana.
+19/01/2022 10:54:51 PM - INFO : Vallet Dusan sent 67 to vallet Nebojsa.
+19/01/2022 10:54:51 PM - INFO : Vallet Teodora sent 98 to vallet Nikola.
+19/01/2022 10:54:53 PM - INFO : Vallet Zorana received 43 from vallet Teodora
+19/01/2022 10:54:53 PM - INFO : Vallet Nikola sent 50 to vallet Teodora.
+19/01/2022 10:54:54 PM - INFO : Vallet Nebojsa sent 27 to vallet Teodora.
+19/01/2022 10:54:54 PM - INFO : Vallet Zorana sent 16 to vallet Teodora.
+19/01/2022 10:54:55 PM - INFO : Vallet Teodora received 83 from vallet Dusan
+19/01/2022 10:54:55 PM - INFO : Vallet Dusan sent 11 to vallet Teodora.
+19/01/2022 10:54:56 PM - INFO : Vallet Nikola sent 87 to vallet Zorana.
+19/01/2022 10:54:56 PM - INFO : Vallet Teodora sent 43 to vallet Dusan.
+19/01/2022 10:54:57 PM - INFO : Vallet Zorana received 23 from vallet Teodora
+19/01/2022 10:54:57 PM - INFO : Vallet Nebojsa sent 63 to vallet Nikola.
+19/01/2022 10:56:56 PM - INFO : Vallet Nikola started.
+19/01/2022 10:56:56 PM - INFO : Vallet Dusan started.
+19/01/2022 10:56:56 PM - INFO : Vallet Teodora started.
+19/01/2022 10:56:56 PM - INFO : Vallet Zorana started.
+19/01/2022 10:56:56 PM - INFO : Vallet Nebojsa started.
+19/01/2022 10:56:59 PM - INFO : Vallet Dusan sent 19 to vallet Nikola.
+19/01/2022 10:57:00 PM - INFO : Vallet Teodora sent 37 to vallet Dusan.
+19/01/2022 10:57:00 PM - INFO : Vallet Zorana sent 37 to vallet Teodora.
+19/01/2022 10:57:00 PM - INFO : Vallet Nebojsa sent 14 to vallet Dusan.
+19/01/2022 10:57:01 PM - INFO : Vallet Nikola sent 41 to vallet Teodora.
+19/01/2022 10:57:02 PM - INFO : Vallet Zorana sent 22 to vallet Dusan.
+19/01/2022 10:57:03 PM - INFO : Vallet Nikola received 19 from vallet Dusan
+19/01/2022 10:57:03 PM - INFO : Vallet Nebojsa sent 14 to vallet Teodora.
+19/01/2022 10:57:03 PM - INFO : Vallet Dusan sent 16 to vallet Nikola.
+19/01/2022 10:57:03 PM - INFO : Vallet Nikola sent 12 to vallet Dusan.
+19/01/2022 10:57:04 PM - INFO : Vallet Teodora sent 99 to vallet Zorana.
+19/01/2022 10:57:04 PM - INFO : Vallet Zorana sent 73 to vallet Dusan.
+19/01/2022 10:57:05 PM - INFO : Vallet Dusan received 37 from vallet Teodora
+19/01/2022 10:57:06 PM - INFO : Vallet Dusan sent 35 to vallet Teodora.
+19/01/2022 10:57:07 PM - INFO : Vallet Teodora received 37 from vallet Zorana
+19/01/2022 10:57:07 PM - INFO : Vallet Teodora sent 33 to vallet Dusan.
+19/01/2022 10:57:07 PM - INFO : Vallet Nebojsa sent 26 to vallet Nikola.
+19/01/2022 10:57:08 PM - INFO : Vallet Zorana sent 32 to vallet Dusan.
+19/01/2022 10:57:08 PM - INFO : Vallet Nikola sent 26 to vallet Teodora.
+19/01/2022 10:57:09 PM - INFO : Vallet Dusan received 14 from vallet Nebojsa
+19/01/2022 10:57:09 PM - INFO : Vallet Teodora sent 83 to vallet Dusan.
+19/01/2022 10:57:09 PM - INFO : Vallet Dusan sent 78 to vallet Nikola.
+19/01/2022 10:57:10 PM - INFO : Vallet Nikola sent 86 to vallet Zorana.
+19/01/2022 10:57:11 PM - INFO : Vallet Teodora received 41 from vallet Nikola
+19/01/2022 10:57:11 PM - INFO : Vallet Teodora sent 76 to vallet Dusan.
+19/01/2022 10:57:11 PM - INFO : Vallet Nebojsa sent 59 to vallet Teodora.
+19/01/2022 10:57:11 PM - INFO : Vallet Dusan sent 95 to vallet Nikola.
+19/01/2022 10:57:12 PM - INFO : Vallet Zorana sent 14 to vallet Dusan.
+19/01/2022 10:57:12 PM - INFO : Vallet Nikola sent 100 to vallet Dusan.
+19/01/2022 10:57:13 PM - INFO : Vallet Dusan received 22 from vallet Zorana
+19/01/2022 10:57:13 PM - INFO : Vallet Teodora sent 92 to vallet Nikola.
+19/01/2022 10:57:14 PM - INFO : Vallet Dusan sent 11 to vallet Nikola.
+19/01/2022 10:57:15 PM - INFO : Vallet Teodora received 14 from vallet Nebojsa
+19/01/2022 10:57:15 PM - INFO : Vallet Nebojsa sent 14 to vallet Teodora.
+19/01/2022 10:57:15 PM - INFO : Vallet Teodora sent 75 to vallet Nikola.
+19/01/2022 10:57:16 PM - INFO : Vallet Dusan sent 29 to vallet Zorana.
+19/01/2022 11:00:31 PM - INFO : Vallet Zorana started.
+19/01/2022 11:00:31 PM - INFO : Vallet Teodora started.
+19/01/2022 11:00:31 PM - INFO : Vallet Dusan started.
+19/01/2022 11:00:31 PM - INFO : Vallet Nikola started.
+19/01/2022 11:00:31 PM - INFO : Vallet Nebojsa started.
+19/01/2022 11:00:35 PM - INFO : Vallet Zorana sent 26 to vallet Nebojsa.
+19/01/2022 11:00:35 PM - INFO : Vallet Teodora sent 82 to vallet Dusan.
+19/01/2022 11:00:35 PM - INFO : Vallet Dusan sent 40 to vallet Zorana.
+19/01/2022 11:00:37 PM - INFO : Vallet Nebojsa sent 96 to vallet Nikola.
+19/01/2022 11:00:38 PM - INFO : Vallet Nikola sent 57 to vallet Dusan.
+19/01/2022 11:00:38 PM - INFO : Vallet Dusan sent 23 to vallet Zorana.
+19/01/2022 11:00:39 PM - INFO : Vallet Nebojsa received 26 from vallet Zorana
+19/01/2022 11:00:39 PM - INFO : Vallet Zorana sent 15 to vallet Teodora.
+19/01/2022 11:00:39 PM - INFO : Vallet Teodora sent 77 to vallet Dusan.
+19/01/2022 11:00:41 PM - INFO : Vallet Dusan received 82 from vallet Teodora
+19/01/2022 11:00:41 PM - INFO : Vallet Nebojsa sent 46 to vallet Zorana.
+19/01/2022 11:00:42 PM - INFO : Vallet Zorana sent 39 to vallet Teodora.
+19/01/2022 11:00:42 PM - INFO : Vallet Nikola sent 35 to vallet Dusan.
+19/01/2022 11:00:42 PM - INFO : Vallet Teodora sent 59 to vallet Nebojsa.
+19/01/2022 11:00:43 PM - INFO : Vallet Zorana received 40 from vallet Dusan
+19/01/2022 11:00:43 PM - INFO : Vallet Dusan sent 60 to vallet Nikola.
+19/01/2022 11:00:44 PM - INFO : Vallet Nikola sent 100 to vallet Nebojsa.
+19/01/2022 11:00:44 PM - INFO : Vallet Nebojsa sent 93 to vallet Teodora.
+19/01/2022 11:00:45 PM - INFO : Vallet Nikola received 96 from vallet Nebojsa
+19/01/2022 11:00:45 PM - INFO : Vallet Teodora sent 60 to vallet Nikola.
+19/01/2022 11:00:46 PM - INFO : Vallet Zorana sent 23 to vallet Nebojsa.
+19/01/2022 11:00:46 PM - INFO : Vallet Nikola sent 25 to vallet Teodora.
+19/01/2022 11:00:46 PM - INFO : Vallet Nebojsa sent 74 to vallet Dusan.
+19/01/2022 11:00:47 PM - INFO : Vallet Dusan received 57 from vallet Nikola
+19/01/2022 11:00:48 PM - INFO : Vallet Dusan sent 72 to vallet Teodora.
+19/01/2022 11:00:49 PM - INFO : Vallet Zorana received 23 from vallet Dusan
+19/01/2022 11:00:50 PM - INFO : Vallet Nikola sent 31 to vallet Dusan.
+19/01/2022 11:00:50 PM - INFO : Vallet Teodora sent 33 to vallet Zorana.
+19/01/2022 11:00:50 PM - INFO : Vallet Nebojsa sent 22 to vallet Zorana.
+19/01/2022 11:00:50 PM - INFO : Vallet Dusan sent 80 to vallet Zorana.
+19/01/2022 11:00:51 PM - INFO : Vallet Teodora received 15 from vallet Zorana
+19/01/2022 11:00:51 PM - INFO : Vallet Zorana sent 98 to vallet Nikola.
+19/01/2022 11:00:52 PM - INFO : Vallet Dusan sent 79 to vallet Teodora.
+19/01/2022 11:00:53 PM - INFO : Vallet Dusan received 77 from vallet Teodora
+19/01/2022 11:00:53 PM - INFO : Vallet Teodora sent 82 to vallet Nikola.
+19/01/2022 11:00:53 PM - INFO : Vallet Nebojsa sent 52 to vallet Dusan.
+19/01/2022 11:00:54 PM - INFO : Vallet Dusan sent 12 to vallet Teodora.
+19/01/2022 11:00:55 PM - INFO : Vallet Zorana received 46 from vallet Nebojsa
+19/01/2022 11:00:55 PM - INFO : Vallet Nikola sent 44 to vallet Teodora.
+19/01/2022 11:00:55 PM - INFO : Vallet Nebojsa sent 91 to vallet Zorana.
+19/01/2022 11:00:56 PM - INFO : Vallet Zorana sent 79 to vallet Nikola.
+19/01/2022 11:00:57 PM - INFO : Vallet Teodora received 39 from vallet Zorana
+19/01/2022 11:00:57 PM - INFO : Vallet Dusan sent 45 to vallet Zorana.
+19/01/2022 11:00:58 PM - INFO : Vallet Zorana sent 34 to vallet Nebojsa.
+19/01/2022 11:00:58 PM - INFO : Vallet Teodora sent 25 to vallet Zorana.
+19/01/2022 11:00:59 PM - INFO : Vallet Dusan received 35 from vallet Nikola
+19/01/2022 11:00:59 PM - INFO : Vallet Nikola sent 24 to vallet Zorana.
+19/01/2022 11:00:59 PM - INFO : Vallet Nebojsa sent 10 to vallet Nikola.
+19/01/2022 11:01:00 PM - INFO : Vallet Teodora sent 99 to vallet Zorana.
+19/01/2022 11:01:00 PM - INFO : Vallet Dusan sent 96 to vallet Teodora.
+19/01/2022 11:01:01 PM - INFO : Vallet Nebojsa received 59 from vallet Teodora
+19/01/2022 11:01:01 PM - INFO : Vallet Zorana sent 76 to vallet Teodora.
+19/01/2022 11:01:01 PM - INFO : Vallet Nikola sent 11 to vallet Dusan.
+19/01/2022 11:01:03 PM - INFO : Vallet Dusan sent 86 to vallet Zorana.
+19/01/2022 11:01:03 PM - INFO : Vallet Nikola received 60 from vallet Dusan
+19/01/2022 11:01:03 PM - INFO : Vallet Teodora sent 65 to vallet Dusan.
+19/01/2022 11:01:03 PM - INFO : Vallet Nebojsa sent 68 to vallet Zorana.
+19/01/2022 11:01:05 PM - INFO : Vallet Nebojsa received 100 from vallet Nikola
+19/01/2022 11:01:05 PM - INFO : Vallet Zorana sent 47 to vallet Nebojsa.
+19/01/2022 11:01:05 PM - INFO : Vallet Nikola sent 21 to vallet Teodora.
+19/01/2022 11:01:05 PM - INFO : Vallet Nebojsa sent 13 to vallet Nikola.
+19/01/2022 11:01:07 PM - INFO : Vallet Dusan sent 87 to vallet Nikola.
+19/01/2022 11:01:07 PM - INFO : Vallet Teodora received 93 from vallet Nebojsa
+19/01/2022 11:01:07 PM - INFO : Vallet Nikola sent 28 to vallet Dusan.
+19/01/2022 11:01:07 PM - INFO : Vallet Teodora sent 61 to vallet Nebojsa.
+19/01/2022 11:01:09 PM - INFO : Vallet Nikola received 60 from vallet Teodora

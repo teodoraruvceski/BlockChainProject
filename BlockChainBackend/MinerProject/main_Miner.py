@@ -14,6 +14,7 @@ from threading import Thread
 import threading
 import  time
 import json
+from logger import Logger
 #global variables
 difficulty=1
 count=0
@@ -170,7 +171,7 @@ def AppendingBlock(blockchain):
                 delayResponding.release()
                 break
             
-def JoinBlockchain(miner,blockchain):
+def JoinBlockchain(miner,blockchain,logger):
     TCP_IP='localhost'
     TCP_PORT=6000
     BUFFER_SIZE = 1024
@@ -197,17 +198,21 @@ def JoinBlockchain(miner,blockchain):
         responseFromMiner=pickle.loads(s.recv(1024))
         blockchain=responseFromMiner
         s.close()
+        logger.logMessage(f"Miner se prikljucio blockchain-u IP: {miner.getIp()} PORT: {miner.getPort()} preko drugog minera IP: {connectingMiner.getIp()} PORT: {connectingMiner.getPort()}.")
     elif(type(responseFromBlockMaker)==type(Block(time.time(),"0"))):
         blockchain.append(responseFromBlockMaker.hash)
         print("Received genesis block. Appended to my blockchain.\n")
+        logger.logMessage(f"Miner se prikljucio blockchain-u IP: {miner.getIp()} PORT: {miner.getPort()} kao prvi miner.")
     s.close()
     
-def Listening(miner,blockchain,ss):
+def Listening(miner,blockchain,ss,logger):
     global savedBlock
     global cond_obj
     global serverSocket
     print ("Listening on port ",miner.getPort())
     read_list = [ss]
+    # client_socket=None 
+    # address = None
     while True:
         readable, writable, errored = select.select(read_list, [], [])
         for s in readable:
@@ -223,11 +228,14 @@ def Listening(miner,blockchain,ss):
                         time.sleep(5) #time for validating
                         #cond_obj.acquire()
                         print('Received new block from blockmaker')
+                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} dobio blok na hash-ovanje. Timestamp bloka:{data.timestamp}.")
                         data.setPreviousHash(blockchain[len(blockchain)-1])
                         hash=proof_of_work(data)
                         data.setHash(hash)
+                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} hash-ovao blok. Hash: {data.getHash()} Timestamp bloka:{data.timestamp}.")
                         print(str(data))
                         PublishValidatedBlock(data)
+                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} poslao blok na validaciju. Hash: {data.getHash()} Timestamp bloka:{data.timestamp}.")
                         #semafor ceka
                         serverSocket=s
                         print('^^^^^^^^^^set socket ')
@@ -240,7 +248,9 @@ def Listening(miner,blockchain,ss):
                         print('Received new miner: ')
                         print(data)
                         print("Sending blockchain...")
-                        s.send(pickle.dumps(blockchain))     
+                        s.send(pickle.dumps(blockchain))   
+                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} poslao blockchain miner-u.")
+  
                 else:
                     s.close()
                     read_list.remove(s)
@@ -260,6 +270,8 @@ def Responding():
         
     
 if __name__=='__main__':
+    logger = Logger("minerLogs.log")
+    print('Miner started with work.')
     blockchain=[] #sadrzi hashove
     miner=Miner()
     HOST=''
@@ -269,8 +281,9 @@ if __name__=='__main__':
     ss.bind((HOST,PORT))
     ss.listen(5)
     miner.setPort(ss.getsockname()[1])
-    JoinBlockchain(miner,blockchain)
-    listeningProcess=Thread(target=Listening,args=[miner,blockchain,ss])
+    logger.logMessage(f"Miner pokrenut IP: {miner.getIp()} PORT: {miner.getPort()}.")
+    JoinBlockchain(miner,blockchain,logger)
+    listeningProcess=Thread(target=Listening,args=[miner,blockchain,ss,logger])
     subscribeBlockProcess=Thread(target=SubscribeToBlockTopic,args=())
     subscribeConfirmationProcess=Thread(target=SubscribeToConfirmationTopic,args=())
     appendingBlockProcess=Thread(target=AppendingBlock,args=[blockchain])
