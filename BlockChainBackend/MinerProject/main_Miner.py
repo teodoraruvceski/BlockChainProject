@@ -15,15 +15,19 @@ import threading
 import  time
 import json
 from logger import Logger
+import sys
 #global variables
 difficulty=1
 count=0
+blockchain=[] #sadrzi hashove
 savedBlock=None
 confirmationMessages=Queue()
 cond_obj=threading.Condition()
 serverSocket=None
 delayResponding=threading.Condition()
-
+logger = Logger("minerLogs.log")
+minername="-1"
+broker="broker.emqx.io"
 def proof_of_work( block):
     global difficulty
     global count
@@ -46,23 +50,10 @@ def checkValidatedBlock( block):
     if(computed_hash==pom):
         return True
     return False
-def on_message(client, userdata, message):
-    print("Received message: ", str(message.payload.decode("utf-8")))
-    #provjera da li je blok dobar, uvezuje li se dobro u lanac
-    #to treba provjeriti kako tacno radi, neki broj se hesuje sanecim da se dobije to ocekivano...
-def StartMining():
-    mqttBroker = "test.mosquitto.org"
-    client = mqtt.Client("Smartphone")
-    client.connect(mqttBroker)
-    while True:
-        client.loop_start()
-        client.subscribe("TEMPERATURE")
-        client.on_message = on_message
-        time.sleep(1)
-        client.loop_read()
 
 def SubscribeToBlockTopic():
-    mqttBroker = "test.mosquitto.org"
+    global broker
+    mqttBroker = broker
     client = mqtt.Client()
     client.connect(mqttBroker)
     while True:
@@ -73,7 +64,8 @@ def SubscribeToBlockTopic():
         client.loop_read()   
 
 def SubscribeToConfirmationTopic():
-    mqttBroker = "test.mosquitto.org"
+    global broker
+    mqttBroker = broker
     client = mqtt.Client()
     client.connect(mqttBroker)
     while True:
@@ -81,22 +73,28 @@ def SubscribeToConfirmationTopic():
         client.subscribe("confirmation")
         client.on_message = on_messageConfirmationTopic
         time.sleep(1)
-        client.loop_read()   
-   
-        
+        client.loop_read() 
+                 
 def PublishValidatedBlock(block):
-    
-    mqttBroker = "test.mosquitto.org"
+    global minername
+    global logger
+    global broker
+    logger.logMessage(f'Miner {minername} publishing block on block topic.')
+    mqttBroker = broker
     client = mqtt.Client()
     client.connect(mqttBroker)
     #block=json.loads(block)
     #block=CreateBlockObject(block)
     bytes=json.dumps(block.dump(block.hash))
     client.publish("block", bytes)
-    #print('EXITING PublishValidatedBlock')
+    print('EXITING PublishValidatedBlock')
     
 def PublishConfirmation(message):
-    mqttBroker = "test.mosquitto.org"
+    global logger
+    global minername
+    global broker
+    logger.logMessage(f'Miner {minername} publishing message on confirmation topic: {message}')
+    mqttBroker = broker
     client = mqtt.Client()
     client.connect(mqttBroker)
     client.publish("confirmation", message)
@@ -113,12 +111,14 @@ def CreateTransactionObject(dict):
     tr=Transaction.Transaction(dict["sum"],dict["sender"],dict["receiver"],dict["balance"],dict["timestamp"])
     return tr
 def on_messageBlockTopic(client, userdata, message):
+    global minername
     global savedBlock
     newBlock=message.payload.decode()
     print("----Message on Block topic from MINER----")
     newBlock=json.loads(newBlock)
     newBlock2=CreateBlockObject(newBlock)
     savedBlock=newBlock2
+    logger.logMessage(f'Miner {minername} received message on block topic')
     if(checkValidatedBlock(newBlock2)):
         message="True_"
         message += str(newBlock2.getHash())
@@ -130,20 +130,24 @@ def on_messageBlockTopic(client, userdata, message):
     
 def on_messageConfirmationTopic(client, userdata, message):
     global confirmationMessages
+    global minername
     print("----Message on Confirmation topic----")
     newMessage=message.payload.decode()
+    logger.logMessage(f'Miner {minername} received message on confirmation topic: {newMessage}')
     print(newMessage)
     confirmationMessages.put(newMessage)
  
-def AppendingBlock(blockchain):
+def AppendingBlock():
     global savedBlock
+    global minername
     global confirmationMessages
+    global blockchain
     positive=0
     negative=0
     while True:
         if(savedBlock==None):
             time.sleep(1)
-            print("no block to append")
+            #print("no block to append")
             continue
         time.sleep(3)
         while True:
@@ -160,8 +164,10 @@ def AppendingBlock(blockchain):
             else:
                 if(positive>negative):
                     blockchain.append(savedBlock.getHash())
+                    logger.logMessage(f'Miner {minername} APPENDED block hash:{savedBlock.getHash()} timestamp:{savedBlock.timestamp}')
                 else:
-                    print('ODBIJENNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN')
+                    print('DENIED BLOCK')
+                    logger.logMessage(f'Miner {minername} DENIED block hash:{savedBlock.getHash()} timestamp:{savedBlock.timestamp}')
                 positive=0
                 negative=0
                 #semafor notifikuje
@@ -171,7 +177,10 @@ def AppendingBlock(blockchain):
                 delayResponding.release()
                 break
             
-def JoinBlockchain(miner,blockchain,logger):
+def JoinBlockchain(miner):
+    global minername
+    global logger
+    global blockchain
     TCP_IP='localhost'
     TCP_PORT=6000
     BUFFER_SIZE = 1024
@@ -197,18 +206,22 @@ def JoinBlockchain(miner,blockchain,logger):
         s.send(MESSAGE)
         responseFromMiner=pickle.loads(s.recv(1024))
         blockchain=responseFromMiner
+        print("dobio bc od majnera len:",len(blockchain))
         s.close()
-        logger.logMessage(f"Miner se prikljucio blockchain-u IP: {miner.getIp()} PORT: {miner.getPort()} preko drugog minera IP: {connectingMiner.getIp()} PORT: {connectingMiner.getPort()}.")
+        logger.logMessage(f"Miner {minername} se prikljucio blockchain-u preko drugog minera: {connectingMiner.minername}.")
     elif(type(responseFromBlockMaker)==type(Block(time.time(),"0"))):
         blockchain.append(responseFromBlockMaker.hash)
         print("Received genesis block. Appended to my blockchain.\n")
-        logger.logMessage(f"Miner se prikljucio blockchain-u IP: {miner.getIp()} PORT: {miner.getPort()} kao prvi miner.")
+        logger.logMessage(f"Miner {minername} se prikljucio blockchain-u kao prvi miner. Primio genesis block.")
     s.close()
     
-def Listening(miner,blockchain,ss,logger):
+def Listening(miner,ss):
     global savedBlock
+    global blockchain
     global cond_obj
     global serverSocket
+    global minername
+    global logger
     print ("Listening on port ",miner.getPort())
     read_list = [ss]
     # client_socket=None 
@@ -228,17 +241,18 @@ def Listening(miner,blockchain,ss,logger):
                         time.sleep(5) #time for validating
                         #cond_obj.acquire()
                         print('Received new block from blockmaker')
-                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} dobio blok na hash-ovanje. Timestamp bloka:{data.timestamp}.")
+                        logger.logMessage(f"Miner {minername} dobio blok na hash-ovanje. Timestamp bloka:{data.timestamp}.")
+                        print("BC len:", len(blockchain))
                         data.setPreviousHash(blockchain[len(blockchain)-1])
                         hash=proof_of_work(data)
                         data.setHash(hash)
-                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} hash-ovao blok. Hash: {data.getHash()} Timestamp bloka:{data.timestamp}.")
+                        logger.logMessage(f"Miner {minername} hash-ovao blok. Hash: {data.hash} Timestamp bloka:{data.timestamp}.")
                         print(str(data))
                         PublishValidatedBlock(data)
-                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} poslao blok na validaciju. Hash: {data.getHash()} Timestamp bloka:{data.timestamp}.")
+                        logger.logMessage(f"Miner {minername} poslao blok na validaciju. Hash: {data.hash} Timestamp bloka:{data.timestamp}.")
                         #semafor ceka
                         serverSocket=s
-                        print('^^^^^^^^^^set socket ')
+                     
                         #cond_obj.wait()
                         #print('notified : sending "done" to blockmaker')
                         #MESSAGE="done"
@@ -247,9 +261,11 @@ def Listening(miner,blockchain,ss,logger):
                     elif(type(data)==type(Miner())):
                         print('Received new miner: ')
                         print(data)
+                        while(len(blockchain)==0):
+                            time.sleep(1)
                         print("Sending blockchain...")
                         s.send(pickle.dumps(blockchain))   
-                        logger.logMessage(f"Miner IP: {miner.getIp()} PORT: {miner.getPort()} poslao blockchain miner-u.")
+                        logger.logMessage(f"Miner {minername} poslao blockchain miner-u.")
   
                 else:
                     s.close()
@@ -258,22 +274,30 @@ def Listening(miner,blockchain,ss,logger):
 def Responding():
     global serverSocket
     global delayResponding
+    global minername
+    global logger
     while True:
+       
         delayResponding.acquire()
-        print("BLOCKED IN WAITING FOR NOTIFICATION")
+        print(f'Miner {minername} is blocked and waiting for notification to send "done" to Blockmaker.')
+        logger.logMessage(f'Miner {minername} is blocked and waiting for notification to send "done" to Blockmaker.')
         delayResponding.wait()
         if(serverSocket!=None):
-            print('notified : sending "done" to blockmaker')
+            logger.logMessage(f'Miner {minername} is notified and sending "done" to Blockmaker.')
+            print(f'Miner {minername} is notified and sending "done" to Blockmaker.')
             serverSocket.send(pickle.dumps("done"))
+            logger.logMessage(f'--------------Miner {minername} is notified and sending {pickle.dumps("done")} to Blockmaker.')
             serverSocket=None
         delayResponding.release()
-        
+
     
 if __name__=='__main__':
-    logger = Logger("minerLogs.log")
+    minername = sys.argv[1]
+    #minername="Miner"
     print('Miner started with work.')
-    blockchain=[] #sadrzi hashove
+    
     miner=Miner()
+    miner.setMinername(minername)
     HOST=''
     PORT=miner.getPort()
     ss=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
@@ -281,12 +305,12 @@ if __name__=='__main__':
     ss.bind((HOST,PORT))
     ss.listen(5)
     miner.setPort(ss.getsockname()[1])
-    logger.logMessage(f"Miner pokrenut IP: {miner.getIp()} PORT: {miner.getPort()}.")
-    JoinBlockchain(miner,blockchain,logger)
-    listeningProcess=Thread(target=Listening,args=[miner,blockchain,ss,logger])
+    logger.logMessage(f"Miner {minername} pokrenut.")
+    JoinBlockchain(miner)
+    listeningProcess=Thread(target=Listening,args=[miner,ss])
     subscribeBlockProcess=Thread(target=SubscribeToBlockTopic,args=())
     subscribeConfirmationProcess=Thread(target=SubscribeToConfirmationTopic,args=())
-    appendingBlockProcess=Thread(target=AppendingBlock,args=[blockchain])
+    appendingBlockProcess=Thread(target=AppendingBlock,args=())
     respondingThread=Thread(target=Responding,args=())
     listeningProcess.start()
     subscribeBlockProcess.start()

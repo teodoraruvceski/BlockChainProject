@@ -1,20 +1,419 @@
-19/01/2022 11:00:31 PM - INFO : Miner pokrenut IP: localhost PORT: 61053.
-19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61055.
-19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61057.
-19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61059.
-19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61063.
-19/01/2022 11:00:32 PM - INFO : Miner pokrenut IP: localhost PORT: 61065.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61063 kao prvi miner.
-19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61065 preko drugog minera IP: localhost PORT: 61063.
-19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61065 poslao blockchain miner-u.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61053 preko drugog minera IP: localhost PORT: 61065.
-19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61055 preko drugog minera IP: localhost PORT: 61063.
-19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61057 preko drugog minera IP: localhost PORT: 61063.
-19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61063 poslao blockchain miner-u.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61060 preko drugog minera IP: localhost PORT: 61063.
-19/01/2022 11:00:33 PM - INFO : Miner IP: localhost PORT: 61057 poslao blockchain miner-u.
-19/01/2022 11:00:33 PM - INFO : Miner se prikljucio blockchain-u IP: localhost PORT: 61059 preko drugog minera IP: localhost PORT: 61057.
-19/01/2022 11:00:46 PM - INFO : Miner IP: localhost PORT: 61060 dobio blok na hash-ovanje. Timestamp bloka:1642629633.2194273.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:22:10 AM - INFO : Miner Miner4 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 poslao blockchain miner-u.
+22/01/2022 12:22:10 AM - INFO : Miner Miner4 se prikljucio blockchain-u preko drugog minera: Miner2.
+22/01/2022 12:22:10 AM - INFO : Miner Miner4 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:22:10 AM - INFO : Miner Miner1 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner7 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner5 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner6 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 poslao blockchain miner-u.
+22/01/2022 12:22:10 AM - INFO : Miner Miner1 se prikljucio blockchain-u preko drugog minera: Miner2.
+22/01/2022 12:22:10 AM - INFO : Miner Miner1 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:22:10 AM - INFO : Miner Miner3 pokrenut.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 poslao blockchain miner-u.
+22/01/2022 12:22:10 AM - INFO : Miner Miner7 se prikljucio blockchain-u preko drugog minera: Miner2.
+22/01/2022 12:22:10 AM - INFO : Miner Miner7 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 poslao blockchain miner-u.
+22/01/2022 12:22:10 AM - INFO : Miner Miner6 se prikljucio blockchain-u preko drugog minera: Miner2.
+22/01/2022 12:22:10 AM - INFO : Miner Miner6 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:22:10 AM - INFO : Miner Miner2 poslao blockchain miner-u.
+22/01/2022 12:22:10 AM - INFO : Miner Miner3 se prikljucio blockchain-u preko drugog minera: Miner2.
+22/01/2022 12:22:10 AM - INFO : Miner Miner3 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:22:22 AM - INFO : Miner Miner6 dobio blok na hash-ovanje. Timestamp bloka:1642807329.1510658.
+22/01/2022 12:24:54 AM - INFO : Miner Miner4 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner4 se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:24:54 AM - INFO : Miner Miner4 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:24:54 AM - INFO : Miner Miner3 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner4 poslao blockchain miner-u.
+22/01/2022 12:24:54 AM - INFO : Miner Miner3 se prikljucio blockchain-u preko drugog minera: Miner4.
+22/01/2022 12:24:54 AM - INFO : Miner Miner3 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:24:54 AM - INFO : Miner Miner5 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner7 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner3 poslao blockchain miner-u.
+22/01/2022 12:24:54 AM - INFO : Miner Miner5 se prikljucio blockchain-u preko drugog minera: Miner3.
+22/01/2022 12:24:54 AM - INFO : Miner Miner1 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner5 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:24:54 AM - INFO : Miner Miner3 poslao blockchain miner-u.
+22/01/2022 12:24:54 AM - INFO : Miner Miner7 se prikljucio blockchain-u preko drugog minera: Miner3.
+22/01/2022 12:24:54 AM - INFO : Miner Miner7 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:24:54 AM - INFO : Miner Miner6 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner4 poslao blockchain miner-u.
+22/01/2022 12:24:54 AM - INFO : Miner Miner1 se prikljucio blockchain-u preko drugog minera: Miner4.
+22/01/2022 12:24:54 AM - INFO : Miner Miner1 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:24:54 AM - INFO : Miner Miner1 poslao blockchain miner-u.
+22/01/2022 12:24:54 AM - INFO : Miner Miner6 se prikljucio blockchain-u preko drugog minera: Miner1.
+22/01/2022 12:24:54 AM - INFO : Miner Miner2 pokrenut.
+22/01/2022 12:24:54 AM - INFO : Miner Miner6 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:24:54 AM - INFO : Miner Miner6 poslao blockchain miner-u.
+22/01/2022 12:24:54 AM - INFO : Miner Miner2 se prikljucio blockchain-u preko drugog minera: Miner6.
+22/01/2022 12:24:54 AM - INFO : Miner Miner2 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 dobio blok na hash-ovanje. Timestamp bloka:1642807492.9710605.
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 hash-ovao blok. Hash: 0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f Timestamp bloka:1642807492.9710605.
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 publishing block on block topic.
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 poslao blok na validaciju. Hash: 0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f Timestamp bloka:1642807492.9710605.
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on block topic
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 publishing message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:06 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner5 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner7 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner4 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner2 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner6 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner1 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:07 AM - INFO : Miner Miner3 received message on confirmation topic: True_0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f
+22/01/2022 12:25:25 AM - INFO : Miner Miner4 APPENDED block hash:0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f timestamp:1642807492.9710605
+22/01/2022 12:25:25 AM - INFO : Miner Miner4 is notified and sending "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : --------------Miner Miner4 is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner4 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner3 APPENDED block hash:0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f timestamp:1642807492.9710605
+22/01/2022 12:25:25 AM - INFO : Miner Miner3 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner7 APPENDED block hash:0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f timestamp:1642807492.9710605
+22/01/2022 12:25:25 AM - INFO : Miner Miner7 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner5 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner1 APPENDED block hash:0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f timestamp:1642807492.9710605
+22/01/2022 12:25:25 AM - INFO : Miner Miner6 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner1 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:25 AM - INFO : Miner Miner2 APPENDED block hash:0307f5df8f3172bcf62109b5dffd3507cedf38f6e264ddf43f77a1c60baee40f timestamp:1642807492.9710605
+22/01/2022 12:25:25 AM - INFO : Miner Miner2 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 dobio blok na hash-ovanje. Timestamp bloka:1642807500.99556.
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 hash-ovao blok. Hash: 0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 Timestamp bloka:1642807500.99556.
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 publishing block on block topic.
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 poslao blok na validaciju. Hash: 0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 Timestamp bloka:1642807500.99556.
+22/01/2022 12:25:38 AM - INFO : Miner Miner5 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner4 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner5 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner7 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner4 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner6 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner7 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner6 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner3 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner3 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 received message on block topic
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 publishing message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner4 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner4 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner2 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner4 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:38 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner2 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner4 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner2 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner1 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner4 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner7 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner3 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner2 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner6 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner5 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:39 AM - INFO : Miner Miner4 received message on confirmation topic: True_0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397
+22/01/2022 12:25:49 AM - INFO : Miner Miner2 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:49 AM - INFO : Miner Miner2 is notified and sending "done" to Blockmaker.
+22/01/2022 12:25:49 AM - INFO : --------------Miner Miner2 is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:25:49 AM - INFO : Miner Miner2 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:50 AM - INFO : Miner Miner4 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:50 AM - INFO : Miner Miner4 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:50 AM - INFO : Miner Miner3 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:50 AM - INFO : Miner Miner3 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:50 AM - INFO : Miner Miner7 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:50 AM - INFO : Miner Miner5 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:50 AM - INFO : Miner Miner7 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:50 AM - INFO : Miner Miner5 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:50 AM - INFO : Miner Miner6 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:50 AM - INFO : Miner Miner6 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:25:50 AM - INFO : Miner Miner1 APPENDED block hash:0f4b5a890d69dc2405234547f72ca3e6c3cb246d650b062bbb8a3396b0145397 timestamp:1642807500.99556
+22/01/2022 12:25:50 AM - INFO : Miner Miner1 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:02 AM - INFO : Miner Miner2 dobio blok na hash-ovanje. Timestamp bloka:1642807533.0982301.
+22/01/2022 12:26:02 AM - INFO : Miner Miner2 hash-ovao blok. Hash: 0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c Timestamp bloka:1642807533.0982301.
+22/01/2022 12:26:02 AM - INFO : Miner Miner2 publishing block on block topic.
+22/01/2022 12:26:02 AM - INFO : Miner Miner2 poslao blok na validaciju. Hash: 0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c Timestamp bloka:1642807533.0982301.
+22/01/2022 12:26:02 AM - INFO : Miner Miner4 received message on block topic
+22/01/2022 12:26:02 AM - INFO : Miner Miner4 publishing message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:02 AM - INFO : Miner Miner6 received message on block topic
+22/01/2022 12:26:02 AM - INFO : Miner Miner7 received message on block topic
+22/01/2022 12:26:02 AM - INFO : Miner Miner1 received message on block topic
+22/01/2022 12:26:02 AM - INFO : Miner Miner7 publishing message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:02 AM - INFO : Miner Miner6 publishing message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:02 AM - INFO : Miner Miner1 publishing message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:02 AM - INFO : Miner Miner3 received message on block topic
+22/01/2022 12:26:02 AM - INFO : Miner Miner3 publishing message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:02 AM - INFO : Miner Miner2 received message on block topic
+22/01/2022 12:26:02 AM - INFO : Miner Miner2 publishing message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner7 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner1 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner3 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner1 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner3 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner3 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner1 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner3 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner7 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner3 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner1 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner7 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner3 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner7 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner1 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner7 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner1 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner2 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner5 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner4 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner7 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:03 AM - INFO : Miner Miner6 received message on confirmation topic: True_0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c
+22/01/2022 12:26:13 AM - INFO : Miner Miner7 APPENDED block hash:0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c timestamp:1642807533.0982301
+22/01/2022 12:26:13 AM - INFO : Miner Miner5 APPENDED block hash:0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c timestamp:1642807533.0982301
+22/01/2022 12:26:13 AM - INFO : Miner Miner7 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:13 AM - INFO : Miner Miner5 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:13 AM - INFO : Miner Miner1 APPENDED block hash:0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c timestamp:1642807533.0982301
+22/01/2022 12:26:13 AM - INFO : Miner Miner2 is notified and sending "done" to Blockmaker.
+22/01/2022 12:26:13 AM - INFO : Miner Miner1 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:13 AM - INFO : Miner Miner6 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:13 AM - INFO : --------------Miner Miner2 is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:26:13 AM - INFO : Miner Miner2 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:14 AM - INFO : Miner Miner4 APPENDED block hash:0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c timestamp:1642807533.0982301
+22/01/2022 12:26:14 AM - INFO : Miner Miner4 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:14 AM - INFO : Miner Miner3 APPENDED block hash:0ae6a7febfaf96fe88a4da8538eceaefc1fb87458179f4163920740c6c18785c timestamp:1642807533.0982301
+22/01/2022 12:26:14 AM - INFO : Miner Miner3 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 dobio blok na hash-ovanje. Timestamp bloka:1642807557.1664262.
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 hash-ovao blok. Hash: 053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d Timestamp bloka:1642807557.1664262.
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 publishing block on block topic.
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 poslao blok na validaciju. Hash: 053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d Timestamp bloka:1642807557.1664262.
+22/01/2022 12:26:26 AM - INFO : Miner Miner4 received message on block topic
+22/01/2022 12:26:26 AM - INFO : Miner Miner4 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner6 received message on block topic
+22/01/2022 12:26:26 AM - INFO : Miner Miner6 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner1 received message on block topic
+22/01/2022 12:26:26 AM - INFO : Miner Miner5 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner1 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner7 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 received message on block topic
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner2 received message on block topic
+22/01/2022 12:26:26 AM - INFO : Miner Miner2 publishing message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner1 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner6 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:26 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner1 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner6 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner1 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner6 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner1 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner6 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner6 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner1 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner1 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner2 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner3 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner6 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner5 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner4 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:27 AM - INFO : Miner Miner7 received message on confirmation topic: True_053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d
+22/01/2022 12:26:37 AM - INFO : Miner Miner4 APPENDED block hash:053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d timestamp:1642807557.1664262
+22/01/2022 12:26:37 AM - INFO : Miner Miner4 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:37 AM - INFO : Miner Miner5 APPENDED block hash:053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d timestamp:1642807557.1664262
+22/01/2022 12:26:37 AM - INFO : Miner Miner3 is notified and sending "done" to Blockmaker.
+22/01/2022 12:26:37 AM - INFO : Miner Miner5 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:37 AM - INFO : --------------Miner Miner3 is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:26:37 AM - INFO : Miner Miner1 APPENDED block hash:053e6c91049922e7898409667b50c20b11852ec2db3a615bfa822/01/2022 12:26:37 AM - INFO : Miner Miner2 APPENDED block hash:053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d timestamp:1642807557.1664262
+22/01/2022 12:26:37 AM - INFO : Miner Miner1 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:37 AM - INFO : Miner Miner6 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:37 AM - INFO : Miner Miner2 is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:26:38 AM - INFO : Miner Miner7 APPENDED block hash:053e6c91049922e7898409667b50c20b11852ec2db3a615bfa87f982e62e9b6d timestamp:1642807557.1664262
+22/01/2022 12:26:38 AM - INFO : Miner Miner7 is blocked and waiting for notification to send "done" to Blockmaker.

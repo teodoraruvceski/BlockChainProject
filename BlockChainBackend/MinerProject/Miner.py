@@ -5,6 +5,11 @@ class Miner:
         self.socket=Socket(0,'localhost')
         self.blockMined=0
         self.neighbors=[]
+        self.minername=""
+    def setMinername(self,minername):
+        self.minername=minername
+    def getMinername(self):
+        return self.minername
     def getPort(self):
         return self.socket.getPort()
     def getIp(self):

@@ -1,0 +1,124 @@
+21/01/2022 11:59:08 PM - INFO : Miner Miner pokrenut.
+21/01/2022 11:59:08 PM - INFO : Miner Miner se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+21/01/2022 11:59:08 PM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+21/01/2022 11:59:18 PM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642805945.4914038.
+21/01/2022 11:59:18 PM - INFO : Miner Miner hash-ovao blok. Hash: 0f07fd23059eb9aaae4b148c5df36fd7747f2d57826c8f76e279e1aca2454ff3 Timestamp bloka:1642805945.4914038.
+21/01/2022 11:59:18 PM - INFO : Miner Miner publishing block on block topic.
+21/01/2022 11:59:18 PM - INFO : Miner Miner poslao blok na validaciju. Hash: 0f07fd23059eb9aaae4b148c5df36fd7747f2d57826c8f76e279e1aca2454ff3 Timestamp bloka:1642805945.4914038.
+22/01/2022 12:00:00 AM - INFO : Miner Miner pokrenut.
+22/01/2022 12:00:00 AM - INFO : Miner Miner se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:00:00 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:00:12 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642805999.3439865.
+22/01/2022 12:00:12 AM - INFO : Miner Miner hash-ovao blok. Hash: 0a7c60c849a0a76cffc16bd8c9bae7507056a88c8616cb220ebd4b5933094095 Timestamp bloka:1642805999.3439865.
+22/01/2022 12:00:12 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:00:38 AM - INFO : Miner Miner pokrenut.
+22/01/2022 12:00:38 AM - INFO : Miner Miner se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:00:38 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:00:51 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806038.1091602.
+22/01/2022 12:00:51 AM - INFO : Miner Miner hash-ovao blok. Hash: 0ae9874c0632213ce616664aeb86baa7b5930d066cf9dd48c24fd4c254ad48bd Timestamp bloka:1642806038.1091602.
+22/01/2022 12:00:51 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:01:21 AM - INFO : Miner Miner pokrenut.
+22/01/2022 12:01:21 AM - INFO : Miner Miner se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:01:21 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:01:32 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806079.0925958.
+22/01/2022 12:01:32 AM - INFO : Miner Miner hash-ovao blok. Hash: 02b3696f980ae2b292dd1c1746984cd46b4efceb165a71570c0b9c16f35af8ff Timestamp bloka:1642806079.0925958.
+22/01/2022 12:01:32 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:01:32 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 02b3696f980ae2b292dd1c1746984cd46b4efceb165a71570c0b9c16f35af8ff Timestamp bloka:1642806079.0925958.
+22/01/2022 12:03:07 AM - INFO : Miner Miner pokrenut.
+22/01/2022 12:03:07 AM - INFO : Miner Miner se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:03:07 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:03:20 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806187.0321593.
+22/01/2022 12:03:20 AM - INFO : Miner Miner hash-ovao blok. Hash: 0d5307bef14c77691828416cc63abf172dcfd47f30d252b7bd29130ad6a34430 Timestamp bloka:1642806187.0321593.
+22/01/2022 12:03:20 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:03:20 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 0d5307bef14c77691828416cc63abf172dcfd47f30d252b7bd29130ad6a34430 Timestamp bloka:1642806187.0321593.
+22/01/2022 12:04:50 AM - INFO : Miner Miner pokrenut.
+22/01/2022 12:04:50 AM - INFO : Miner Miner se prikljucio blockchain-u kao prvi miner. Primio genesis block.
+22/01/2022 12:04:50 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:05:03 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806290.4850242.
+22/01/2022 12:05:03 AM - INFO : Miner Miner hash-ovao blok. Hash: 09c4635002ddb85d0f4de8a970be28de8b59adb72a3bce0a6658e2ad00c3e04f Timestamp bloka:1642806290.4850242.
+22/01/2022 12:05:03 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:05:03 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 09c4635002ddb85d0f4de8a970be28de8b59adb72a3bce0a6658e2ad00c3e04f Timestamp bloka:1642806290.4850242.
+22/01/2022 12:05:03 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:05:03 AM - INFO : Miner Miner publishing message on confirmation topic: True_09c4635002ddb85d0f4de8a970be28de8b59adb72a3bce0a6658e2ad00c3e04f
+22/01/2022 12:05:04 AM - INFO : Miner Miner received message on confirmation topic: True_09c4635002ddb85d0f4de8a970be28de8b59adb72a3bce0a6658e2ad00c3e04f
+22/01/2022 12:05:08 AM - INFO : Miner Miner APPENDED block hash:09c4635002ddb85d0f4de8a970be28de8b59adb72a3bce0a6658e2ad00c3e04f timestamp:1642806290.4850242
+22/01/2022 12:05:08 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:05:08 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:05:08 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:05:21 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806298.5446155.
+22/01/2022 12:05:21 AM - INFO : Miner Miner hash-ovao blok. Hash: 0dfa0367ed9c13ad151cb5a42a7fe2469065793143f6cfcaa34939434adcb398 Timestamp bloka:1642806298.5446155.
+22/01/2022 12:05:21 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:05:21 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 0dfa0367ed9c13ad151cb5a42a7fe2469065793143f6cfcaa34939434adcb398 Timestamp bloka:1642806298.5446155.
+22/01/2022 12:05:22 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:05:22 AM - INFO : Miner Miner publishing message on confirmation topic: True_0dfa0367ed9c13ad151cb5a42a7fe2469065793143f6cfcaa34939434adcb398
+22/01/2022 12:05:22 AM - INFO : Miner Miner received message on confirmation topic: True_0dfa0367ed9c13ad151cb5a42a7fe2469065793143f6cfcaa34939434adcb398
+22/01/2022 12:05:28 AM - INFO : Miner Miner APPENDED block hash:0dfa0367ed9c13ad151cb5a42a7fe2469065793143f6cfcaa34939434adcb398 timestamp:1642806298.5446155
+22/01/2022 12:05:28 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:05:28 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:05:28 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:05:41 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806316.6030502.
+22/01/2022 12:05:41 AM - INFO : Miner Miner hash-ovao blok. Hash: 005419c9e68ef8e41c1e92bbf79b52bcbfaaed1aa7c0afe676421fdebe329230 Timestamp bloka:1642806316.6030502.
+22/01/2022 12:05:41 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:05:41 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 005419c9e68ef8e41c1e92bbf79b52bcbfaaed1aa7c0afe676421fdebe329230 Timestamp bloka:1642806316.6030502.
+22/01/2022 12:05:42 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:05:42 AM - INFO : Miner Miner publishing message on confirmation topic: True_005419c9e68ef8e41c1e92bbf79b52bcbfaaed1aa7c0afe676421fdebe329230
+22/01/2022 12:05:42 AM - INFO : Miner Miner received message on confirmation topic: True_005419c9e68ef8e41c1e92bbf79b52bcbfaaed1aa7c0afe676421fdebe329230
+22/01/2022 12:05:47 AM - INFO : Miner Miner APPENDED block hash:005419c9e68ef8e41c1e92bbf79b52bcbfaaed1aa7c0afe676421fdebe329230 timestamp:1642806316.6030502
+22/01/2022 12:05:47 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:05:47 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:05:47 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:05:59 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806336.6859853.
+22/01/2022 12:05:59 AM - INFO : Miner Miner hash-ovao blok. Hash: 072b82591b0ca0ee7e5c98a8a02cc3a626fa63d2397c954eaeff00768336f1a7 Timestamp bloka:1642806336.6859853.
+22/01/2022 12:05:59 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:06:00 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 072b82591b0ca0ee7e5c98a8a02cc3a626fa63d2397c954eaeff00768336f1a7 Timestamp bloka:1642806336.6859853.
+22/01/2022 12:06:00 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:06:00 AM - INFO : Miner Miner publishing message on confirmation topic: True_072b82591b0ca0ee7e5c98a8a02cc3a626fa63d2397c954eaeff00768336f1a7
+22/01/2022 12:06:00 AM - INFO : Miner Miner received message on confirmation topic: True_072b82591b0ca0ee7e5c98a8a02cc3a626fa63d2397c954eaeff00768336f1a7
+22/01/2022 12:06:05 AM - INFO : Miner Miner APPENDED block hash:072b82591b0ca0ee7e5c98a8a02cc3a626fa63d2397c954eaeff00768336f1a7 timestamp:1642806336.6859853
+22/01/2022 12:06:05 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:06:05 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:06:05 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:06:17 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806354.7502246.
+22/01/2022 12:06:17 AM - INFO : Miner Miner hash-ovao blok. Hash: 0cbb3156bff7ea7d5706144874ab22033943a4322a28ccbef55a21f879eee079 Timestamp bloka:1642806354.7502246.
+22/01/2022 12:06:17 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:06:18 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 0cbb3156bff7ea7d5706144874ab22033943a4322a28ccbef55a21f879eee079 Timestamp bloka:1642806354.7502246.
+22/01/2022 12:06:18 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:06:18 AM - INFO : Miner Miner publishing message on confirmation topic: True_0cbb3156bff7ea7d5706144874ab22033943a4322a28ccbef55a21f879eee079
+22/01/2022 12:06:18 AM - INFO : Miner Miner received message on confirmation topic: True_0cbb3156bff7ea7d5706144874ab22033943a4322a28ccbef55a21f879eee079
+22/01/2022 12:06:23 AM - INFO : Miner Miner APPENDED block hash:0cbb3156bff7ea7d5706144874ab22033943a4322a28ccbef55a21f879eee079 timestamp:1642806354.7502246
+22/01/2022 12:06:23 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:06:23 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:06:23 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:06:35 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806372.8245761.
+22/01/2022 12:06:35 AM - INFO : Miner Miner hash-ovao blok. Hash: 0bd5e6b9cc3ce22c07369bb14f3540c4ac0469ef8e1e123ee8edf149abd3032b Timestamp bloka:1642806372.8245761.
+22/01/2022 12:06:35 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:06:36 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 0bd5e6b9cc3ce22c07369bb14f3540c4ac0469ef8e1e123ee8edf149abd3032b Timestamp bloka:1642806372.8245761.
+22/01/2022 12:06:36 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:06:36 AM - INFO : Miner Miner publishing message on confirmation topic: True_0bd5e6b9cc3ce22c07369bb14f3540c4ac0469ef8e1e123ee8edf149abd3032b
+22/01/2022 12:06:36 AM - INFO : Miner Miner received message on confirmation topic: True_0bd5e6b9cc3ce22c07369bb14f3540c4ac0469ef8e1e123ee8edf149abd3032b
+22/01/2022 12:06:41 AM - INFO : Miner Miner APPENDED block hash:0bd5e6b9cc3ce22c07369bb14f3540c4ac0469ef8e1e123ee8edf149abd3032b timestamp:1642806372.8245761
+22/01/2022 12:06:41 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:06:41 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:06:41 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:06:53 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806390.891096.
+22/01/2022 12:06:53 AM - INFO : Miner Miner hash-ovao blok. Hash: 0ef50cf3037131123c3e55d806abe575be4a8bc6ddebcb8e209bc83b32d2b23c Timestamp bloka:1642806390.891096.
+22/01/2022 12:06:53 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:06:54 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 0ef50cf3037131123c3e55d806abe575be4a8bc6ddebcb8e209bc83b32d2b23c Timestamp bloka:1642806390.891096.
+22/01/2022 12:06:54 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:06:54 AM - INFO : Miner Miner publishing message on confirmation topic: True_0ef50cf3037131123c3e55d806abe575be4a8bc6ddebcb8e209bc83b32d2b23c
+22/01/2022 12:06:54 AM - INFO : Miner Miner received message on confirmation topic: True_0ef50cf3037131123c3e55d806abe575be4a8bc6ddebcb8e209bc83b32d2b23c
+22/01/2022 12:06:59 AM - INFO : Miner Miner APPENDED block hash:0ef50cf3037131123c3e55d806abe575be4a8bc6ddebcb8e209bc83b32d2b23c timestamp:1642806390.891096
+22/01/2022 12:06:59 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:06:59 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:06:59 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.
+22/01/2022 12:07:12 AM - INFO : Miner Miner dobio blok na hash-ovanje. Timestamp bloka:1642806408.9606519.
+22/01/2022 12:07:12 AM - INFO : Miner Miner hash-ovao blok. Hash: 0682b67c7c51884c64f5cde12e8f1ef64680d75f9c152307b200f426914a76d0 Timestamp bloka:1642806408.9606519.
+22/01/2022 12:07:12 AM - INFO : Miner Miner publishing block on block topic.
+22/01/2022 12:07:12 AM - INFO : Miner Miner poslao blok na validaciju. Hash: 0682b67c7c51884c64f5cde12e8f1ef64680d75f9c152307b200f426914a76d0 Timestamp bloka:1642806408.9606519.
+22/01/2022 12:07:12 AM - INFO : Miner Miner received message on block topic
+22/01/2022 12:07:12 AM - INFO : Miner Miner publishing message on confirmation topic: True_0682b67c7c51884c64f5cde12e8f1ef64680d75f9c152307b200f426914a76d0
+22/01/2022 12:07:12 AM - INFO : Miner Miner received message on confirmation topic: True_0682b67c7c51884c64f5cde12e8f1ef64680d75f9c152307b200f426914a76d0
+22/01/2022 12:07:17 AM - INFO : Miner Miner APPENDED block hash:0682b67c7c51884c64f5cde12e8f1ef64680d75f9c152307b200f426914a76d0 timestamp:1642806408.9606519
+22/01/2022 12:07:17 AM - INFO : Miner Miner is notified and sending "done" to Blockmaker.
+22/01/2022 12:07:17 AM - INFO : --------------Miner Miner is notified and sending b'\x80\x04\x95\x08\x00\x00\x00\x00\x00\x00\x00\x8c\x04done\x94.' to Blockmaker.
+22/01/2022 12:07:17 AM - INFO : Miner Miner is blocked and waiting for notification to send "done" to Blockmaker.

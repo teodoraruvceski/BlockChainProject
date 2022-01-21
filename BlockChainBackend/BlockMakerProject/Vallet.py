@@ -7,8 +7,6 @@ class Vallet:
     counter=0
     def __init__(self,username,port):
         self.balance=1000
-        self.id= self.counter +1
-        self.counter += 1
         self.transactions=[]
         self.ipAddr=socket.gethostbyname(socket.gethostname())
         self.socket = Socket(port,socket.gethostbyname(socket.gethostname()))
