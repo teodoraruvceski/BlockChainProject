@@ -17,7 +17,7 @@ import json
 from logger import Logger
 import sys
 #global variables
-difficulty=1
+miner=None
 count=0
 blockchain=[] #sadrzi hashove
 savedBlock=None
@@ -34,7 +34,7 @@ def proof_of_work( block):
     block.nonce = 0
     computed_hash = block.compute_hash()
     #print('VALIDATING BLOCK:\n',block)
-    while not computed_hash.startswith('0' * difficulty):
+    while not computed_hash.startswith('0' * block.getDifficulty()):
         block.nonce += 1
         computed_hash = block.compute_hash()
         #print('POW=',computed_hash)
@@ -276,6 +276,8 @@ def Responding():
     global delayResponding
     global minername
     global logger
+    global miner
+
     while True:
        
         delayResponding.acquire()
@@ -286,8 +288,11 @@ def Responding():
             logger.logMessage(f'Miner {minername} is notified and sending "done" to Blockmaker.')
             print(f'Miner {minername} is notified and sending "done" to Blockmaker.')
             serverSocket.send(pickle.dumps("done"))
-            logger.logMessage(f'--------------Miner {minername} is notified and sending {pickle.dumps("done")} to Blockmaker.')
+            logger.logMessage(f'--------------Miner {minername} is notified and sending "done" to Blockmaker.')
             serverSocket=None
+            miner.incrementBlockMined()
+            miner.payment()
+            logger.logMessage(f'+Miner {minername} new balance {miner.getBalance()}')
         delayResponding.release()
 
     

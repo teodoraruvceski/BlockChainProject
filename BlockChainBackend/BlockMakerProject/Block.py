@@ -10,8 +10,13 @@ class Block:
         self.index=0
         Block.cnt+=1
         self.hash=None
+        self.difficulty=1
     def addTransaction(self,transaction):
         self.transactions.append(transaction)
+    def setDifficulty(self,d):
+        self.difficulty = d
+    def getDifficulty(self):
+        return self.difficulty
     def compute_hash(self):
         block_string=self.toJSON()
         return sha256(block_string.encode()).hexdigest()

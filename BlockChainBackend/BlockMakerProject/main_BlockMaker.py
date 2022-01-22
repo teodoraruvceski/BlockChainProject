@@ -64,12 +64,12 @@ def recieveTransactions(sendingQueue,savingQueue,blockmaker,logger):
             if s is ss:
                 client_socket, address = ss.accept()
                 read_list.append(client_socket)
-                print( "Connection from", address)
+                #print( "Connection from", address)
             else:
                 data = s.recv(1024)
                 if data:
                     trans=pickle.loads(data)
-                    print('New transaction : \n',trans)
+                    #print('New transaction : \n',trans)
                     logger.logMessage(f"Pristigla nova transakcija od vallet-a {trans.sender} za vallet {trans.receiver}. Kolicina {trans.sum}.")
                     ind=False
                     for v in blockmaker.getVallets():
@@ -110,57 +110,52 @@ def sendTransaction(q,blockmaker,logger):
                 s.connect((TCP_IP, TCP_PORT))
                 s.send(MESSAGE)
                 logger.logMessage(f"Transakcija od {data.sender} ka {data.receiver} proslijedjena. Kolicina {data.sum}.")
-                print('sent transaction to client')
+               # print('sent transaction to client')
                 s.close()
 
 def saveTransaction(q,blockMaker,logger):
     global webclientQueue
     start=None
-    indikator=0
-    nesto=""
     while True:
         start=time.time()
-        print("----------------------------------------------------------------IND: ",indikator)
-        if nesto!="no":
-            while True:
-                
-                transaction=q.get()
-                blockMaker.addTransaction(transaction)
-                logger.logMessage(f"Transakcija od {transaction.sender} ka {transaction.receiver}, kolicine {transaction.sum}, sacuvana u blok.")
-                if(time.time()-start>= 7):
-                    break
-            lock.acquire()
-            if(len(blockMaker.getBlock().getTransactions())==0):
-                continue
-            if(blockMaker.getMinersCount()==0):
-                print(blockMaker.getMinersCount())
-                lock.release()
-                continue
-            chosenMiner=blockMaker.getRandomMiner()
+        while True:
+            
+            transaction=q.get()
+            blockMaker.addTransaction(transaction)
+            logger.logMessage(f"Transakcija od {transaction.sender} ka {transaction.receiver}, kolicine {transaction.sum}, sacuvana u blok.")
+            if(time.time()-start>= 7):
+                break
+        lock.acquire()
+        if(len(blockMaker.getBlock().getTransactions())==0):
+            continue
+        if(blockMaker.getMinersCount()==0):
             lock.release()
-            TCP_IP = chosenMiner.getIp()
-            TCP_PORT =(int)(chosenMiner.getPort())
-            webclientQueue.put(blockMaker.getBlock())
-            MESSAGE = pickle.dumps(blockMaker.getBlock())
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((TCP_IP, TCP_PORT))
-            s.send(MESSAGE)
-            blockMaker.newBlock()
-            print('------RESETOVANJE BLOKA------')
-            print(blockMaker.getBlock())
-            logger.logMessage(f"Blok napravljen i proslijedjen ka miner-u {chosenMiner.getMinername()}.")
-            print('Prije blokiranja i cekanja potvrde da je blok sredjen')
-        logger.logMessage(f"-------TIME:")
+            continue
+        blockMaker.IncBlockCounter()
+        if(blockMaker.getBlockCounter()>5):
+            blockMaker.incDifficulty()
+        blockMaker.setBlocksDifficulty()
+        chosenMiner=blockMaker.getRandomMiner()
+        lock.release()
+        TCP_IP = chosenMiner.getIp()
+        TCP_PORT =(int)(chosenMiner.getPort())
+        webclientQueue.put(blockMaker.getBlock())
+        MESSAGE = pickle.dumps(blockMaker.getBlock())
+        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        s.connect((TCP_IP, TCP_PORT))
+        s.send(MESSAGE)
+        #print(blockMaker.getBlock())
+        blockMaker.newBlock()
+        print('------RESETOVANJE BLOKA------')
+        #print(blockMaker.getBlock())
+        logger.logMessage(f"Blok napravljen i proslijedjen ka miner-u {chosenMiner.getMinername()}.")
+        #print('Prije blokiranja i cekanja potvrde da je blok sredjen')
         data = s.recv(1024)
-        logger.logMessage(f"-------TIME:")
-        print('Nakon primanja poruke')
-        nesto="no"
+        #print('Nakon primanja poruke')
         if data:
             mess=pickle.loads(data)
-            print(mess)
+            #print(mess)
             logger.logMessage(f"Blok je hash-ovan.")
-            indikator=1
-            nesto=""
 
 
 def RegisterMiner(blockMaker,logger):
@@ -175,7 +170,6 @@ def RegisterMiner(blockMaker,logger):
     print ("Listening on port 6000")
     read_list = [ss]
     while True:
-        print("-----------------------------------------------------------")
        # readable, writable, errored = select.select(read_list, [], [])
         readable, writable, errored = select.select(read_list, [], [])
         for s in readable:
@@ -285,11 +279,11 @@ if __name__=='__main__':
     registerValletProcess=Thread(target=RegisterVallet,args=[inst,logger])
     #webServerProcess=multiprocessing.Process(target=runServerForWeb,args=())
     
-    #registerValletProcess.start()
-    #recieveProcess.start() #receiving transactions from Vallet
-    #sendProcess.start()
+    registerValletProcess.start()
+    recieveProcess.start() #receiving transactions from Vallet
+    sendProcess.start()
     saveProcess.start()
-    fakeReceiveProcess.start() #faking receiving transactions from Vallet
+    #fakeReceiveProcess.start() #faking receiving transactions from Vallet
     registerMinerProcess.start()
     #socketIo.run(app)#############################################################dodao
 

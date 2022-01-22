@@ -10,6 +10,11 @@ class Block:
         self.index=0
         Block.cnt+=1
         self.hash=None
+        self.difficulty=1
+    def setDifficulty(self,d):
+        self.difficulty = d
+    def getDifficulty(self):
+        return self.difficulty
     def addTransaction(self,transaction):
         self.transactions.append(transaction)
     def compute_hash(self):

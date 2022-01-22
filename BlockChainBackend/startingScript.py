@@ -23,12 +23,11 @@ if __name__ == "__main__":
     startBM.start()
     cnt =0
     sleep(2)
-    # for i in range(len(usrnameforVallets)):
-    #     startVallet=Thread(target=StartVallet,args=[cnt,valletArgs])
-    #     startVallet.start()
-    #     cnt+=1
+    for i in range(len(usrnameforVallets)):
+        startVallet=Thread(target=StartVallet,args=[cnt,valletArgs])
+        startVallet.start()
+        cnt+=1
     cnt=0
-    print("minerrrr")
     for i in range(len(usernameforMiners)):
         startMiner=Thread(target=StartMiner,args=[usernameforMiners[cnt]])
         startMiner.start()

@@ -15,10 +15,26 @@ class BlockMaker:
          self.miners=[]
          self.ipAddr=socket.gethostbyname(socket.gethostname())
          self.vallets=[]
-        
+         self.blockCounter=0
+         self.globalDifficulty=1
+    def getDifficulty(self):
+        return self.globalDifficulty
+    def incDifficulty(self):
+        self.globalDifficulty += 1
+        self.blockCounter=0
+    def setBlocksDifficulty(self):
+        self.block.setDifficulty(self.globalDifficulty)
+    def getBlockCounter(self):
+        return self.blockCounter
+    def IncBlockCounter(self):
+        self.blockCounter += 1
+    def resetCounter(self):
+        self.blockCounter=0
     def addTransaction(self,transaction):
         self.block.transactions.append(transaction)
-   
+    def getTrCount(self):
+        tr=self.block.getTransactions()
+        return len(tr)
     def newBlock(self):
         #newB=Block(time.time(),None)
         #print(newB)

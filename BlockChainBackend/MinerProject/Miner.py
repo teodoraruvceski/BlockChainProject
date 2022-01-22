@@ -6,6 +6,11 @@ class Miner:
         self.blockMined=0
         self.neighbors=[]
         self.minername=""
+        self.balance=0  
+    def payment(self):
+        self.balance += 1*(1 + self.balance/100000 + self.blockMined/1000 )
+    def getBalance(self):
+        return self.balance
     def setMinername(self,minername):
         self.minername=minername
     def getMinername(self):

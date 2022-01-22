@@ -153,7 +153,7 @@ if __name__=='__main__':
     rcvProcess.start()
     #p2.start()
     while True:
-        time.sleep(randint(2,5))
+        time.sleep(randint(5,10))
         SendTransaction(vallet,username,users,logger)
         #logger.logMessage(f"Vallet {username} sent transaction.")
 

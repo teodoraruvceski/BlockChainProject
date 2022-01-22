@@ -1,1 +1,1 @@
-blockMakerLogs
+ print(blockMaker.getBlock())
